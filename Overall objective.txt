@@ -1,0 +1,580 @@
+一、总目标
+
+只基于 GSE160306，完成一套纯 Python 分析，输出：
+
+1. 样本清单与分组文件。
+2. 原始 counts 和 normalized CPM 的标准化处理结果。
+3. 主分析结果：
+   只保留 macula 样本；
+   保留四组原始疾病标签：
+   healthy control、diabetic、NPPR、NPDR/PDR + DME。
+4. 两层分析框架：
+   第一层，主发现分析：healthy control vs NPDR/PDR + DME。
+   第二层，严重度/进展支持分析：四组 macula 样本按 0/1/2/3 做趋势分析。
+5. 炎症评分、差异分析、炎症候选基因筛选、LASSO 特征筛选、ROC、GSEA、免疫浸润。
+6. 全部主文图和补充图所需的原始结果文件与成图脚本。
+7. 一个总结果汇总文件，能直接喂给论文写作。
+
+二、必须先改掉的旧逻辑
+
+这部分很关键，agent 必须遵守。
+
+第一，不允许沿用你当前 metadata.py 的二分类逻辑。它把样本在最开始就压成 Control/DR，还只保留 `'normal/healthy/control'` 和 `'diabetic retinopathy/dr'`，会把 diabetic 和 NPPR 这两层直接弄没。这样后面没法做四组趋势分析，也没法判断哪些基因是 diabetes effect，哪些是 DR severity effect。
+
+第二，不允许直接用 normalized CPM 做差异分析。差异分析必须从 raw counts 出发。normalized CPM 只用于 PCA、heatmap、ssGSEA、LASSO 输入矩阵、表达可视化。
+
+第三，不允许再用“Pearson 定义 DE-INFGs”作为主口径。正式主口径应该统一为：
+DEGs 与 Hallmark inflammatory response 基因集取交集，得到 inflammation-associated candidate genes。
+Pearson/Spearman 相关只用于后续功能富集或趋势分析，不再定义候选基因。
+
+第四，不允许硬编码结果数字。旧稿里的 98、45、7、38/20 都只能作为历史参考，重跑后全部重新计算。
+
+第五，不允许在纯 Python 流程里把 IPA 当成自动可复现步骤。IPA 不是开源 Python 分析模块。正确做法是：
+Python 主流程完成后，额外导出一个 `ipa_input_selected_genes.csv` 给你手动做 IPA；
+或者用 Python 的 ORA/GSEA 和 network 图替代 IPA 主结果。
+
+三、建议的项目目录
+
+把下面这套目录直接发给 agent：
+
+```text
+dr_gse160306_project/
+├── data_raw/
+│   ├── GSE160306_series_matrix.txt
+│   ├── GSE160306_human_retina_DR_totalRNA_counts.txt
+│   ├── GSE160306_human_retina_DR_totalRNA_normalized_cpm.txt
+│   ├── hallmark_inflammatory_response.gmt
+│   ├── immune_28_signatures.gmt
+│   └── gene_annotation.tsv                 # 推荐准备，包含 ensembl_id / gene_symbol / gene_biotype
+├── data_processed/
+├── results/
+│   ├── tables/
+│   ├── stats/
+│   ├── figures/
+│   └── logs/
+├── scripts/
+│   ├── 00_config.py
+│   ├── 01_parse_manifest.py
+│   ├── 02_prepare_expression.py
+│   ├── 03_qc_and_pca.py
+│   ├── 04_differential_expression.py
+│   ├── 05_inflammation_scoring.py
+│   ├── 06_candidate_selection.py
+│   ├── 07_lasso_signature.py
+│   ├── 08_enrichment_analysis.py
+│   ├── 09_immune_infiltration.py
+│   ├── 10_make_figures.py
+│   ├── 11_export_master_summary.py
+│   └── utils.py
+└── run_all.py
+```
+
+四、每个 Python 文件的作用、内容、输入和输出
+
+1. `00_config.py`
+
+作用：
+统一管理路径、分组名称、阈值、随机种子、画图参数。
+
+内容必须包括：
+`RAW_DIR`, `PROC_DIR`, `RESULT_DIR`
+四组标准名：
+`healthy control`, `diabetic`, `NPPR`, `NPDR/PDR + DME`
+主比较组：
+`PRIMARY_CTRL = "healthy control"`
+`PRIMARY_CASE = "NPDR/PDR + DME"`
+严重度映射：
+`{"healthy control":0, "diabetic":1, "NPPR":2, "NPDR/PDR + DME":3}`
+差异分析阈值：
+`padj < 0.05`, `abs(log2FC) > 0.5`
+低表达过滤阈值：
+推荐 `count >= 10` 且至少出现在 `max(3, ceil(0.2 * n_samples))` 个样本中
+LASSO 参数：
+5-fold repeated CV，重复 20 次，评分 AUC，`penalty='l1'`
+随机种子固定。
+
+输出：
+无，作为全项目配置入口。
+
+2. `01_parse_manifest.py`
+
+作用：
+从 `series_matrix.txt` 中解析样本元数据，保留完整分组信息，不做过早二分类。
+
+输入：
+`GSE160306_series_matrix.txt`
+`GSE160306_human_retina_DR_totalRNA_counts.txt`
+
+核心内容：
+逐行解析所有 `!Sample_...` 字段，提取：
+`sample_id`
+`title`
+`region`
+`group_raw`
+`donor_id`（如果 metadata 里有）
+其它临床字段先全保留
+统一标准字段：
+`region_clean`
+`group_clean`
+`severity_code`
+生成三个 manifest：
+`manifest_all_samples.csv`
+`manifest_macula_4groups.csv`
+`manifest_primary_binary.csv`
+
+关键逻辑：
+只在最后一步才定义主比较二分类；
+前面必须保留四组原始信息。
+同时检查 counts 矩阵中的列名能否和 sample_id 完整匹配，输出匹配状态。
+
+输出：
+`data_processed/manifest_all_samples.csv`
+`data_processed/manifest_macula_4groups.csv`
+`data_processed/manifest_primary_binary.csv`
+`results/tables/sample_count_by_group_region.csv`
+
+3. `02_prepare_expression.py`
+
+作用：
+读取 counts 和 CPM，按 manifest 对齐样本、做基因过滤、生成分析矩阵。
+
+输入：
+counts 文件、normalized CPM 文件、manifest、gene annotation。
+
+核心内容：
+读取 raw counts 和 normalized CPM。
+基因 ID 统一。
+如果是 Ensembl ID，去版本号，例如 `ENSG... .xx -> ENSG...`
+和 `gene_annotation.tsv` 合并，得到 gene symbol。
+若一个 symbol 对应多个 Ensembl，保留平均表达最高或总 counts 最高的一条，并记录日志。
+生成三个矩阵：
+`counts_macula_4groups.tsv`
+`counts_primary_binary.tsv`
+`log2cpm_macula_4groups.tsv`
+
+关键逻辑：
+差异分析用 filtered raw counts；
+可视化和 ssGSEA 用 `log2(CPM + 1)`。
+不要重复 log。
+生成样本顺序一致的 phenotype 表。
+
+输出：
+`data_processed/counts_macula_4groups.tsv`
+`data_processed/counts_primary_binary.tsv`
+`data_processed/log2cpm_macula_4groups.tsv`
+`data_processed/pheno_macula_4groups.csv`
+`data_processed/pheno_primary_binary.csv`
+`results/tables/gene_filtering_summary.csv`
+
+4. `03_qc_and_pca.py`
+
+作用：
+做质控和样本层面可视化。
+
+输入：
+过滤后的 counts、log2CPM、phenotype。
+
+核心内容：
+样本总 reads / library size 统计。
+基因表达分布箱线图。
+样本间 Spearman 相关性热图。
+层次聚类树。
+PCA：
+一张用四组上色；
+一张只突出主比较组。
+可选 UMAP，但不是必须。
+
+输出：
+`results/figures/qc_library_size.png`
+`results/figures/qc_expression_boxplot.png`
+`results/figures/qc_sample_correlation_heatmap.png`
+`results/figures/qc_sample_clustering.png`
+`results/figures/pca_macula_4groups.png`
+`results/tables/pca_coordinates.csv`
+
+5. `04_differential_expression.py`
+
+作用：
+完成主差异分析和辅助差异分析。
+
+输入：
+`counts_primary_binary.tsv`
+`counts_macula_4groups.tsv`
+对应 phenotype。
+
+推荐方法：
+纯 Python 下优先用 `pydeseq2`。
+不要再尝试“模仿 limma”。
+
+必须完成三个比较：
+A. primary：
+healthy control vs NPDR/PDR + DME
+B. diabetic vs healthy control
+C. NPPR vs healthy control
+
+可选第四个：
+NPDR/PDR + DME vs diabetic
+
+此外再做一个趋势分析：
+按四组 severity code 0/1/2/3，对每个基因做 Spearman 趋势相关，输出 `rho`、`pvalue`、`fdr`。
+
+主输出：
+主比较完整 DEG 表
+上调 DEG 表
+下调 DEG 表
+趋势分析表
+
+输出：
+`results/tables/deg_primary_all.csv`
+`results/tables/deg_primary_up.csv`
+`results/tables/deg_primary_down.csv`
+`results/tables/deg_diabetic_vs_control.csv`
+`results/tables/deg_nppr_vs_control.csv`
+`results/tables/gene_severity_trend.csv`
+
+6. `05_inflammation_scoring.py`
+
+作用：
+计算炎症 ssGSEA 分数，并做组间比较。
+
+输入：
+`log2cpm_macula_4groups.tsv`
+`hallmark_inflammatory_response.gmt`
+phenotype。
+
+核心内容：
+用 `gseapy.ssgsea` 对每个样本计算 inflammation score。
+做两类统计：
+A. 主比较组 Mann–Whitney U
+B. 四组 Kruskal–Wallis
+C. 四组 severity code vs inflammation score 的 Spearman 相关
+
+输出：
+`results/tables/inflammation_ssgsea_scores.csv`
+`results/stats/inflammation_group_comparison.csv`
+`results/stats/inflammation_severity_trend.csv`
+
+7. `06_candidate_selection.py`
+
+作用：
+定义炎症候选基因，形成正式候选集。
+
+输入：
+主比较 DEG 表
+Hallmark inflammatory response gene set
+趋势分析表。
+
+核心逻辑：
+先做第一层交集：
+`primary_DEGs ∩ inflammatory_gene_set = inflammatory_core_genes`
+再做第二层优先级标记：
+这些核心基因中，哪些同时满足四组 severity trend 显著。
+输出两套清单：
+A. `inflammatory_core_genes`
+B. `progressive_inflammatory_genes`
+
+注意：
+不要把最终基因数硬限制成 45。
+也不要再用 Pearson 来定义候选基因。
+
+输出：
+`results/tables/inflammatory_core_genes.csv`
+`results/tables/progressive_inflammatory_genes.csv`
+`results/tables/candidate_gene_summary.csv`
+
+8. `07_lasso_signature.py`
+
+作用：
+在候选基因基础上做特征筛选和诊断签名构建。
+
+输入：
+主比较组的 `log2CPM` 表达矩阵
+候选基因列表
+主比较 phenotype。
+
+推荐策略：
+输入特征优先用 `progressive_inflammatory_genes`；
+如果数量过少，再退回 `inflammatory_core_genes`。
+标准化：
+`StandardScaler`
+LASSO：
+`LogisticRegressionCV`
+`penalty='l1'`
+`solver='saga'`
+`scoring='roc_auc'`
+`cv = RepeatedStratifiedKFold(n_splits=5, n_repeats=20, random_state=...)`
+
+必须输出两类 ROC：
+A. 每个入选基因单独 ROC
+B. 组合 signature ROC
+
+很重要：
+组合 ROC 不要直接用同一批样本的拟合后概率，那样过拟合太明显。
+应该输出：
+out-of-fold predicted probabilities 的 ROC
+以及 bootstrap 95% CI。
+
+同时输出：
+非零系数基因列表
+最终 signature 公式
+每个样本的 signature score。
+
+输出：
+`results/tables/lasso_selected_genes.csv`
+`results/tables/lasso_coefficients.csv`
+`results/tables/signature_scores.csv`
+`results/stats/roc_individual_genes.csv`
+`results/stats/roc_combined_signature.csv`
+
+9. `08_enrichment_analysis.py`
+
+作用：
+做功能富集和 pathway 总结。
+
+输入：
+selected genes
+全基因表达矩阵
+Hallmark/GO/Reactome/KEGG 基因集。
+
+推荐方法：
+对每个 selected gene：
+计算它与全基因的 Spearman 相关；
+按相关系数构造 ranked list；
+用 `gseapy.prerank` 做 preranked GSEA。
+
+主输出建议：
+A. 每个 gene 的 GSEA 完整结果表
+B. 汇总后的 pathway NES matrix
+C. top recurrent pathways 统计表
+
+关于 IPA：
+不在 Python 主流程中执行。
+额外输出：
+`results/tables/ipa_input_selected_genes.csv`
+供你以后手动上传 IPA。
+
+输出：
+`results/tables/gsea_<gene>.csv`
+`results/tables/gsea_summary_matrix.csv`
+`results/tables/pathway_recurrence_summary.csv`
+`results/tables/ipa_input_selected_genes.csv`
+
+10. `09_immune_infiltration.py`
+
+作用：
+做 28 immune signatures 的 ssGSEA 和基因-免疫相关分析。
+
+输入：
+`log2cpm_macula_4groups.tsv`
+`immune_28_signatures.gmt`
+phenotype
+selected genes。
+
+核心内容：
+每个样本计算 28 immune cell ssGSEA score。
+先做主比较组差异，再做四组趋势分析。
+对显著 immune cells，与 selected genes 做 Spearman 相关。
+输出相关系数、p 值、FDR。
+
+注意：
+这部分只作为 supportive evidence，不要让 agent 在报告里把它写成“真实浸润定量”。
+
+输出：
+`results/tables/immune_ssgsea_scores.csv`
+`results/stats/immune_primary_comparison.csv`
+`results/stats/immune_severity_trend.csv`
+`results/stats/gene_immune_correlations.csv`
+
+11. `10_make_figures.py`
+
+作用：
+统一生成所有主图和补图。
+
+输入：
+前面所有结果表。
+
+必须把所有图做成独立函数，不要把画图逻辑散落在各脚本里。
+图名固定，便于论文引用。
+
+12. `11_export_master_summary.py`
+
+作用：
+把所有分析结果整合成一个总表和一个文字摘要文件。
+
+输出内容：
+样本数
+主比较组构成
+DEG 数量
+炎症评分比较结果
+候选基因数
+LASSO 入选基因
+每个基因的方向和 AUC
+显著通路
+显著 immune cells
+
+输出：
+`results/tables/master_analysis_summary.csv`
+`results/logs/master_analysis_summary.md`
+
+13. `utils.py`
+
+作用：
+放通用函数。
+
+必须包括：
+读写文件
+多重检验校正
+AUC bootstrap CI
+boxplot/violin 通用画图
+volcano plot
+heatmap
+gene symbol 去重
+颜色和字体设置
+日志输出
+
+14. `run_all.py`
+
+作用：
+按顺序调用所有脚本，一次跑完整套流程。
+
+五、你应该让 agent 使用的 Python 包
+
+最少需要这些：
+
+`pandas`
+`numpy`
+`scipy`
+`statsmodels`
+`scikit-learn`
+`matplotlib`
+`seaborn`
+`pydeseq2`
+`gseapy`
+`networkx`
+`openpyxl`
+
+可选：
+`adjustText`
+`umap-learn`
+
+六、图像清单：只基于 GSE160306
+
+下面这部分就是论文图的正式规划。不要再照着旧稿 figure legends 机械复制。
+
+主文图建议 5 张。
+
+Figure 1：样本筛选与质控
+
+Figure 1A：
+分析流程图。
+内容：
+GSE160306 原始样本 → 解析 metadata → 保留 macula → 保留四组 → 主比较 healthy vs NPDR/PDR + DME → secondary trend analysis → candidate genes → LASSO → GSEA → immune ssGSEA
+
+Figure 1B：
+样本构成图。
+内容：
+按 region 和 group 统计样本数。
+可以做 stacked bar，或者 before/after filtering barplot。
+
+Figure 1C：
+PCA 图。
+内容：
+只基于 macula 四组样本，按四组着色。
+如果分离不明显也照样保留，这就是事实。
+
+Figure 2：炎症与差异表达
+
+Figure 2A：
+inflammation ssGSEA score 箱线/小提琴图。
+内容：
+四组都画出来，同时标 healthy vs advanced DR 显著性。
+如果想更强一点，加一条 severity trend 线。
+
+Figure 2B：
+primary contrast 的 volcano plot。
+内容：
+healthy control vs NPDR/PDR + DME。
+标出显著上调、下调和 selected genes。
+
+Figure 2C：
+heatmap。
+内容：
+建议画“top 50 DEGs”或者“all inflammatory_core_genes”。
+样本按四组排序，列注释标 group。
+
+Figure 2D：
+Venn 或 UpSet 图。
+内容：
+`primary_DEGs` 与 `Hallmark inflammatory response` 的交集。
+这张图的作用是告诉审稿人：候选基因不是乱来的，是有生物学约束的。
+
+Figure 3：候选基因筛选与 signature
+
+Figure 3A：
+LASSO coefficient path。
+横轴 log(lambda) 或 log(C)，纵轴系数。
+
+Figure 3B：
+cross-validation curve。
+内容：
+AUC 或 deviance 随正则化参数变化。
+
+Figure 3C：
+selected genes 在四组中的表达箱线图。
+不要只画二分类。四组一起画，才能体现严重度关系。
+
+Figure 3D：
+每个 selected gene 的 ROC 图。
+可以放在一个 panel 中，多条曲线。
+
+Figure 3E：
+combined signature 的 ROC。
+必须优先用 out-of-fold probabilities 生成，不要用 training-fitted probabilities 造假。
+
+Figure 4：功能富集
+
+Figure 4A：
+selected genes × recurrent pathways 的 NES 热图。
+横轴 selected genes，纵轴 top pathways。
+
+Figure 4B：
+top recurrent pathways dotplot。
+内容：
+路径名称、NES 或 enrichment score、FDR、涉及基因数。
+
+Figure 4C：
+gene-pathway network 图。
+如果做出来太丑就删，别为了凑图硬上。
+
+Figure 5：免疫浸润
+
+Figure 5A：
+显著 immune cell types 的箱线/小提琴图。
+建议主图只放显著的那几类。
+
+Figure 5B：
+selected genes vs significant immune cells 的相关热图。
+格子里显示 rho，显著性用星号或边框。
+
+补充图建议如下。
+
+Supplementary Figure S1：
+样本聚类树 + 样本相关性热图。
+
+Supplementary Figure S2：
+library size、表达分布、QC 图。
+
+Supplementary Figure S3：
+完整 DEG heatmap 或 top 100 DEG heatmap。
+
+Supplementary Figure S4：
+all inflammatory_core_genes 的 heatmap。
+
+Supplementary Figure S5：
+每个 selected gene 的单独 GSEA enrichment plot。
+如果最后是 7 个基因，就是 7 张。
+
+Supplementary Figure S6：
+gene-immune 的单独散点相关图。
+只对显著对生成。
+

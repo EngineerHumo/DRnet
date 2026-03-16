@@ -33,9 +33,10 @@ def draw_bar_from_pairs(pairs, name, color=(80, 145, 220)):
     save(c, name)
 
 
-def draw_scatter(rows, xk, yk, groupk, name):
+def draw_scatter(rows, xk, yk, groupk, name, palette=None):
     c = Canvas(1100, 700)
-    palette = {'healthy control': (65, 105, 225), 'diabetic': (34, 139, 34), 'NPDR': (255, 140, 0), 'NPDR/PDR + DME': (220, 20, 60)}
+    default_palette = {'healthy control': (65, 105, 225), 'diabetic': (34, 139, 34), 'NPDR': (255, 140, 0), 'NPDR/PDR + DME': (220, 20, 60)}
+    palette = palette or default_palette
     xs = [float(r[xk]) for r in rows]
     ys = [float(r[yk]) for r in rows]
     c.line(90, 620, 1030, 620, (0, 0, 0), 2)
@@ -43,7 +44,14 @@ def draw_scatter(rows, xk, yk, groupk, name):
     for r in rows:
         x = int(scale(float(r[xk]), min(xs), max(xs), 120, 1000))
         y = int(scale(float(r[yk]), min(ys), max(ys), 600, 120))
-        c.circle(x, y, 5, palette.get(r.get(groupk, ''), (90, 90, 90)))
+        grp = str(r.get(groupk, ''))
+        if grp in palette:
+            color = palette[grp]
+        else:
+            # deterministic fallback color for unseen classes (avoid all-gray collapse)
+            h = sum(ord(ch) for ch in grp)
+            color = (40 + (h * 53) % 180, 40 + (h * 97) % 180, 40 + (h * 29) % 180)
+        c.circle(x, y, 5, color)
     save(c, name)
 
 
@@ -90,18 +98,19 @@ def main():
         grp[r['group']].append(float(r['inflammation_ssgsea']))
     draw_bar_from_pairs([(k, sum(v) / len(v)) for k, v in sorted(grp.items())], 'Figure2_inflammation_ssgsea_4groups', (220, 140, 90))
 
-    deg = read_csv(RESULT_DIR / 'tables' / 'deg_primary_healthy_vs_npdr_pdr_dme.csv')[:1000]
-    volc = [{'x': float(r['log2FC']), 'y': -__import__('math').log10(max(float(r['pvalue']), 1e-300)), 'group': 'sig' if int(r['significant']) else 'ns'} for r in deg]
-    draw_scatter(volc, 'x', 'y', 'group', 'Figure2_primary_volcano')
+    deg_all = read_csv(RESULT_DIR / 'tables' / 'deg_primary_healthy_vs_npdr_pdr_dme.csv')
+    deg_plot = deg_all[:1000]
+    volc = [{'x': float(r['log2FC']), 'y': -__import__('math').log10(max(float(r['pvalue']), 1e-300)), 'group': 'sig' if int(r['significant']) else 'ns'} for r in deg_plot]
+    draw_scatter(volc, 'x', 'y', 'group', 'Figure2_primary_volcano', palette={'sig': (220, 20, 60), 'ns': (160, 160, 160)})
 
-    top_deg = deg[:40]
+    top_deg = deg_all[:40]
     heat_rows = [{'gene': r['gene'], 'metric': 'log2FC', 'val': float(r['log2FC'])} for r in top_deg]
     draw_heatmap(heat_rows, 'gene', 'metric', 'val', 'Figure2_deg_inflammatory_heatmap')
 
     # overlap counts
     with open(RESULT_DIR / 'tables' / 'inflammatory_core_genes.csv', encoding='utf-8') as f:
         core = [r for r in csv.DictReader(f)]
-    draw_bar_from_pairs([('primary_deg_sig', sum(int(r['significant']) for r in deg)), ('inflam_core', len(core))], 'Figure2_overlap_primarydeg_inflammation', (150, 200, 120))
+    draw_bar_from_pairs([('primary_deg_sig', sum(int(r['significant']) for r in deg_all)), ('inflam_core', len(core))], 'Figure2_overlap_primarydeg_inflammation', (150, 200, 120))
 
     # Figure3
     coef = read_csv(RESULT_DIR / 'tables' / 'lasso_coefficients.csv')
@@ -136,7 +145,7 @@ def main():
     qc = read_csv(RESULT_DIR / 'tables' / 'qc_metrics.csv')
     draw_bar_from_pairs([(r['sample_id'], float(r['library_size'])) for r in qc], 'Supp_QC', (120, 150, 220))
     draw_heatmap([{'sample': r['sample_id'], 'metric': 'expr_median', 'val': float(r['expr_median'])} for r in qc], 'sample', 'metric', 'val', 'Supp_clustering')
-    draw_heatmap([{'gene': r['gene'], 'metric': 'padj', 'val': -__import__('math').log10(max(float(r['padj']), 1e-300))} for r in deg[:50]], 'gene', 'metric', 'val', 'Supp_expanded_deg_heatmap')
+    draw_heatmap([{'gene': r['gene'], 'metric': 'padj', 'val': -__import__('math').log10(max(float(r['padj']), 1e-300))} for r in deg_all[:50]], 'gene', 'metric', 'val', 'Supp_expanded_deg_heatmap')
     draw_bar_from_pairs([(r['gene_symbol'], 1) for r in core[:30]], 'Supp_all_inflammatory_core_heatmap', (200, 80, 80))
     draw_bar_from_pairs([(r['pathway'], abs(float(r['NES']))) for r in gsea[:30]], 'Supp_single_gene_gsea', (140, 120, 200))
     if cor:

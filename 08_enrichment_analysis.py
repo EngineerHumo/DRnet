@@ -32,12 +32,45 @@ def enrichment_score(ranked_genes, ranked_scores, gene_set, p=1.0):
 
 def perm_null(ranked_genes, ranked_scores, gene_set, n_perm=80):
     rnd = random.Random(SEED)
-    scores = ranked_scores[:]
     null = []
+    base = ranked_scores[:]
     for _ in range(n_perm):
+        scores = base[:]
         rnd.shuffle(scores)
         null.append(enrichment_score(ranked_genes, scores, gene_set))
     return null
+
+
+def _normalize_nes_and_pvalue(es, null):
+    # Robust to empty same-sign null tails: fallback to all-null absolute mean normalization
+    if not null:
+        return 0.0, 1.0, 'empty_null'
+
+    if es >= 0:
+        same = [x for x in null if x >= 0]
+        if same:
+            denom = sum(same) / len(same)
+            pval = (sum(1 for x in same if x >= es) + 1) / (len(same) + 1)
+            method = 'same_sign_pos'
+        else:
+            denom = sum(abs(x) for x in null) / len(null)
+            pval = (sum(1 for x in null if abs(x) >= abs(es)) + 1) / (len(null) + 1)
+            method = 'fallback_abs_null'
+    else:
+        same = [x for x in null if x < 0]
+        if same:
+            denom = abs(sum(same) / len(same))
+            pval = (sum(1 for x in same if x <= es) + 1) / (len(same) + 1)
+            method = 'same_sign_neg'
+        else:
+            denom = sum(abs(x) for x in null) / len(null)
+            pval = (sum(1 for x in null if abs(x) >= abs(es)) + 1) / (len(null) + 1)
+            method = 'fallback_abs_null'
+
+    denom = max(denom, 1e-6)
+    nes = es / denom
+    pval = min(max(pval, 1.0 / (len(null) + 1)), 1.0)
+    return nes, pval, method
 
 
 def main():
@@ -71,17 +104,9 @@ def main():
     for pth, gset in hall.items():
         es = enrichment_score(ranked_genes, ranked_scores, gset)
         null = perm_null(ranked_genes, ranked_scores, gset)
-        if es >= 0:
-            pos = [x for x in null if x >= 0] or [1e-12]
-            nes = es / (sum(pos) / len(pos))
-            pval = sum(1 for x in pos if x >= es) / len(pos)
-        else:
-            neg = [x for x in null if x < 0] or [-1e-12]
-            nes = -es / (abs(sum(neg) / len(neg)) + 1e-12)
-            nes = -nes
-            pval = sum(1 for x in neg if x <= es) / len(neg)
+        nes, pval, nes_method = _normalize_nes_and_pvalue(es, null)
         hits = len(set(gset).intersection(set(ranked_genes)))
-        rows.append({'pathway': pth, 'ES': es, 'NES': nes, 'pvalue': pval, 'hit_genes': hits, 'geneset_size': len(set(gset))})
+        rows.append({'pathway': pth, 'ES': es, 'NES': nes, 'pvalue': pval, 'hit_genes': hits, 'geneset_size': len(set(gset)), 'nes_method': nes_method})
 
     adj = bh_adjust([r['pvalue'] for r in rows])
     for r, a in zip(rows, adj):
@@ -98,8 +123,6 @@ def main():
         w.writeheader()
         w.writerows([{'pathway': r['pathway'], 'hit_genes': r['hit_genes'], 'padj': r['padj'], 'NES': r['NES']} for r in rows])
 
-    # gene-centric extraction from real GSEA result: pathways containing each selected gene, with global NES/FDR
-    gene_rows = []
     hall_sets = {k: set(v) for k, v in hall.items()}
     for g in genes:
         out = []
@@ -111,7 +134,6 @@ def main():
             w = csv.DictWriter(f, fieldnames=fields)
             w.writeheader()
             w.writerows(out)
-        gene_rows.extend(out)
 
     with open(RESULT_DIR / 'tables' / 'ipa_input_selected_genes.csv', 'w', newline='', encoding='utf-8') as f:
         w = csv.DictWriter(f, fieldnames=['gene_symbol'])

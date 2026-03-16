@@ -187,11 +187,19 @@ def main():
 
     available = [g for g in feats if g in mat_symbol]
     if len(available) < 3:
+        # preserve DE ranking order when falling back to top DE genes
         with open(RESULT_DIR / 'tables' / 'deg_primary_healthy_vs_npdr_pdr_dme.csv', encoding='utf-8') as f:
             top_ens = [r['gene'] for r in list(csv.DictReader(f))[:80]]
-        rev = {k: v for k, v in mapping.items() if k in set(top_ens)}
-        available = sorted(set(rev.values()))[:30]
-        available = [g for g in available if g in mat_symbol]
+        ordered = []
+        seen = set()
+        for eid in top_ens:
+            sym = mapping.get(eid.split('.')[0])
+            if sym and sym in mat_symbol and sym not in seen:
+                ordered.append(sym)
+                seen.add(sym)
+            if len(ordered) >= 30:
+                break
+        available = ordered
 
     X_raw = []
     for s in sample_ids:

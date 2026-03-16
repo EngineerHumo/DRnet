@@ -28,9 +28,12 @@ def pearson(x, y):
 
 def top2_pca(samples_by_gene):
     # input: list of genes, each = vector over samples
+    # sample-PCA should center each gene across samples (row-wise centering)
     n = len(samples_by_gene[0])
-    means = [sum(g[i] for g in samples_by_gene) / len(samples_by_gene) for i in range(n)]
-    centered = [[g[i] - means[i] for i in range(n)] for g in samples_by_gene]
+    centered = []
+    for g in samples_by_gene:
+        gm = sum(g) / len(g)
+        centered.append([x - gm for x in g])
 
     cov = [[0.0] * n for _ in range(n)]
     for g in centered:

@@ -1,0 +1,39 @@
+sample_id,group,severity_code,inflammation_ssgsea
+sample_01,healthy control,0,0.0
+sample_10,healthy control,0,0.0
+sample_02,healthy control,0,0.0
+sample_21,diabetic,1,0.0
+sample_22,diabetic,1,0.0
+sample_23,diabetic,1,0.0
+sample_24,diabetic,1,0.0
+sample_25,diabetic,1,0.0
+sample_26,diabetic,1,0.0
+sample_27,diabetic,1,0.0
+sample_28,diabetic,1,0.0
+sample_29,diabetic,1,0.0
+sample_03,healthy control,0,0.0
+sample_30,diabetic,1,0.0
+sample_04,healthy control,0,0.0
+sample_41,NPPR,2,0.0
+sample_42,NPPR,2,0.0
+sample_43,NPPR,2,0.0
+sample_44,NPPR,2,0.0
+sample_46,NPPR,2,0.0
+sample_47,NPPR,2,0.0
+sample_48,NPPR,2,0.0
+sample_49,NPPR,2,0.0
+sample_05,healthy control,0,0.0
+sample_50,NPPR,2,0.0
+sample_06,healthy control,0,0.0
+sample_61,NPDR/PDR + DME,3,0.0
+sample_62,NPDR/PDR + DME,3,0.0
+sample_63,NPDR/PDR + DME,3,0.0
+sample_64,NPDR/PDR + DME,3,0.0
+sample_66,NPDR/PDR + DME,3,0.0
+sample_67,NPDR/PDR + DME,3,0.0
+sample_68,NPDR/PDR + DME,3,0.0
+sample_69,NPDR/PDR + DME,3,0.0
+sample_07,healthy control,0,0.0
+sample_70,NPDR/PDR + DME,3,0.0
+sample_08,healthy control,0,0.0
+sample_09,healthy control,0,0.0

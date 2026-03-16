@@ -1,0 +1,80 @@
+sample_id,geo_accession,disease_group,region,severity_code,disease_group_detailed
+sample_01,GSM4871112,healthy control,macula,0,Control
+sample_10,GSM4871113,healthy control,macula,0,Control
+sample_11,GSM4871114,healthy control,periphery,0,Control
+sample_12,GSM4871115,healthy control,periphery,0,Control
+sample_13,GSM4871116,healthy control,periphery,0,Control
+sample_14,GSM4871117,healthy control,periphery,0,Control
+sample_15,GSM4871118,healthy control,periphery,0,Control
+sample_16,GSM4871119,healthy control,periphery,0,Control
+sample_17,GSM4871120,healthy control,periphery,0,Control
+sample_18,GSM4871121,healthy control,periphery,0,Control
+sample_19,GSM4871122,healthy control,periphery,0,Control
+sample_02,GSM4871123,healthy control,macula,0,Control
+sample_20,GSM4871124,healthy control,periphery,0,Control
+sample_21,GSM4871125,diabetic,macula,1,Diabetic
+sample_22,GSM4871126,diabetic,macula,1,Diabetic
+sample_23,GSM4871127,diabetic,macula,1,Diabetic
+sample_24,GSM4871128,diabetic,macula,1,Diabetic
+sample_25,GSM4871129,diabetic,macula,1,Diabetic
+sample_26,GSM4871130,diabetic,macula,1,Diabetic
+sample_27,GSM4871131,diabetic,macula,1,Diabetic
+sample_28,GSM4871132,diabetic,macula,1,Diabetic
+sample_29,GSM4871133,diabetic,macula,1,Diabetic
+sample_03,GSM4871134,healthy control,macula,0,Control
+sample_30,GSM4871135,diabetic,macula,1,Diabetic
+sample_31,GSM4871136,diabetic,periphery,1,Diabetic
+sample_32,GSM4871137,diabetic,periphery,1,Diabetic
+sample_33,GSM4871138,diabetic,periphery,1,Diabetic
+sample_34,GSM4871139,diabetic,periphery,1,Diabetic
+sample_35,GSM4871140,diabetic,periphery,1,Diabetic
+sample_36,GSM4871141,diabetic,periphery,1,Diabetic
+sample_37,GSM4871142,diabetic,periphery,1,Diabetic
+sample_38,GSM4871143,diabetic,periphery,1,Diabetic
+sample_39,GSM4871144,diabetic,periphery,1,Diabetic
+sample_04,GSM4871145,healthy control,macula,0,Control
+sample_40,GSM4871146,diabetic,periphery,1,Diabetic
+sample_41,GSM4871147,NPPR,macula,2,NPDR
+sample_42,GSM4871148,NPPR,macula,2,NPDR
+sample_43,GSM4871149,NPPR,macula,2,NPDR
+sample_44,GSM4871150,NPPR,macula,2,NPDR
+sample_46,GSM4871151,NPPR,macula,2,NPDR
+sample_47,GSM4871152,NPPR,macula,2,NPDR
+sample_48,GSM4871153,NPPR,macula,2,NPDR
+sample_49,GSM4871154,NPPR,macula,2,NPDR
+sample_05,GSM4871155,healthy control,macula,0,Control
+sample_50,GSM4871156,NPPR,macula,2,NPDR
+sample_51,GSM4871157,NPPR,periphery,2,NPDR
+sample_52,GSM4871158,NPPR,periphery,2,NPDR
+sample_53,GSM4871159,NPPR,periphery,2,NPDR
+sample_54,GSM4871160,NPPR,periphery,2,NPDR
+sample_55,GSM4871161,NPPR,periphery,2,NPDR
+sample_56,GSM4871162,NPPR,periphery,2,NPDR
+sample_57,GSM4871163,NPPR,periphery,2,NPDR
+sample_58,GSM4871164,NPPR,periphery,2,NPDR
+sample_59,GSM4871165,NPPR,periphery,2,NPDR
+sample_06,GSM4871166,healthy control,macula,0,Control
+sample_60,GSM4871167,NPPR,periphery,2,NPDR
+sample_61,GSM4871168,NPDR/PDR + DME,macula,3,NPDR + DME
+sample_62,GSM4871169,NPDR/PDR + DME,macula,3,NPDR + DME
+sample_63,GSM4871170,NPDR/PDR + DME,macula,3,PDR + DME
+sample_64,GSM4871171,NPDR/PDR + DME,macula,3,PDR + DME
+sample_65,GSM4871172,NPDR/PDR + DME,macula,3,NPDR + DME
+sample_66,GSM4871173,NPDR/PDR + DME,macula,3,NPDR + DME
+sample_67,GSM4871174,NPDR/PDR + DME,macula,3,NPDR + DME
+sample_68,GSM4871175,NPDR/PDR + DME,macula,3,PDR + DME
+sample_69,GSM4871176,NPDR/PDR + DME,macula,3,NPDR + DME
+sample_07,GSM4871177,healthy control,macula,0,Control
+sample_70,GSM4871178,NPDR/PDR + DME,macula,3,NPDR + DME
+sample_71,GSM4871179,NPDR/PDR + DME,periphery,3,NPDR + DME
+sample_72,GSM4871180,NPDR/PDR + DME,periphery,3,NPDR + DME
+sample_73,GSM4871181,NPDR/PDR + DME,periphery,3,PDR + DME
+sample_74,GSM4871182,NPDR/PDR + DME,periphery,3,NPDR + DME
+sample_75,GSM4871183,NPDR/PDR + DME,periphery,3,NPDR + DME
+sample_76,GSM4871184,NPDR/PDR + DME,periphery,3,NPDR + DME
+sample_77,GSM4871185,NPDR/PDR + DME,periphery,3,NPDR + DME
+sample_78,GSM4871186,NPDR/PDR + DME,periphery,3,PDR + DME
+sample_79,GSM4871187,NPDR/PDR + DME,periphery,3,NPDR + DME
+sample_08,GSM4871188,healthy control,macula,0,Control
+sample_80,GSM4871189,NPDR/PDR + DME,periphery,3,NPDR + DME
+sample_09,GSM4871190,healthy control,macula,0,Control

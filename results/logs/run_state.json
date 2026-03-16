@@ -1,0 +1,16 @@
+{
+  "completed": [
+    "00a_validate_and_clean_gene_sets.py",
+    "01_parse_manifest.py",
+    "02_prepare_expression.py",
+    "03_qc_and_pca.py",
+    "04_differential_expression.py",
+    "05_inflammation_scoring.py",
+    "06_candidate_selection.py",
+    "07_lasso_signature.py",
+    "08_enrichment_analysis.py",
+    "09_immune_infiltration.py",
+    "10_make_figures.py",
+    "11_export_master_summary.py"
+  ]
+}

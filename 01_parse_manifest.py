@@ -15,7 +15,7 @@ def main():
     out=[]
     for r in data:
         raw_group=r.get('disease_group_dme', r.get('disease_group','')).strip()
-        map_group={'Control':'healthy control','Diabetic':'diabetic','NPDR':'NPPR','NPDR/PDR + DME':'NPDR/PDR + DME'}
+        map_group={'Control':'healthy control','Diabetic':'diabetic','NPDR':'NPDR','NPDR/PDR + DME':'NPDR/PDR + DME'}
         g=map_group.get(raw_group,raw_group)
         region='macula' if 'Macula' in r.get('tissue','') else 'periphery'
         row={'sample_id':r['sample_id'],'geo_accession':r.get('geo_accession',''),'disease_group':g,'region':region,'severity_code':cfg['SEVERITY_MAP'].get(g,''),'disease_group_detailed':r.get('disease_group_detailed','')}

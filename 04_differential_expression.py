@@ -29,7 +29,7 @@ def main():
     groups={k:v['disease_group'] for k,v in ph.items()}
     run_contrast(samples,groups,data,'healthy control','NPDR/PDR + DME',RESULT_DIR/'tables'/'deg_primary_healthy_vs_npdr_pdr_dme.csv')
     run_contrast(samples,groups,data,'healthy control','diabetic',RESULT_DIR/'tables'/'deg_diabetic_vs_healthy.csv')
-    run_contrast(samples,groups,data,'healthy control','NPPR',RESULT_DIR/'tables'/'deg_nppr_vs_healthy.csv')
+    run_contrast(samples,groups,data,'healthy control','NPDR',RESULT_DIR/'tables'/'deg_nppr_vs_healthy.csv')
     run_contrast(samples,groups,data,'diabetic','NPDR/PDR + DME',RESULT_DIR/'tables'/'deg_npdr_pdr_dme_vs_diabetic.csv')
     sev={k:int(v['severity_code']) for k,v in ph.items()}
     trend=[]

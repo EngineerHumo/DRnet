@@ -1,0 +1,1065 @@
+sample_id,group,severity_code,cell_type,score
+sample_01,healthy control,0,Activated_B_cell,4.112590999999999
+sample_01,healthy control,0,Activated_CD4_T_cell,3.930488111111112
+sample_01,healthy control,0,Activated_CD8_T_cell,3.996749666666666
+sample_01,healthy control,0,Activated_dendritic_cell,4.015056444444443
+sample_01,healthy control,0,CD56bright_natural_killer_cell,4.018828920000001
+sample_01,healthy control,0,CD56dim_natural_killer_cell,4.060479583333334
+sample_01,healthy control,0,Central_memory_CD4_T_cell,4.0769639
+sample_01,healthy control,0,Central_memory_CD8_T_cell,4.10270675
+sample_01,healthy control,0,Effector_memory_CD4_T_cell,4.043558722222222
+sample_01,healthy control,0,Effector_memory_CD8_T_cell,4.081934583333333
+sample_01,healthy control,0,Eosinophil,3.998481875
+sample_01,healthy control,0,Gamma_delta_T_cell,4.044673368421052
+sample_01,healthy control,0,Immature_B_cell,4.071842
+sample_01,healthy control,0,Immature_dendritic_cell,4.0904506000000005
+sample_01,healthy control,0,Macrophage,3.937242230769231
+sample_01,healthy control,0,Mast_cell,3.9724981999999995
+sample_01,healthy control,0,MDSC,3.9331333749999997
+sample_01,healthy control,0,Memory_B_cell,4.063750375000001
+sample_01,healthy control,0,Monocyte,4.12802325
+sample_01,healthy control,0,Natural_killer_cell,4.0602730000000005
+sample_01,healthy control,0,Natural_killer_T_cell,4.06146205263158
+sample_01,healthy control,0,Neutrophil,3.88059075
+sample_01,healthy control,0,Plasmacytoid_dendritic_cell,4.1118345199999995
+sample_01,healthy control,0,Regulatory_T_cell,4.0236766
+sample_01,healthy control,0,T_follicular_helper_cell,4.032755476190475
+sample_01,healthy control,0,Type_1_T_helper_cell,4.045303714285715
+sample_01,healthy control,0,Type_17_T_helper_cell,3.9954516153846154
+sample_01,healthy control,0,Type_2_T_helper_cell,4.0113214210526325
+sample_10,healthy control,0,Activated_B_cell,4.1382194
+sample_10,healthy control,0,Activated_CD4_T_cell,3.9112024444444446
+sample_10,healthy control,0,Activated_CD8_T_cell,3.9932760833333343
+sample_10,healthy control,0,Activated_dendritic_cell,4.016036000000001
+sample_10,healthy control,0,CD56bright_natural_killer_cell,4.019568279999999
+sample_10,healthy control,0,CD56dim_natural_killer_cell,4.0538885
+sample_10,healthy control,0,Central_memory_CD4_T_cell,4.08270395
+sample_10,healthy control,0,Central_memory_CD8_T_cell,4.111161
+sample_10,healthy control,0,Effector_memory_CD4_T_cell,4.035900222222222
+sample_10,healthy control,0,Effector_memory_CD8_T_cell,4.087956166666667
+sample_10,healthy control,0,Eosinophil,4.012896625
+sample_10,healthy control,0,Gamma_delta_T_cell,4.06765252631579
+sample_10,healthy control,0,Immature_B_cell,4.0335945
+sample_10,healthy control,0,Immature_dendritic_cell,4.089556933333333
+sample_10,healthy control,0,Macrophage,3.947393076923076
+sample_10,healthy control,0,Mast_cell,3.9989712000000006
+sample_10,healthy control,0,MDSC,3.9709592499999995
+sample_10,healthy control,0,Memory_B_cell,4.047096625
+sample_10,healthy control,0,Monocyte,4.1308125625
+sample_10,healthy control,0,Natural_killer_cell,4.069276047619048
+sample_10,healthy control,0,Natural_killer_T_cell,4.061985894736843
+sample_10,healthy control,0,Neutrophil,3.8897114999999998
+sample_10,healthy control,0,Plasmacytoid_dendritic_cell,4.10445308
+sample_10,healthy control,0,Regulatory_T_cell,4.008390099999999
+sample_10,healthy control,0,T_follicular_helper_cell,4.035929238095238
+sample_10,healthy control,0,Type_1_T_helper_cell,4.055776047619046
+sample_10,healthy control,0,Type_17_T_helper_cell,4.002262615384615
+sample_10,healthy control,0,Type_2_T_helper_cell,3.9976637368421053
+sample_02,healthy control,0,Activated_B_cell,4.1064554
+sample_02,healthy control,0,Activated_CD4_T_cell,3.909890666666666
+sample_02,healthy control,0,Activated_CD8_T_cell,4.013700583333333
+sample_02,healthy control,0,Activated_dendritic_cell,3.997742333333333
+sample_02,healthy control,0,CD56bright_natural_killer_cell,4.01020916
+sample_02,healthy control,0,CD56dim_natural_killer_cell,4.051952583333333
+sample_02,healthy control,0,Central_memory_CD4_T_cell,4.0900707999999995
+sample_02,healthy control,0,Central_memory_CD8_T_cell,4.116762916666667
+sample_02,healthy control,0,Effector_memory_CD4_T_cell,4.024189777777778
+sample_02,healthy control,0,Effector_memory_CD8_T_cell,4.077915916666667
+sample_02,healthy control,0,Eosinophil,3.9647819999999996
+sample_02,healthy control,0,Gamma_delta_T_cell,4.05489252631579
+sample_02,healthy control,0,Immature_B_cell,4.0665905
+sample_02,healthy control,0,Immature_dendritic_cell,4.0798434
+sample_02,healthy control,0,Macrophage,3.960198615384616
+sample_02,healthy control,0,Mast_cell,4.0032704
+sample_02,healthy control,0,MDSC,3.9368764999999994
+sample_02,healthy control,0,Memory_B_cell,4.068943875
+sample_02,healthy control,0,Monocyte,4.130816625
+sample_02,healthy control,0,Natural_killer_cell,4.0587503809523815
+sample_02,healthy control,0,Natural_killer_T_cell,4.055053421052632
+sample_02,healthy control,0,Neutrophil,3.9262180000000004
+sample_02,healthy control,0,Plasmacytoid_dendritic_cell,4.11314276
+sample_02,healthy control,0,Regulatory_T_cell,4.0209319
+sample_02,healthy control,0,T_follicular_helper_cell,4.041481999999999
+sample_02,healthy control,0,Type_1_T_helper_cell,4.059009785714285
+sample_02,healthy control,0,Type_17_T_helper_cell,4.0014987692307695
+sample_02,healthy control,0,Type_2_T_helper_cell,4.0001398421052645
+sample_21,diabetic,1,Activated_B_cell,4.1236224
+sample_21,diabetic,1,Activated_CD4_T_cell,3.892955222222222
+sample_21,diabetic,1,Activated_CD8_T_cell,4.003186250000001
+sample_21,diabetic,1,Activated_dendritic_cell,4.000771277777777
+sample_21,diabetic,1,CD56bright_natural_killer_cell,4.01518332
+sample_21,diabetic,1,CD56dim_natural_killer_cell,4.050546000000001
+sample_21,diabetic,1,Central_memory_CD4_T_cell,4.083748599999999
+sample_21,diabetic,1,Central_memory_CD8_T_cell,4.1167775833333335
+sample_21,diabetic,1,Effector_memory_CD4_T_cell,4.034359944444445
+sample_21,diabetic,1,Effector_memory_CD8_T_cell,4.071644083333334
+sample_21,diabetic,1,Eosinophil,3.956320875
+sample_21,diabetic,1,Gamma_delta_T_cell,4.065282105263158
+sample_21,diabetic,1,Immature_B_cell,4.0569755
+sample_21,diabetic,1,Immature_dendritic_cell,4.090866133333333
+sample_21,diabetic,1,Macrophage,3.965940230769232
+sample_21,diabetic,1,Mast_cell,3.9962396
+sample_21,diabetic,1,MDSC,3.94787875
+sample_21,diabetic,1,Memory_B_cell,4.06745775
+sample_21,diabetic,1,Monocyte,4.1269655
+sample_21,diabetic,1,Natural_killer_cell,4.066663428571428
+sample_21,diabetic,1,Natural_killer_T_cell,4.053329947368421
+sample_21,diabetic,1,Neutrophil,3.8950372499999997
+sample_21,diabetic,1,Plasmacytoid_dendritic_cell,4.11153232
+sample_21,diabetic,1,Regulatory_T_cell,4.0412209
+sample_21,diabetic,1,T_follicular_helper_cell,4.037528047619047
+sample_21,diabetic,1,Type_1_T_helper_cell,4.049524309523808
+sample_21,diabetic,1,Type_17_T_helper_cell,4.000504
+sample_21,diabetic,1,Type_2_T_helper_cell,3.997985842105263
+sample_22,diabetic,1,Activated_B_cell,4.1485932
+sample_22,diabetic,1,Activated_CD4_T_cell,3.9215692222222223
+sample_22,diabetic,1,Activated_CD8_T_cell,3.9981348333333337
+sample_22,diabetic,1,Activated_dendritic_cell,4.019740111111112
+sample_22,diabetic,1,CD56bright_natural_killer_cell,4.017764320000001
+sample_22,diabetic,1,CD56dim_natural_killer_cell,4.0530525
+sample_22,diabetic,1,Central_memory_CD4_T_cell,4.1008773
+sample_22,diabetic,1,Central_memory_CD8_T_cell,4.12035025
+sample_22,diabetic,1,Effector_memory_CD4_T_cell,4.030777888888888
+sample_22,diabetic,1,Effector_memory_CD8_T_cell,4.088972333333332
+sample_22,diabetic,1,Eosinophil,3.9625778749999996
+sample_22,diabetic,1,Gamma_delta_T_cell,4.063294473684211
+sample_22,diabetic,1,Immature_B_cell,4.05891675
+sample_22,diabetic,1,Immature_dendritic_cell,4.089678666666667
+sample_22,diabetic,1,Macrophage,3.960752846153847
+sample_22,diabetic,1,Mast_cell,3.9783336
+sample_22,diabetic,1,MDSC,3.95885125
+sample_22,diabetic,1,Memory_B_cell,4.049708625
+sample_22,diabetic,1,Monocyte,4.1232141875
+sample_22,diabetic,1,Natural_killer_cell,4.076692095238095
+sample_22,diabetic,1,Natural_killer_T_cell,4.069092210526316
+sample_22,diabetic,1,Neutrophil,3.92728275
+sample_22,diabetic,1,Plasmacytoid_dendritic_cell,4.10858804
+sample_22,diabetic,1,Regulatory_T_cell,4.023749499999999
+sample_22,diabetic,1,T_follicular_helper_cell,4.052173761904761
+sample_22,diabetic,1,Type_1_T_helper_cell,4.059317119047619
+sample_22,diabetic,1,Type_17_T_helper_cell,3.9996991538461537
+sample_22,diabetic,1,Type_2_T_helper_cell,3.993776210526315
+sample_23,diabetic,1,Activated_B_cell,4.1080492
+sample_23,diabetic,1,Activated_CD4_T_cell,3.9144692222222215
+sample_23,diabetic,1,Activated_CD8_T_cell,3.99959425
+sample_23,diabetic,1,Activated_dendritic_cell,3.994911722222222
+sample_23,diabetic,1,CD56bright_natural_killer_cell,4.0087808
+sample_23,diabetic,1,CD56dim_natural_killer_cell,4.045036583333332
+sample_23,diabetic,1,Central_memory_CD4_T_cell,4.06961615
+sample_23,diabetic,1,Central_memory_CD8_T_cell,4.114491833333333
+sample_23,diabetic,1,Effector_memory_CD4_T_cell,4.04611361111111
+sample_23,diabetic,1,Effector_memory_CD8_T_cell,4.065624166666667
+sample_23,diabetic,1,Eosinophil,3.9705957499999998
+sample_23,diabetic,1,Gamma_delta_T_cell,4.0546549999999995
+sample_23,diabetic,1,Immature_B_cell,4.0284005
+sample_23,diabetic,1,Immature_dendritic_cell,4.084624000000001
+sample_23,diabetic,1,Macrophage,3.944621538461538
+sample_23,diabetic,1,Mast_cell,3.9859995999999995
+sample_23,diabetic,1,MDSC,3.90267975
+sample_23,diabetic,1,Memory_B_cell,4.052812374999999
+sample_23,diabetic,1,Monocyte,4.1288008750000005
+sample_23,diabetic,1,Natural_killer_cell,4.04576280952381
+sample_23,diabetic,1,Natural_killer_T_cell,4.0476548421052625
+sample_23,diabetic,1,Neutrophil,3.92189725
+sample_23,diabetic,1,Plasmacytoid_dendritic_cell,4.102958879999999
+sample_23,diabetic,1,Regulatory_T_cell,4.0179879
+sample_23,diabetic,1,T_follicular_helper_cell,4.0127624285714285
+sample_23,diabetic,1,Type_1_T_helper_cell,4.038519833333334
+sample_23,diabetic,1,Type_17_T_helper_cell,3.989725230769231
+sample_23,diabetic,1,Type_2_T_helper_cell,3.995993263157895
+sample_24,diabetic,1,Activated_B_cell,4.09933
+sample_24,diabetic,1,Activated_CD4_T_cell,3.883286
+sample_24,diabetic,1,Activated_CD8_T_cell,3.9929435000000004
+sample_24,diabetic,1,Activated_dendritic_cell,3.9850526666666672
+sample_24,diabetic,1,CD56bright_natural_killer_cell,4.00576684
+sample_24,diabetic,1,CD56dim_natural_killer_cell,4.040929083333333
+sample_24,diabetic,1,Central_memory_CD4_T_cell,4.0669463
+sample_24,diabetic,1,Central_memory_CD8_T_cell,4.108264583333333
+sample_24,diabetic,1,Effector_memory_CD4_T_cell,4.042077000000001
+sample_24,diabetic,1,Effector_memory_CD8_T_cell,4.053297416666666
+sample_24,diabetic,1,Eosinophil,4.006226750000001
+sample_24,diabetic,1,Gamma_delta_T_cell,4.053956368421052
+sample_24,diabetic,1,Immature_B_cell,4.0147224999999995
+sample_24,diabetic,1,Immature_dendritic_cell,4.0921520000000005
+sample_24,diabetic,1,Macrophage,3.953290384615384
+sample_24,diabetic,1,Mast_cell,3.9801446
+sample_24,diabetic,1,MDSC,3.8825846250000002
+sample_24,diabetic,1,Memory_B_cell,4.046469625
+sample_24,diabetic,1,Monocyte,4.124043875
+sample_24,diabetic,1,Natural_killer_cell,4.054974952380952
+sample_24,diabetic,1,Natural_killer_T_cell,4.048651052631579
+sample_24,diabetic,1,Neutrophil,3.90876225
+sample_24,diabetic,1,Plasmacytoid_dendritic_cell,4.104983560000001
+sample_24,diabetic,1,Regulatory_T_cell,3.9943244
+sample_24,diabetic,1,T_follicular_helper_cell,4.012058428571429
+sample_24,diabetic,1,Type_1_T_helper_cell,4.048149952380953
+sample_24,diabetic,1,Type_17_T_helper_cell,3.9990104615384614
+sample_24,diabetic,1,Type_2_T_helper_cell,4.007340789473684
+sample_25,diabetic,1,Activated_B_cell,4.1060631999999995
+sample_25,diabetic,1,Activated_CD4_T_cell,3.9032711111111116
+sample_25,diabetic,1,Activated_CD8_T_cell,4.00359925
+sample_25,diabetic,1,Activated_dendritic_cell,4.007208055555555
+sample_25,diabetic,1,CD56bright_natural_killer_cell,4.02028332
+sample_25,diabetic,1,CD56dim_natural_killer_cell,4.048377749999999
+sample_25,diabetic,1,Central_memory_CD4_T_cell,4.0762332500000005
+sample_25,diabetic,1,Central_memory_CD8_T_cell,4.111620916666667
+sample_25,diabetic,1,Effector_memory_CD4_T_cell,4.0491507222222225
+sample_25,diabetic,1,Effector_memory_CD8_T_cell,4.076684083333334
+sample_25,diabetic,1,Eosinophil,3.962386875
+sample_25,diabetic,1,Gamma_delta_T_cell,4.051169578947369
+sample_25,diabetic,1,Immature_B_cell,4.063385749999999
+sample_25,diabetic,1,Immature_dendritic_cell,4.091469866666667
+sample_25,diabetic,1,Macrophage,3.9590664615384608
+sample_25,diabetic,1,Mast_cell,4.013307
+sample_25,diabetic,1,MDSC,3.9015021250000004
+sample_25,diabetic,1,Memory_B_cell,4.061534999999999
+sample_25,diabetic,1,Monocyte,4.13743975
+sample_25,diabetic,1,Natural_killer_cell,4.059534904761904
+sample_25,diabetic,1,Natural_killer_T_cell,4.05098547368421
+sample_25,diabetic,1,Neutrophil,3.9170185
+sample_25,diabetic,1,Plasmacytoid_dendritic_cell,4.10746388
+sample_25,diabetic,1,Regulatory_T_cell,4.0021976
+sample_25,diabetic,1,T_follicular_helper_cell,4.023989761904763
+sample_25,diabetic,1,Type_1_T_helper_cell,4.047079738095238
+sample_25,diabetic,1,Type_17_T_helper_cell,4.002633076923077
+sample_25,diabetic,1,Type_2_T_helper_cell,4.003812526315791
+sample_26,diabetic,1,Activated_B_cell,4.107867199999999
+sample_26,diabetic,1,Activated_CD4_T_cell,3.8827096666666665
+sample_26,diabetic,1,Activated_CD8_T_cell,4.015618166666667
+sample_26,diabetic,1,Activated_dendritic_cell,3.995187333333333
+sample_26,diabetic,1,CD56bright_natural_killer_cell,4.014393600000001
+sample_26,diabetic,1,CD56dim_natural_killer_cell,4.061253083333333
+sample_26,diabetic,1,Central_memory_CD4_T_cell,4.07365945
+sample_26,diabetic,1,Central_memory_CD8_T_cell,4.11100075
+sample_26,diabetic,1,Effector_memory_CD4_T_cell,4.036754777777778
+sample_26,diabetic,1,Effector_memory_CD8_T_cell,4.068917666666667
+sample_26,diabetic,1,Eosinophil,3.9803603750000005
+sample_26,diabetic,1,Gamma_delta_T_cell,4.043562263157894
+sample_26,diabetic,1,Immature_B_cell,4.05072425
+sample_26,diabetic,1,Immature_dendritic_cell,4.089547866666667
+sample_26,diabetic,1,Macrophage,3.950216
+sample_26,diabetic,1,Mast_cell,3.976312
+sample_26,diabetic,1,MDSC,3.899028875
+sample_26,diabetic,1,Memory_B_cell,4.077371
+sample_26,diabetic,1,Monocyte,4.1326724375
+sample_26,diabetic,1,Natural_killer_cell,4.062136238095237
+sample_26,diabetic,1,Natural_killer_T_cell,4.051104315789473
+sample_26,diabetic,1,Neutrophil,3.89075275
+sample_26,diabetic,1,Plasmacytoid_dendritic_cell,4.10993112
+sample_26,diabetic,1,Regulatory_T_cell,4.0081293
+sample_26,diabetic,1,T_follicular_helper_cell,4.025466857142857
+sample_26,diabetic,1,Type_1_T_helper_cell,4.0441053333333326
+sample_26,diabetic,1,Type_17_T_helper_cell,4.0021706923076925
+sample_26,diabetic,1,Type_2_T_helper_cell,4.0068484210526325
+sample_27,diabetic,1,Activated_B_cell,4.1184978
+sample_27,diabetic,1,Activated_CD4_T_cell,3.8977385555555557
+sample_27,diabetic,1,Activated_CD8_T_cell,4.001392166666666
+sample_27,diabetic,1,Activated_dendritic_cell,3.999397388888889
+sample_27,diabetic,1,CD56bright_natural_killer_cell,4.0069174
+sample_27,diabetic,1,CD56dim_natural_killer_cell,4.0507591666666665
+sample_27,diabetic,1,Central_memory_CD4_T_cell,4.109157099999999
+sample_27,diabetic,1,Central_memory_CD8_T_cell,4.109463916666667
+sample_27,diabetic,1,Effector_memory_CD4_T_cell,4.021141555555555
+sample_27,diabetic,1,Effector_memory_CD8_T_cell,4.065182000000001
+sample_27,diabetic,1,Eosinophil,3.9386615000000003
+sample_27,diabetic,1,Gamma_delta_T_cell,4.055084842105264
+sample_27,diabetic,1,Immature_B_cell,4.06106025
+sample_27,diabetic,1,Immature_dendritic_cell,4.084408866666667
+sample_27,diabetic,1,Macrophage,3.970366769230769
+sample_27,diabetic,1,Mast_cell,4.0035946000000004
+sample_27,diabetic,1,MDSC,3.9440242499999996
+sample_27,diabetic,1,Memory_B_cell,4.0104235
+sample_27,diabetic,1,Monocyte,4.1106055
+sample_27,diabetic,1,Natural_killer_cell,4.076161476190476
+sample_27,diabetic,1,Natural_killer_T_cell,4.052738789473684
+sample_27,diabetic,1,Neutrophil,4.00180725
+sample_27,diabetic,1,Plasmacytoid_dendritic_cell,4.110166999999999
+sample_27,diabetic,1,Regulatory_T_cell,4.0184099
+sample_27,diabetic,1,T_follicular_helper_cell,4.02435938095238
+sample_27,diabetic,1,Type_1_T_helper_cell,4.057789095238095
+sample_27,diabetic,1,Type_17_T_helper_cell,3.9933543076923077
+sample_27,diabetic,1,Type_2_T_helper_cell,3.9923462105263154
+sample_28,diabetic,1,Activated_B_cell,4.1336228
+sample_28,diabetic,1,Activated_CD4_T_cell,3.9179307777777783
+sample_28,diabetic,1,Activated_CD8_T_cell,3.9898859166666667
+sample_28,diabetic,1,Activated_dendritic_cell,4.032898666666666
+sample_28,diabetic,1,CD56bright_natural_killer_cell,4.02471416
+sample_28,diabetic,1,CD56dim_natural_killer_cell,4.03867675
+sample_28,diabetic,1,Central_memory_CD4_T_cell,4.10598
+sample_28,diabetic,1,Central_memory_CD8_T_cell,4.147160416666666
+sample_28,diabetic,1,Effector_memory_CD4_T_cell,4.036198388888888
+sample_28,diabetic,1,Effector_memory_CD8_T_cell,4.081813916666667
+sample_28,diabetic,1,Eosinophil,4.057109125
+sample_28,diabetic,1,Gamma_delta_T_cell,4.050980315789474
+sample_28,diabetic,1,Immature_B_cell,4.0869515
+sample_28,diabetic,1,Immature_dendritic_cell,4.094525466666666
+sample_28,diabetic,1,Macrophage,4.017820307692308
+sample_28,diabetic,1,Mast_cell,4.021171
+sample_28,diabetic,1,MDSC,3.9672013749999993
+sample_28,diabetic,1,Memory_B_cell,4.0164405
+sample_28,diabetic,1,Monocyte,4.126101125
+sample_28,diabetic,1,Natural_killer_cell,4.084774523809524
+sample_28,diabetic,1,Natural_killer_T_cell,4.067768052631578
+sample_28,diabetic,1,Neutrophil,4.07646325
+sample_28,diabetic,1,Plasmacytoid_dendritic_cell,4.113682559999999
+sample_28,diabetic,1,Regulatory_T_cell,4.0343295
+sample_28,diabetic,1,T_follicular_helper_cell,4.039971714285714
+sample_28,diabetic,1,Type_1_T_helper_cell,4.068764428571429
+sample_28,diabetic,1,Type_17_T_helper_cell,4.025751846153846
+sample_28,diabetic,1,Type_2_T_helper_cell,4.004511684210526
+sample_29,diabetic,1,Activated_B_cell,4.1240326000000005
+sample_29,diabetic,1,Activated_CD4_T_cell,3.8846204444444448
+sample_29,diabetic,1,Activated_CD8_T_cell,4.001468833333333
+sample_29,diabetic,1,Activated_dendritic_cell,3.9925560555555557
+sample_29,diabetic,1,CD56bright_natural_killer_cell,4.0112774
+sample_29,diabetic,1,CD56dim_natural_killer_cell,4.047426083333334
+sample_29,diabetic,1,Central_memory_CD4_T_cell,4.084097699999999
+sample_29,diabetic,1,Central_memory_CD8_T_cell,4.117629249999999
+sample_29,diabetic,1,Effector_memory_CD4_T_cell,4.028852777777777
+sample_29,diabetic,1,Effector_memory_CD8_T_cell,4.064164333333333
+sample_29,diabetic,1,Eosinophil,3.9573412500000003
+sample_29,diabetic,1,Gamma_delta_T_cell,4.055888105263158
+sample_29,diabetic,1,Immature_B_cell,4.05874
+sample_29,diabetic,1,Immature_dendritic_cell,4.0864487333333335
+sample_29,diabetic,1,Macrophage,3.9530024615384622
+sample_29,diabetic,1,Mast_cell,3.9897332
+sample_29,diabetic,1,MDSC,3.9117815
+sample_29,diabetic,1,Memory_B_cell,4.06697275
+sample_29,diabetic,1,Monocyte,4.12870175
+sample_29,diabetic,1,Natural_killer_cell,4.067137476190476
+sample_29,diabetic,1,Natural_killer_T_cell,4.050663473684211
+sample_29,diabetic,1,Neutrophil,3.8871662500000004
+sample_29,diabetic,1,Plasmacytoid_dendritic_cell,4.10581636
+sample_29,diabetic,1,Regulatory_T_cell,4.019082099999999
+sample_29,diabetic,1,T_follicular_helper_cell,4.029804095238096
+sample_29,diabetic,1,Type_1_T_helper_cell,4.048927761904762
+sample_29,diabetic,1,Type_17_T_helper_cell,3.986539846153846
+sample_29,diabetic,1,Type_2_T_helper_cell,4.010086631578948
+sample_03,healthy control,0,Activated_B_cell,4.1240866
+sample_03,healthy control,0,Activated_CD4_T_cell,3.899498666666667
+sample_03,healthy control,0,Activated_CD8_T_cell,4.012113833333332
+sample_03,healthy control,0,Activated_dendritic_cell,3.9965053888888895
+sample_03,healthy control,0,CD56bright_natural_killer_cell,4.01348296
+sample_03,healthy control,0,CD56dim_natural_killer_cell,4.055455333333334
+sample_03,healthy control,0,Central_memory_CD4_T_cell,4.08814695
+sample_03,healthy control,0,Central_memory_CD8_T_cell,4.121563916666667
+sample_03,healthy control,0,Effector_memory_CD4_T_cell,4.030964000000001
+sample_03,healthy control,0,Effector_memory_CD8_T_cell,4.068376249999999
+sample_03,healthy control,0,Eosinophil,3.97430775
+sample_03,healthy control,0,Gamma_delta_T_cell,4.050514105263159
+sample_03,healthy control,0,Immature_B_cell,4.05009625
+sample_03,healthy control,0,Immature_dendritic_cell,4.0775679333333334
+sample_03,healthy control,0,Macrophage,3.9540378461538457
+sample_03,healthy control,0,Mast_cell,3.9676778000000006
+sample_03,healthy control,0,MDSC,3.9573992499999995
+sample_03,healthy control,0,Memory_B_cell,4.0745185
+sample_03,healthy control,0,Monocyte,4.1318476875
+sample_03,healthy control,0,Natural_killer_cell,4.062751952380952
+sample_03,healthy control,0,Natural_killer_T_cell,4.052862210526317
+sample_03,healthy control,0,Neutrophil,3.9191575
+sample_03,healthy control,0,Plasmacytoid_dendritic_cell,4.1088898799999996
+sample_03,healthy control,0,Regulatory_T_cell,4.021709899999999
+sample_03,healthy control,0,T_follicular_helper_cell,4.042556095238096
+sample_03,healthy control,0,Type_1_T_helper_cell,4.054136047619048
+sample_03,healthy control,0,Type_17_T_helper_cell,4.005921692307692
+sample_03,healthy control,0,Type_2_T_helper_cell,4.009243473684211
+sample_30,diabetic,1,Activated_B_cell,4.1061046
+sample_30,diabetic,1,Activated_CD4_T_cell,3.9073290000000003
+sample_30,diabetic,1,Activated_CD8_T_cell,3.9983465833333334
+sample_30,diabetic,1,Activated_dendritic_cell,4.0089695
+sample_30,diabetic,1,CD56bright_natural_killer_cell,4.028358119999999
+sample_30,diabetic,1,CD56dim_natural_killer_cell,4.0436707499999995
+sample_30,diabetic,1,Central_memory_CD4_T_cell,4.0905158
+sample_30,diabetic,1,Central_memory_CD8_T_cell,4.108566916666667
+sample_30,diabetic,1,Effector_memory_CD4_T_cell,4.048584944444444
+sample_30,diabetic,1,Effector_memory_CD8_T_cell,4.076049083333333
+sample_30,diabetic,1,Eosinophil,3.990888625
+sample_30,diabetic,1,Gamma_delta_T_cell,4.060295052631578
+sample_30,diabetic,1,Immature_B_cell,4.06651925
+sample_30,diabetic,1,Immature_dendritic_cell,4.093594800000001
+sample_30,diabetic,1,Macrophage,3.9702435384615384
+sample_30,diabetic,1,Mast_cell,4.007712
+sample_30,diabetic,1,MDSC,3.928447625
+sample_30,diabetic,1,Memory_B_cell,4.04753975
+sample_30,diabetic,1,Monocyte,4.131355625
+sample_30,diabetic,1,Natural_killer_cell,4.062432523809524
+sample_30,diabetic,1,Natural_killer_T_cell,4.054659
+sample_30,diabetic,1,Neutrophil,3.9866155
+sample_30,diabetic,1,Plasmacytoid_dendritic_cell,4.111527920000001
+sample_30,diabetic,1,Regulatory_T_cell,4.002286499999999
+sample_30,diabetic,1,T_follicular_helper_cell,4.031521666666668
+sample_30,diabetic,1,Type_1_T_helper_cell,4.054441071428572
+sample_30,diabetic,1,Type_17_T_helper_cell,3.995839461538461
+sample_30,diabetic,1,Type_2_T_helper_cell,3.993309842105264
+sample_04,healthy control,0,Activated_B_cell,4.147170600000001
+sample_04,healthy control,0,Activated_CD4_T_cell,3.928606666666666
+sample_04,healthy control,0,Activated_CD8_T_cell,3.986925083333333
+sample_04,healthy control,0,Activated_dendritic_cell,3.993772833333333
+sample_04,healthy control,0,CD56bright_natural_killer_cell,3.99809968
+sample_04,healthy control,0,CD56dim_natural_killer_cell,4.0719645
+sample_04,healthy control,0,Central_memory_CD4_T_cell,4.114465449999999
+sample_04,healthy control,0,Central_memory_CD8_T_cell,4.130615916666667
+sample_04,healthy control,0,Effector_memory_CD4_T_cell,4.040383833333332
+sample_04,healthy control,0,Effector_memory_CD8_T_cell,4.091256416666667
+sample_04,healthy control,0,Eosinophil,4.025977875
+sample_04,healthy control,0,Gamma_delta_T_cell,4.0555158421052635
+sample_04,healthy control,0,Immature_B_cell,4.0190815
+sample_04,healthy control,0,Immature_dendritic_cell,4.0933910000000004
+sample_04,healthy control,0,Macrophage,3.952459230769231
+sample_04,healthy control,0,Mast_cell,3.9579449999999996
+sample_04,healthy control,0,MDSC,3.931156875
+sample_04,healthy control,0,Memory_B_cell,4.047166750000001
+sample_04,healthy control,0,Monocyte,4.148646562500001
+sample_04,healthy control,0,Natural_killer_cell,4.077767571428572
+sample_04,healthy control,0,Natural_killer_T_cell,4.064762526315788
+sample_04,healthy control,0,Neutrophil,3.93057225
+sample_04,healthy control,0,Plasmacytoid_dendritic_cell,4.11313312
+sample_04,healthy control,0,Regulatory_T_cell,4.0104410999999995
+sample_04,healthy control,0,T_follicular_helper_cell,4.027248714285714
+sample_04,healthy control,0,Type_1_T_helper_cell,4.065321071428572
+sample_04,healthy control,0,Type_17_T_helper_cell,3.9947613846153853
+sample_04,healthy control,0,Type_2_T_helper_cell,4.007330473684211
+sample_41,NPPR,2,Activated_B_cell,4.132909799999999
+sample_41,NPPR,2,Activated_CD4_T_cell,3.925778555555556
+sample_41,NPPR,2,Activated_CD8_T_cell,4.004984250000001
+sample_41,NPPR,2,Activated_dendritic_cell,4.013494222222223
+sample_41,NPPR,2,CD56bright_natural_killer_cell,4.0105786
+sample_41,NPPR,2,CD56dim_natural_killer_cell,4.05396525
+sample_41,NPPR,2,Central_memory_CD4_T_cell,4.0838338499999995
+sample_41,NPPR,2,Central_memory_CD8_T_cell,4.142888
+sample_41,NPPR,2,Effector_memory_CD4_T_cell,4.044645111111111
+sample_41,NPPR,2,Effector_memory_CD8_T_cell,4.073200583333333
+sample_41,NPPR,2,Eosinophil,3.9802266250000002
+sample_41,NPPR,2,Gamma_delta_T_cell,4.065306315789474
+sample_41,NPPR,2,Immature_B_cell,4.061832750000001
+sample_41,NPPR,2,Immature_dendritic_cell,4.085414133333333
+sample_41,NPPR,2,Macrophage,3.9490261538461544
+sample_41,NPPR,2,Mast_cell,3.9819854
+sample_41,NPPR,2,MDSC,3.967057625
+sample_41,NPPR,2,Memory_B_cell,4.04624225
+sample_41,NPPR,2,Monocyte,4.1323541875
+sample_41,NPPR,2,Natural_killer_cell,4.063525761904761
+sample_41,NPPR,2,Natural_killer_T_cell,4.053972315789473
+sample_41,NPPR,2,Neutrophil,3.92688475
+sample_41,NPPR,2,Plasmacytoid_dendritic_cell,4.1078768000000006
+sample_41,NPPR,2,Regulatory_T_cell,4.031783299999999
+sample_41,NPPR,2,T_follicular_helper_cell,4.036739047619049
+sample_41,NPPR,2,Type_1_T_helper_cell,4.047276428571428
+sample_41,NPPR,2,Type_17_T_helper_cell,4.002856076923077
+sample_41,NPPR,2,Type_2_T_helper_cell,3.998639210526315
+sample_42,NPPR,2,Activated_B_cell,4.1221212000000005
+sample_42,NPPR,2,Activated_CD4_T_cell,3.885275666666667
+sample_42,NPPR,2,Activated_CD8_T_cell,4.005398666666667
+sample_42,NPPR,2,Activated_dendritic_cell,4.007335333333334
+sample_42,NPPR,2,CD56bright_natural_killer_cell,4.0164838000000005
+sample_42,NPPR,2,CD56dim_natural_killer_cell,4.036304666666666
+sample_42,NPPR,2,Central_memory_CD4_T_cell,4.0861366
+sample_42,NPPR,2,Central_memory_CD8_T_cell,4.10731025
+sample_42,NPPR,2,Effector_memory_CD4_T_cell,4.051904055555556
+sample_42,NPPR,2,Effector_memory_CD8_T_cell,4.063059916666667
+sample_42,NPPR,2,Eosinophil,3.9612322499999997
+sample_42,NPPR,2,Gamma_delta_T_cell,4.063863263157894
+sample_42,NPPR,2,Immature_B_cell,4.0437105
+sample_42,NPPR,2,Immature_dendritic_cell,4.0920570666666665
+sample_42,NPPR,2,Macrophage,3.931940846153846
+sample_42,NPPR,2,Mast_cell,3.9836162
+sample_42,NPPR,2,MDSC,3.9317085
+sample_42,NPPR,2,Memory_B_cell,4.058989
+sample_42,NPPR,2,Monocyte,4.128952000000001
+sample_42,NPPR,2,Natural_killer_cell,4.054904857142857
+sample_42,NPPR,2,Natural_killer_T_cell,4.0447281578947365
+sample_42,NPPR,2,Neutrophil,3.8923802499999995
+sample_42,NPPR,2,Plasmacytoid_dendritic_cell,4.11375624
+sample_42,NPPR,2,Regulatory_T_cell,4.0214579
+sample_42,NPPR,2,T_follicular_helper_cell,4.034903857142857
+sample_42,NPPR,2,Type_1_T_helper_cell,4.0478097380952365
+sample_42,NPPR,2,Type_17_T_helper_cell,3.9859885384615388
+sample_42,NPPR,2,Type_2_T_helper_cell,3.99432852631579
+sample_43,NPPR,2,Activated_B_cell,4.1248124
+sample_43,NPPR,2,Activated_CD4_T_cell,3.9015500000000003
+sample_43,NPPR,2,Activated_CD8_T_cell,3.9962898333333334
+sample_43,NPPR,2,Activated_dendritic_cell,4.0238138333333335
+sample_43,NPPR,2,CD56bright_natural_killer_cell,4.018245679999999
+sample_43,NPPR,2,CD56dim_natural_killer_cell,4.047985833333333
+sample_43,NPPR,2,Central_memory_CD4_T_cell,4.084154100000001
+sample_43,NPPR,2,Central_memory_CD8_T_cell,4.138162583333333
+sample_43,NPPR,2,Effector_memory_CD4_T_cell,4.041380722222222
+sample_43,NPPR,2,Effector_memory_CD8_T_cell,4.072077666666666
+sample_43,NPPR,2,Eosinophil,3.9533159999999996
+sample_43,NPPR,2,Gamma_delta_T_cell,4.05580047368421
+sample_43,NPPR,2,Immature_B_cell,4.07053275
+sample_43,NPPR,2,Immature_dendritic_cell,4.089193133333334
+sample_43,NPPR,2,Macrophage,3.961417846153846
+sample_43,NPPR,2,Mast_cell,4.0024106
+sample_43,NPPR,2,MDSC,3.9492689999999997
+sample_43,NPPR,2,Memory_B_cell,4.0599175
+sample_43,NPPR,2,Monocyte,4.1293428125
+sample_43,NPPR,2,Natural_killer_cell,4.060678333333334
+sample_43,NPPR,2,Natural_killer_T_cell,4.051889315789474
+sample_43,NPPR,2,Neutrophil,3.92778275
+sample_43,NPPR,2,Plasmacytoid_dendritic_cell,4.1083754
+sample_43,NPPR,2,Regulatory_T_cell,4.0311497
+sample_43,NPPR,2,T_follicular_helper_cell,4.033231190476191
+sample_43,NPPR,2,Type_1_T_helper_cell,4.048601785714286
+sample_43,NPPR,2,Type_17_T_helper_cell,4.011763076923077
+sample_43,NPPR,2,Type_2_T_helper_cell,4.001817105263159
+sample_44,NPPR,2,Activated_B_cell,4.1349524
+sample_44,NPPR,2,Activated_CD4_T_cell,3.9014435555555553
+sample_44,NPPR,2,Activated_CD8_T_cell,3.9979433333333336
+sample_44,NPPR,2,Activated_dendritic_cell,4.019498055555555
+sample_44,NPPR,2,CD56bright_natural_killer_cell,4.0152629200000005
+sample_44,NPPR,2,CD56dim_natural_killer_cell,4.049536666666667
+sample_44,NPPR,2,Central_memory_CD4_T_cell,4.089454999999999
+sample_44,NPPR,2,Central_memory_CD8_T_cell,4.143472916666668
+sample_44,NPPR,2,Effector_memory_CD4_T_cell,4.024316388888889
+sample_44,NPPR,2,Effector_memory_CD8_T_cell,4.079597666666667
+sample_44,NPPR,2,Eosinophil,3.9599377500000004
+sample_44,NPPR,2,Gamma_delta_T_cell,4.051719263157895
+sample_44,NPPR,2,Immature_B_cell,4.05832375
+sample_44,NPPR,2,Immature_dendritic_cell,4.0791524
+sample_44,NPPR,2,Macrophage,3.940198692307692
+sample_44,NPPR,2,Mast_cell,3.9596507999999995
+sample_44,NPPR,2,MDSC,3.9355933750000007
+sample_44,NPPR,2,Memory_B_cell,4.067246750000001
+sample_44,NPPR,2,Monocyte,4.133394062499999
+sample_44,NPPR,2,Natural_killer_cell,4.065361714285714
+sample_44,NPPR,2,Natural_killer_T_cell,4.055658105263157
+sample_44,NPPR,2,Neutrophil,3.9232252499999998
+sample_44,NPPR,2,Plasmacytoid_dendritic_cell,4.104152679999999
+sample_44,NPPR,2,Regulatory_T_cell,4.0176133
+sample_44,NPPR,2,T_follicular_helper_cell,4.033636761904762
+sample_44,NPPR,2,Type_1_T_helper_cell,4.050036380952382
+sample_44,NPPR,2,Type_17_T_helper_cell,3.9892263846153844
+sample_44,NPPR,2,Type_2_T_helper_cell,3.996040947368422
+sample_46,NPPR,2,Activated_B_cell,4.120702199999999
+sample_46,NPPR,2,Activated_CD4_T_cell,3.9153797777777775
+sample_46,NPPR,2,Activated_CD8_T_cell,4.00973225
+sample_46,NPPR,2,Activated_dendritic_cell,4.011675722222223
+sample_46,NPPR,2,CD56bright_natural_killer_cell,4.01690516
+sample_46,NPPR,2,CD56dim_natural_killer_cell,4.048677916666667
+sample_46,NPPR,2,Central_memory_CD4_T_cell,4.093669749999999
+sample_46,NPPR,2,Central_memory_CD8_T_cell,4.109739666666667
+sample_46,NPPR,2,Effector_memory_CD4_T_cell,4.034511611111111
+sample_46,NPPR,2,Effector_memory_CD8_T_cell,4.074393166666666
+sample_46,NPPR,2,Eosinophil,3.97747025
+sample_46,NPPR,2,Gamma_delta_T_cell,4.058490789473685
+sample_46,NPPR,2,Immature_B_cell,4.069289
+sample_46,NPPR,2,Immature_dendritic_cell,4.082508066666667
+sample_46,NPPR,2,Macrophage,3.967951153846154
+sample_46,NPPR,2,Mast_cell,4.0017472000000005
+sample_46,NPPR,2,MDSC,3.925095625
+sample_46,NPPR,2,Memory_B_cell,4.066544875
+sample_46,NPPR,2,Monocyte,4.1269914375
+sample_46,NPPR,2,Natural_killer_cell,4.072290571428572
+sample_46,NPPR,2,Natural_killer_T_cell,4.061507789473684
+sample_46,NPPR,2,Neutrophil,3.9125365
+sample_46,NPPR,2,Plasmacytoid_dendritic_cell,4.105850359999998
+sample_46,NPPR,2,Regulatory_T_cell,4.022549400000001
+sample_46,NPPR,2,T_follicular_helper_cell,4.0363706666666666
+sample_46,NPPR,2,Type_1_T_helper_cell,4.0501039285714295
+sample_46,NPPR,2,Type_17_T_helper_cell,3.9911931538461536
+sample_46,NPPR,2,Type_2_T_helper_cell,4.010677894736842
+sample_47,NPPR,2,Activated_B_cell,4.1319854000000005
+sample_47,NPPR,2,Activated_CD4_T_cell,3.9050041111111113
+sample_47,NPPR,2,Activated_CD8_T_cell,3.9993236666666667
+sample_47,NPPR,2,Activated_dendritic_cell,4.035493555555557
+sample_47,NPPR,2,CD56bright_natural_killer_cell,4.02369856
+sample_47,NPPR,2,CD56dim_natural_killer_cell,4.06574975
+sample_47,NPPR,2,Central_memory_CD4_T_cell,4.095207350000001
+sample_47,NPPR,2,Central_memory_CD8_T_cell,4.127662833333333
+sample_47,NPPR,2,Effector_memory_CD4_T_cell,4.042763666666667
+sample_47,NPPR,2,Effector_memory_CD8_T_cell,4.083381916666667
+sample_47,NPPR,2,Eosinophil,3.9855625000000003
+sample_47,NPPR,2,Gamma_delta_T_cell,4.072952578947368
+sample_47,NPPR,2,Immature_B_cell,4.0883445
+sample_47,NPPR,2,Immature_dendritic_cell,4.088435866666666
+sample_47,NPPR,2,Macrophage,3.955022923076923
+sample_47,NPPR,2,Mast_cell,3.9972871999999997
+sample_47,NPPR,2,MDSC,3.98083325
+sample_47,NPPR,2,Memory_B_cell,4.047421375
+sample_47,NPPR,2,Monocyte,4.1334693125
+sample_47,NPPR,2,Natural_killer_cell,4.077727809523811
+sample_47,NPPR,2,Natural_killer_T_cell,4.062700315789473
+sample_47,NPPR,2,Neutrophil,3.9598974999999994
+sample_47,NPPR,2,Plasmacytoid_dendritic_cell,4.11693688
+sample_47,NPPR,2,Regulatory_T_cell,4.0362753
+sample_47,NPPR,2,T_follicular_helper_cell,4.035681666666666
+sample_47,NPPR,2,Type_1_T_helper_cell,4.060815309523808
+sample_47,NPPR,2,Type_17_T_helper_cell,4.001425307692307
+sample_47,NPPR,2,Type_2_T_helper_cell,3.9900117894736846
+sample_48,NPPR,2,Activated_B_cell,4.1239674
+sample_48,NPPR,2,Activated_CD4_T_cell,3.897662
+sample_48,NPPR,2,Activated_CD8_T_cell,4.001563833333333
+sample_48,NPPR,2,Activated_dendritic_cell,3.9995689999999993
+sample_48,NPPR,2,CD56bright_natural_killer_cell,4.027101559999999
+sample_48,NPPR,2,CD56dim_natural_killer_cell,4.0572523333333335
+sample_48,NPPR,2,Central_memory_CD4_T_cell,4.080888349999999
+sample_48,NPPR,2,Central_memory_CD8_T_cell,4.108209333333333
+sample_48,NPPR,2,Effector_memory_CD4_T_cell,4.054544166666667
+sample_48,NPPR,2,Effector_memory_CD8_T_cell,4.057190333333334
+sample_48,NPPR,2,Eosinophil,4.021271875
+sample_48,NPPR,2,Gamma_delta_T_cell,4.060734
+sample_48,NPPR,2,Immature_B_cell,4.04905075
+sample_48,NPPR,2,Immature_dendritic_cell,4.097906933333333
+sample_48,NPPR,2,Macrophage,3.9537431538461543
+sample_48,NPPR,2,Mast_cell,4.003605
+sample_48,NPPR,2,MDSC,3.907556875
+sample_48,NPPR,2,Memory_B_cell,4.056513625
+sample_48,NPPR,2,Monocyte,4.127564875
+sample_48,NPPR,2,Natural_killer_cell,4.071986
+sample_48,NPPR,2,Natural_killer_T_cell,4.060739421052632
+sample_48,NPPR,2,Neutrophil,3.912196
+sample_48,NPPR,2,Plasmacytoid_dendritic_cell,4.10749804
+sample_48,NPPR,2,Regulatory_T_cell,4.0087794
+sample_48,NPPR,2,T_follicular_helper_cell,4.025743285714286
+sample_48,NPPR,2,Type_1_T_helper_cell,4.050899833333335
+sample_48,NPPR,2,Type_17_T_helper_cell,3.989540153846154
+sample_48,NPPR,2,Type_2_T_helper_cell,3.992716526315789
+sample_49,NPPR,2,Activated_B_cell,4.1317842
+sample_49,NPPR,2,Activated_CD4_T_cell,3.9005088888888895
+sample_49,NPPR,2,Activated_CD8_T_cell,3.997454083333334
+sample_49,NPPR,2,Activated_dendritic_cell,4.014252222222222
+sample_49,NPPR,2,CD56bright_natural_killer_cell,4.0009006000000005
+sample_49,NPPR,2,CD56dim_natural_killer_cell,4.055964583333332
+sample_49,NPPR,2,Central_memory_CD4_T_cell,4.08367185
+sample_49,NPPR,2,Central_memory_CD8_T_cell,4.117292583333334
+sample_49,NPPR,2,Effector_memory_CD4_T_cell,4.046624555555556
+sample_49,NPPR,2,Effector_memory_CD8_T_cell,4.08049725
+sample_49,NPPR,2,Eosinophil,4.007658875
+sample_49,NPPR,2,Gamma_delta_T_cell,4.057968578947368
+sample_49,NPPR,2,Immature_B_cell,4.064125499999999
+sample_49,NPPR,2,Immature_dendritic_cell,4.083209666666667
+sample_49,NPPR,2,Macrophage,3.957775538461539
+sample_49,NPPR,2,Mast_cell,3.9986664000000003
+sample_49,NPPR,2,MDSC,3.9457287500000007
+sample_49,NPPR,2,Memory_B_cell,4.04714975
+sample_49,NPPR,2,Monocyte,4.146213
+sample_49,NPPR,2,Natural_killer_cell,4.0669670952380965
+sample_49,NPPR,2,Natural_killer_T_cell,4.060587263157894
+sample_49,NPPR,2,Neutrophil,3.93874575
+sample_49,NPPR,2,Plasmacytoid_dendritic_cell,4.114777440000001
+sample_49,NPPR,2,Regulatory_T_cell,4.021854900000001
+sample_49,NPPR,2,T_follicular_helper_cell,4.032458285714286
+sample_49,NPPR,2,Type_1_T_helper_cell,4.047202452380953
+sample_49,NPPR,2,Type_17_T_helper_cell,4.002778
+sample_49,NPPR,2,Type_2_T_helper_cell,3.980925421052632
+sample_05,healthy control,0,Activated_B_cell,4.1449620000000005
+sample_05,healthy control,0,Activated_CD4_T_cell,3.932909333333333
+sample_05,healthy control,0,Activated_CD8_T_cell,3.9953447499999997
+sample_05,healthy control,0,Activated_dendritic_cell,4.037561666666666
+sample_05,healthy control,0,CD56bright_natural_killer_cell,4.02840744
+sample_05,healthy control,0,CD56dim_natural_killer_cell,4.069363583333334
+sample_05,healthy control,0,Central_memory_CD4_T_cell,4.1081857
+sample_05,healthy control,0,Central_memory_CD8_T_cell,4.12168375
+sample_05,healthy control,0,Effector_memory_CD4_T_cell,4.048754388888889
+sample_05,healthy control,0,Effector_memory_CD8_T_cell,4.081277249999999
+sample_05,healthy control,0,Eosinophil,4.035885125
+sample_05,healthy control,0,Gamma_delta_T_cell,4.059597842105264
+sample_05,healthy control,0,Immature_B_cell,4.07543525
+sample_05,healthy control,0,Immature_dendritic_cell,4.0960184
+sample_05,healthy control,0,Macrophage,3.968525692307693
+sample_05,healthy control,0,Mast_cell,3.9976613999999997
+sample_05,healthy control,0,MDSC,4.00284
+sample_05,healthy control,0,Memory_B_cell,4.049300375
+sample_05,healthy control,0,Monocyte,4.1402126875
+sample_05,healthy control,0,Natural_killer_cell,4.0736703809523815
+sample_05,healthy control,0,Natural_killer_T_cell,4.069442263157895
+sample_05,healthy control,0,Neutrophil,3.9857755
+sample_05,healthy control,0,Plasmacytoid_dendritic_cell,4.11731844
+sample_05,healthy control,0,Regulatory_T_cell,4.037340899999999
+sample_05,healthy control,0,T_follicular_helper_cell,4.043988380952381
+sample_05,healthy control,0,Type_1_T_helper_cell,4.070408523809524
+sample_05,healthy control,0,Type_17_T_helper_cell,4.007542384615385
+sample_05,healthy control,0,Type_2_T_helper_cell,4.011031947368421
+sample_50,NPPR,2,Activated_B_cell,4.146120999999999
+sample_50,NPPR,2,Activated_CD4_T_cell,3.908445666666667
+sample_50,NPPR,2,Activated_CD8_T_cell,4.002141666666667
+sample_50,NPPR,2,Activated_dendritic_cell,4.014676944444444
+sample_50,NPPR,2,CD56bright_natural_killer_cell,4.02472732
+sample_50,NPPR,2,CD56dim_natural_killer_cell,4.058059916666666
+sample_50,NPPR,2,Central_memory_CD4_T_cell,4.0930301
+sample_50,NPPR,2,Central_memory_CD8_T_cell,4.144381999999999
+sample_50,NPPR,2,Effector_memory_CD4_T_cell,4.049469666666666
+sample_50,NPPR,2,Effector_memory_CD8_T_cell,4.08853425
+sample_50,NPPR,2,Eosinophil,3.9598202500000004
+sample_50,NPPR,2,Gamma_delta_T_cell,4.057675684210525
+sample_50,NPPR,2,Immature_B_cell,4.07481675
+sample_50,NPPR,2,Immature_dendritic_cell,4.089525533333334
+sample_50,NPPR,2,Macrophage,3.960876
+sample_50,NPPR,2,Mast_cell,3.9933335999999997
+sample_50,NPPR,2,MDSC,3.9738084999999996
+sample_50,NPPR,2,Memory_B_cell,4.055494875
+sample_50,NPPR,2,Monocyte,4.1281760625
+sample_50,NPPR,2,Natural_killer_cell,4.0831904761904765
+sample_50,NPPR,2,Natural_killer_T_cell,4.060644263157895
+sample_50,NPPR,2,Neutrophil,3.96961875
+sample_50,NPPR,2,Plasmacytoid_dendritic_cell,4.11134908
+sample_50,NPPR,2,Regulatory_T_cell,4.0161902
+sample_50,NPPR,2,T_follicular_helper_cell,4.045325428571429
+sample_50,NPPR,2,Type_1_T_helper_cell,4.0572236904761905
+sample_50,NPPR,2,Type_17_T_helper_cell,4.003107999999999
+sample_50,NPPR,2,Type_2_T_helper_cell,4.003321842105263
+sample_06,healthy control,0,Activated_B_cell,4.1317126
+sample_06,healthy control,0,Activated_CD4_T_cell,3.910342111111111
+sample_06,healthy control,0,Activated_CD8_T_cell,3.992537833333334
+sample_06,healthy control,0,Activated_dendritic_cell,4.009447777777777
+sample_06,healthy control,0,CD56bright_natural_killer_cell,4.015346160000001
+sample_06,healthy control,0,CD56dim_natural_killer_cell,4.0446825833333335
+sample_06,healthy control,0,Central_memory_CD4_T_cell,4.064590399999999
+sample_06,healthy control,0,Central_memory_CD8_T_cell,4.139592666666666
+sample_06,healthy control,0,Effector_memory_CD4_T_cell,4.047609333333334
+sample_06,healthy control,0,Effector_memory_CD8_T_cell,4.071319416666666
+sample_06,healthy control,0,Eosinophil,3.9675
+sample_06,healthy control,0,Gamma_delta_T_cell,4.053748157894737
+sample_06,healthy control,0,Immature_B_cell,4.04875175
+sample_06,healthy control,0,Immature_dendritic_cell,4.080265666666667
+sample_06,healthy control,0,Macrophage,3.943322307692308
+sample_06,healthy control,0,Mast_cell,3.9748352
+sample_06,healthy control,0,MDSC,3.92147875
+sample_06,healthy control,0,Memory_B_cell,4.07878475
+sample_06,healthy control,0,Monocyte,4.1309960625
+sample_06,healthy control,0,Natural_killer_cell,4.0632932380952385
+sample_06,healthy control,0,Natural_killer_T_cell,4.053918789473685
+sample_06,healthy control,0,Neutrophil,3.9162725000000003
+sample_06,healthy control,0,Plasmacytoid_dendritic_cell,4.10625324
+sample_06,healthy control,0,Regulatory_T_cell,4.0091643999999995
+sample_06,healthy control,0,T_follicular_helper_cell,4.031534095238095
+sample_06,healthy control,0,Type_1_T_helper_cell,4.046080452380953
+sample_06,healthy control,0,Type_17_T_helper_cell,4.003216153846153
+sample_06,healthy control,0,Type_2_T_helper_cell,4.00908694736842
+sample_61,NPDR/PDR + DME,3,Activated_B_cell,4.1076802
+sample_61,NPDR/PDR + DME,3,Activated_CD4_T_cell,3.9077153333333334
+sample_61,NPDR/PDR + DME,3,Activated_CD8_T_cell,3.994713333333333
+sample_61,NPDR/PDR + DME,3,Activated_dendritic_cell,4.037239166666668
+sample_61,NPDR/PDR + DME,3,CD56bright_natural_killer_cell,4.00351456
+sample_61,NPDR/PDR + DME,3,CD56dim_natural_killer_cell,4.048068583333333
+sample_61,NPDR/PDR + DME,3,Central_memory_CD4_T_cell,4.1099953
+sample_61,NPDR/PDR + DME,3,Central_memory_CD8_T_cell,4.116335583333333
+sample_61,NPDR/PDR + DME,3,Effector_memory_CD4_T_cell,4.035426166666666
+sample_61,NPDR/PDR + DME,3,Effector_memory_CD8_T_cell,4.072058416666668
+sample_61,NPDR/PDR + DME,3,Eosinophil,3.9535335
+sample_61,NPDR/PDR + DME,3,Gamma_delta_T_cell,4.059349736842105
+sample_61,NPDR/PDR + DME,3,Immature_B_cell,4.0970755
+sample_61,NPDR/PDR + DME,3,Immature_dendritic_cell,4.0633772666666665
+sample_61,NPDR/PDR + DME,3,Macrophage,3.961932076923077
+sample_61,NPDR/PDR + DME,3,Mast_cell,4.0126086
+sample_61,NPDR/PDR + DME,3,MDSC,3.980826625
+sample_61,NPDR/PDR + DME,3,Memory_B_cell,4.043188125
+sample_61,NPDR/PDR + DME,3,Monocyte,4.1202541875000005
+sample_61,NPDR/PDR + DME,3,Natural_killer_cell,4.0674901904761915
+sample_61,NPDR/PDR + DME,3,Natural_killer_T_cell,4.059854894736842
+sample_61,NPDR/PDR + DME,3,Neutrophil,4.052702750000001
+sample_61,NPDR/PDR + DME,3,Plasmacytoid_dendritic_cell,4.1128446400000005
+sample_61,NPDR/PDR + DME,3,Regulatory_T_cell,4.0458533999999995
+sample_61,NPDR/PDR + DME,3,T_follicular_helper_cell,4.045170285714285
+sample_61,NPDR/PDR + DME,3,Type_1_T_helper_cell,4.0494512857142855
+sample_61,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.002768923076923
+sample_61,NPDR/PDR + DME,3,Type_2_T_helper_cell,4.002297736842105
+sample_62,NPDR/PDR + DME,3,Activated_B_cell,4.0959976
+sample_62,NPDR/PDR + DME,3,Activated_CD4_T_cell,3.9222277777777776
+sample_62,NPDR/PDR + DME,3,Activated_CD8_T_cell,4.0037036666666665
+sample_62,NPDR/PDR + DME,3,Activated_dendritic_cell,3.9989903888888887
+sample_62,NPDR/PDR + DME,3,CD56bright_natural_killer_cell,4.0241489999999995
+sample_62,NPDR/PDR + DME,3,CD56dim_natural_killer_cell,4.0416245
+sample_62,NPDR/PDR + DME,3,Central_memory_CD4_T_cell,4.087940549999999
+sample_62,NPDR/PDR + DME,3,Central_memory_CD8_T_cell,4.11124525
+sample_62,NPDR/PDR + DME,3,Effector_memory_CD4_T_cell,4.045016944444444
+sample_62,NPDR/PDR + DME,3,Effector_memory_CD8_T_cell,4.069315333333333
+sample_62,NPDR/PDR + DME,3,Eosinophil,4.06303275
+sample_62,NPDR/PDR + DME,3,Gamma_delta_T_cell,4.052263894736842
+sample_62,NPDR/PDR + DME,3,Immature_B_cell,4.0632445
+sample_62,NPDR/PDR + DME,3,Immature_dendritic_cell,4.085566333333334
+sample_62,NPDR/PDR + DME,3,Macrophage,3.96316923076923
+sample_62,NPDR/PDR + DME,3,Mast_cell,4.0024462
+sample_62,NPDR/PDR + DME,3,MDSC,3.9205019999999995
+sample_62,NPDR/PDR + DME,3,Memory_B_cell,4.008622875
+sample_62,NPDR/PDR + DME,3,Monocyte,4.118619125
+sample_62,NPDR/PDR + DME,3,Natural_killer_cell,4.0623314285714285
+sample_62,NPDR/PDR + DME,3,Natural_killer_T_cell,4.0580902631578954
+sample_62,NPDR/PDR + DME,3,Neutrophil,3.984094
+sample_62,NPDR/PDR + DME,3,Plasmacytoid_dendritic_cell,4.113703920000001
+sample_62,NPDR/PDR + DME,3,Regulatory_T_cell,3.9842526
+sample_62,NPDR/PDR + DME,3,T_follicular_helper_cell,4.013389952380952
+sample_62,NPDR/PDR + DME,3,Type_1_T_helper_cell,4.052159619047619
+sample_62,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.000233000000001
+sample_62,NPDR/PDR + DME,3,Type_2_T_helper_cell,3.9902639473684203
+sample_63,NPDR/PDR + DME,3,Activated_B_cell,4.140138
+sample_63,NPDR/PDR + DME,3,Activated_CD4_T_cell,3.920687555555555
+sample_63,NPDR/PDR + DME,3,Activated_CD8_T_cell,3.9942827500000004
+sample_63,NPDR/PDR + DME,3,Activated_dendritic_cell,4.019913444444445
+sample_63,NPDR/PDR + DME,3,CD56bright_natural_killer_cell,4.009353599999999
+sample_63,NPDR/PDR + DME,3,CD56dim_natural_killer_cell,4.047274416666667
+sample_63,NPDR/PDR + DME,3,Central_memory_CD4_T_cell,4.08006205
+sample_63,NPDR/PDR + DME,3,Central_memory_CD8_T_cell,4.119139333333334
+sample_63,NPDR/PDR + DME,3,Effector_memory_CD4_T_cell,4.026563
+sample_63,NPDR/PDR + DME,3,Effector_memory_CD8_T_cell,4.065430666666667
+sample_63,NPDR/PDR + DME,3,Eosinophil,3.982402875
+sample_63,NPDR/PDR + DME,3,Gamma_delta_T_cell,4.048823473684211
+sample_63,NPDR/PDR + DME,3,Immature_B_cell,4.0796165
+sample_63,NPDR/PDR + DME,3,Immature_dendritic_cell,4.079779066666666
+sample_63,NPDR/PDR + DME,3,Macrophage,3.966541153846154
+sample_63,NPDR/PDR + DME,3,Mast_cell,4.0004522
+sample_63,NPDR/PDR + DME,3,MDSC,3.9732562499999995
+sample_63,NPDR/PDR + DME,3,Memory_B_cell,4.06174675
+sample_63,NPDR/PDR + DME,3,Monocyte,4.1296851875
+sample_63,NPDR/PDR + DME,3,Natural_killer_cell,4.076614476190478
+sample_63,NPDR/PDR + DME,3,Natural_killer_T_cell,4.049213526315789
+sample_63,NPDR/PDR + DME,3,Neutrophil,3.93572675
+sample_63,NPDR/PDR + DME,3,Plasmacytoid_dendritic_cell,4.109857679999999
+sample_63,NPDR/PDR + DME,3,Regulatory_T_cell,4.0435859
+sample_63,NPDR/PDR + DME,3,T_follicular_helper_cell,4.043023761904761
+sample_63,NPDR/PDR + DME,3,Type_1_T_helper_cell,4.052927595238096
+sample_63,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.010367538461538
+sample_63,NPDR/PDR + DME,3,Type_2_T_helper_cell,4.010187263157896
+sample_64,NPDR/PDR + DME,3,Activated_B_cell,4.120497
+sample_64,NPDR/PDR + DME,3,Activated_CD4_T_cell,3.934273222222222
+sample_64,NPDR/PDR + DME,3,Activated_CD8_T_cell,3.9946085000000005
+sample_64,NPDR/PDR + DME,3,Activated_dendritic_cell,4.026086944444445
+sample_64,NPDR/PDR + DME,3,CD56bright_natural_killer_cell,4.011873800000001
+sample_64,NPDR/PDR + DME,3,CD56dim_natural_killer_cell,4.046903666666666
+sample_64,NPDR/PDR + DME,3,Central_memory_CD4_T_cell,4.096814450000001
+sample_64,NPDR/PDR + DME,3,Central_memory_CD8_T_cell,4.1186808333333325
+sample_64,NPDR/PDR + DME,3,Effector_memory_CD4_T_cell,4.0354909999999995
+sample_64,NPDR/PDR + DME,3,Effector_memory_CD8_T_cell,4.081106083333333
+sample_64,NPDR/PDR + DME,3,Eosinophil,4.021481875
+sample_64,NPDR/PDR + DME,3,Gamma_delta_T_cell,4.057897263157894
+sample_64,NPDR/PDR + DME,3,Immature_B_cell,4.1145265
+sample_64,NPDR/PDR + DME,3,Immature_dendritic_cell,4.081322133333334
+sample_64,NPDR/PDR + DME,3,Macrophage,3.984857692307692
+sample_64,NPDR/PDR + DME,3,Mast_cell,4.0154179999999995
+sample_64,NPDR/PDR + DME,3,MDSC,3.9918839999999998
+sample_64,NPDR/PDR + DME,3,Memory_B_cell,4.02020875
+sample_64,NPDR/PDR + DME,3,Monocyte,4.1126076875
+sample_64,NPDR/PDR + DME,3,Natural_killer_cell,4.080520333333333
+sample_64,NPDR/PDR + DME,3,Natural_killer_T_cell,4.055674421052632
+sample_64,NPDR/PDR + DME,3,Neutrophil,4.009611250000001
+sample_64,NPDR/PDR + DME,3,Plasmacytoid_dendritic_cell,4.106715360000001
+sample_64,NPDR/PDR + DME,3,Regulatory_T_cell,4.031066699999999
+sample_64,NPDR/PDR + DME,3,T_follicular_helper_cell,4.036605428571429
+sample_64,NPDR/PDR + DME,3,Type_1_T_helper_cell,4.06207430952381
+sample_64,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.013451307692308
+sample_64,NPDR/PDR + DME,3,Type_2_T_helper_cell,3.9907378421052635
+sample_66,NPDR/PDR + DME,3,Activated_B_cell,4.1427917999999995
+sample_66,NPDR/PDR + DME,3,Activated_CD4_T_cell,3.9210172222222224
+sample_66,NPDR/PDR + DME,3,Activated_CD8_T_cell,3.9941651666666664
+sample_66,NPDR/PDR + DME,3,Activated_dendritic_cell,4.038020777777778
+sample_66,NPDR/PDR + DME,3,CD56bright_natural_killer_cell,4.01281124
+sample_66,NPDR/PDR + DME,3,CD56dim_natural_killer_cell,4.057430583333333
+sample_66,NPDR/PDR + DME,3,Central_memory_CD4_T_cell,4.096517700000001
+sample_66,NPDR/PDR + DME,3,Central_memory_CD8_T_cell,4.12434275
+sample_66,NPDR/PDR + DME,3,Effector_memory_CD4_T_cell,4.045440388888888
+sample_66,NPDR/PDR + DME,3,Effector_memory_CD8_T_cell,4.0900386666666675
+sample_66,NPDR/PDR + DME,3,Eosinophil,3.979890125
+sample_66,NPDR/PDR + DME,3,Gamma_delta_T_cell,4.051366052631577
+sample_66,NPDR/PDR + DME,3,Immature_B_cell,4.1105645
+sample_66,NPDR/PDR + DME,3,Immature_dendritic_cell,4.078051800000001
+sample_66,NPDR/PDR + DME,3,Macrophage,3.984980846153846
+sample_66,NPDR/PDR + DME,3,Mast_cell,4.0211086
+sample_66,NPDR/PDR + DME,3,MDSC,3.991892375
+sample_66,NPDR/PDR + DME,3,Memory_B_cell,4.052079249999999
+sample_66,NPDR/PDR + DME,3,Monocyte,4.13140325
+sample_66,NPDR/PDR + DME,3,Natural_killer_cell,4.068315333333333
+sample_66,NPDR/PDR + DME,3,Natural_killer_T_cell,4.0671970526315775
+sample_66,NPDR/PDR + DME,3,Neutrophil,3.95900225
+sample_66,NPDR/PDR + DME,3,Plasmacytoid_dendritic_cell,4.11441356
+sample_66,NPDR/PDR + DME,3,Regulatory_T_cell,4.0276397
+sample_66,NPDR/PDR + DME,3,T_follicular_helper_cell,4.0477508095238095
+sample_66,NPDR/PDR + DME,3,Type_1_T_helper_cell,4.062864809523807
+sample_66,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.017762076923076
+sample_66,NPDR/PDR + DME,3,Type_2_T_helper_cell,4.006008315789475
+sample_67,NPDR/PDR + DME,3,Activated_B_cell,4.1485218
+sample_67,NPDR/PDR + DME,3,Activated_CD4_T_cell,3.915827111111111
+sample_67,NPDR/PDR + DME,3,Activated_CD8_T_cell,3.9956732499999994
+sample_67,NPDR/PDR + DME,3,Activated_dendritic_cell,4.006979277777778
+sample_67,NPDR/PDR + DME,3,CD56bright_natural_killer_cell,4.022678600000001
+sample_67,NPDR/PDR + DME,3,CD56dim_natural_killer_cell,4.065945
+sample_67,NPDR/PDR + DME,3,Central_memory_CD4_T_cell,4.09949975
+sample_67,NPDR/PDR + DME,3,Central_memory_CD8_T_cell,4.120486083333334
+sample_67,NPDR/PDR + DME,3,Effector_memory_CD4_T_cell,4.0451793333333335
+sample_67,NPDR/PDR + DME,3,Effector_memory_CD8_T_cell,4.0764208333333345
+sample_67,NPDR/PDR + DME,3,Eosinophil,4.015937625000001
+sample_67,NPDR/PDR + DME,3,Gamma_delta_T_cell,4.059345315789473
+sample_67,NPDR/PDR + DME,3,Immature_B_cell,4.043914
+sample_67,NPDR/PDR + DME,3,Immature_dendritic_cell,4.091314933333334
+sample_67,NPDR/PDR + DME,3,Macrophage,3.966732846153846
+sample_67,NPDR/PDR + DME,3,Mast_cell,3.9908533999999998
+sample_67,NPDR/PDR + DME,3,MDSC,3.9978483750000002
+sample_67,NPDR/PDR + DME,3,Memory_B_cell,4.053446374999999
+sample_67,NPDR/PDR + DME,3,Monocyte,4.1246669375
+sample_67,NPDR/PDR + DME,3,Natural_killer_cell,4.0823940952380955
+sample_67,NPDR/PDR + DME,3,Natural_killer_T_cell,4.067054526315789
+sample_67,NPDR/PDR + DME,3,Neutrophil,3.9457232500000003
+sample_67,NPDR/PDR + DME,3,Plasmacytoid_dendritic_cell,4.11162696
+sample_67,NPDR/PDR + DME,3,Regulatory_T_cell,4.034925599999999
+sample_67,NPDR/PDR + DME,3,T_follicular_helper_cell,4.040923761904762
+sample_67,NPDR/PDR + DME,3,Type_1_T_helper_cell,4.071201666666668
+sample_67,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.005152615384615
+sample_67,NPDR/PDR + DME,3,Type_2_T_helper_cell,4.015839631578949
+sample_68,NPDR/PDR + DME,3,Activated_B_cell,4.138548
+sample_68,NPDR/PDR + DME,3,Activated_CD4_T_cell,3.9194584444444445
+sample_68,NPDR/PDR + DME,3,Activated_CD8_T_cell,4.000297916666667
+sample_68,NPDR/PDR + DME,3,Activated_dendritic_cell,4.0311685
+sample_68,NPDR/PDR + DME,3,CD56bright_natural_killer_cell,4.02023996
+sample_68,NPDR/PDR + DME,3,CD56dim_natural_killer_cell,4.050695583333334
+sample_68,NPDR/PDR + DME,3,Central_memory_CD4_T_cell,4.1011272
+sample_68,NPDR/PDR + DME,3,Central_memory_CD8_T_cell,4.117163166666667
+sample_68,NPDR/PDR + DME,3,Effector_memory_CD4_T_cell,4.050255722222222
+sample_68,NPDR/PDR + DME,3,Effector_memory_CD8_T_cell,4.086809916666667
+sample_68,NPDR/PDR + DME,3,Eosinophil,3.971737875
+sample_68,NPDR/PDR + DME,3,Gamma_delta_T_cell,4.054520789473683
+sample_68,NPDR/PDR + DME,3,Immature_B_cell,4.098910500000001
+sample_68,NPDR/PDR + DME,3,Immature_dendritic_cell,4.0876496
+sample_68,NPDR/PDR + DME,3,Macrophage,3.9773092307692313
+sample_68,NPDR/PDR + DME,3,Mast_cell,4.0173086
+sample_68,NPDR/PDR + DME,3,MDSC,3.9702338750000004
+sample_68,NPDR/PDR + DME,3,Memory_B_cell,4.051415375
+sample_68,NPDR/PDR + DME,3,Monocyte,4.13454075
+sample_68,NPDR/PDR + DME,3,Natural_killer_cell,4.065101619047619
+sample_68,NPDR/PDR + DME,3,Natural_killer_T_cell,4.05263342105263
+sample_68,NPDR/PDR + DME,3,Neutrophil,4.021144
+sample_68,NPDR/PDR + DME,3,Plasmacytoid_dendritic_cell,4.11446352
+sample_68,NPDR/PDR + DME,3,Regulatory_T_cell,4.0358689
+sample_68,NPDR/PDR + DME,3,T_follicular_helper_cell,4.043046761904763
+sample_68,NPDR/PDR + DME,3,Type_1_T_helper_cell,4.059752690476191
+sample_68,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.015216923076924
+sample_68,NPDR/PDR + DME,3,Type_2_T_helper_cell,4.017501263157894
+sample_69,NPDR/PDR + DME,3,Activated_B_cell,4.112312
+sample_69,NPDR/PDR + DME,3,Activated_CD4_T_cell,3.901485666666667
+sample_69,NPDR/PDR + DME,3,Activated_CD8_T_cell,3.9931465833333335
+sample_69,NPDR/PDR + DME,3,Activated_dendritic_cell,4.034107111111111
+sample_69,NPDR/PDR + DME,3,CD56bright_natural_killer_cell,4.01313728
+sample_69,NPDR/PDR + DME,3,CD56dim_natural_killer_cell,4.057179833333333
+sample_69,NPDR/PDR + DME,3,Central_memory_CD4_T_cell,4.098000950000001
+sample_69,NPDR/PDR + DME,3,Central_memory_CD8_T_cell,4.107118000000001
+sample_69,NPDR/PDR + DME,3,Effector_memory_CD4_T_cell,4.043294944444444
+sample_69,NPDR/PDR + DME,3,Effector_memory_CD8_T_cell,4.068332166666667
+sample_69,NPDR/PDR + DME,3,Eosinophil,3.959709374999999
+sample_69,NPDR/PDR + DME,3,Gamma_delta_T_cell,4.049464315789473
+sample_69,NPDR/PDR + DME,3,Immature_B_cell,4.0874412499999995
+sample_69,NPDR/PDR + DME,3,Immature_dendritic_cell,4.0871043333333335
+sample_69,NPDR/PDR + DME,3,Macrophage,4.000026461538462
+sample_69,NPDR/PDR + DME,3,Mast_cell,4.0182506
+sample_69,NPDR/PDR + DME,3,MDSC,3.955936125
+sample_69,NPDR/PDR + DME,3,Memory_B_cell,4.063927
+sample_69,NPDR/PDR + DME,3,Monocyte,4.127490125
+sample_69,NPDR/PDR + DME,3,Natural_killer_cell,4.073997952380953
+sample_69,NPDR/PDR + DME,3,Natural_killer_T_cell,4.063110000000001
+sample_69,NPDR/PDR + DME,3,Neutrophil,4.0167555
+sample_69,NPDR/PDR + DME,3,Plasmacytoid_dendritic_cell,4.11649472
+sample_69,NPDR/PDR + DME,3,Regulatory_T_cell,4.0397742999999995
+sample_69,NPDR/PDR + DME,3,T_follicular_helper_cell,4.047871571428571
+sample_69,NPDR/PDR + DME,3,Type_1_T_helper_cell,4.069657809523808
+sample_69,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.026779153846154
+sample_69,NPDR/PDR + DME,3,Type_2_T_helper_cell,4.0132278421052625
+sample_07,healthy control,0,Activated_B_cell,4.104216200000001
+sample_07,healthy control,0,Activated_CD4_T_cell,3.9057247777777775
+sample_07,healthy control,0,Activated_CD8_T_cell,4.00542825
+sample_07,healthy control,0,Activated_dendritic_cell,4.006713666666666
+sample_07,healthy control,0,CD56bright_natural_killer_cell,4.01941636
+sample_07,healthy control,0,CD56dim_natural_killer_cell,4.0548737500000005
+sample_07,healthy control,0,Central_memory_CD4_T_cell,4.084980750000001
+sample_07,healthy control,0,Central_memory_CD8_T_cell,4.143357166666666
+sample_07,healthy control,0,Effector_memory_CD4_T_cell,4.031910388888888
+sample_07,healthy control,0,Effector_memory_CD8_T_cell,4.08138125
+sample_07,healthy control,0,Eosinophil,3.9717748750000004
+sample_07,healthy control,0,Gamma_delta_T_cell,4.0581643684210515
+sample_07,healthy control,0,Immature_B_cell,4.06056625
+sample_07,healthy control,0,Immature_dendritic_cell,4.087132066666666
+sample_07,healthy control,0,Macrophage,3.9454269999999996
+sample_07,healthy control,0,Mast_cell,3.9907988000000003
+sample_07,healthy control,0,MDSC,3.9229089999999998
+sample_07,healthy control,0,Memory_B_cell,4.082765375
+sample_07,healthy control,0,Monocyte,4.1283086875
+sample_07,healthy control,0,Natural_killer_cell,4.070706190476192
+sample_07,healthy control,0,Natural_killer_T_cell,4.045981105263158
+sample_07,healthy control,0,Neutrophil,3.9178619999999995
+sample_07,healthy control,0,Plasmacytoid_dendritic_cell,4.10540884
+sample_07,healthy control,0,Regulatory_T_cell,4.0365479
+sample_07,healthy control,0,T_follicular_helper_cell,4.0313167142857145
+sample_07,healthy control,0,Type_1_T_helper_cell,4.050825976190476
+sample_07,healthy control,0,Type_17_T_helper_cell,4.007697
+sample_07,healthy control,0,Type_2_T_helper_cell,4.009204526315789
+sample_70,NPDR/PDR + DME,3,Activated_B_cell,4.0954528
+sample_70,NPDR/PDR + DME,3,Activated_CD4_T_cell,3.8843101111111107
+sample_70,NPDR/PDR + DME,3,Activated_CD8_T_cell,4.002437166666668
+sample_70,NPDR/PDR + DME,3,Activated_dendritic_cell,3.9753807222222224
+sample_70,NPDR/PDR + DME,3,CD56bright_natural_killer_cell,4.01445704
+sample_70,NPDR/PDR + DME,3,CD56dim_natural_killer_cell,4.0388595
+sample_70,NPDR/PDR + DME,3,Central_memory_CD4_T_cell,4.05821135
+sample_70,NPDR/PDR + DME,3,Central_memory_CD8_T_cell,4.106390499999999
+sample_70,NPDR/PDR + DME,3,Effector_memory_CD4_T_cell,4.052619166666667
+sample_70,NPDR/PDR + DME,3,Effector_memory_CD8_T_cell,4.064025499999999
+sample_70,NPDR/PDR + DME,3,Eosinophil,3.9695100000000005
+sample_70,NPDR/PDR + DME,3,Gamma_delta_T_cell,4.06014447368421
+sample_70,NPDR/PDR + DME,3,Immature_B_cell,4.036607999999999
+sample_70,NPDR/PDR + DME,3,Immature_dendritic_cell,4.091866
+sample_70,NPDR/PDR + DME,3,Macrophage,3.937988384615385
+sample_70,NPDR/PDR + DME,3,Mast_cell,3.9837882000000002
+sample_70,NPDR/PDR + DME,3,MDSC,3.8556204999999997
+sample_70,NPDR/PDR + DME,3,Memory_B_cell,4.059873875
+sample_70,NPDR/PDR + DME,3,Monocyte,4.126162687499999
+sample_70,NPDR/PDR + DME,3,Natural_killer_cell,4.045758095238095
+sample_70,NPDR/PDR + DME,3,Natural_killer_T_cell,4.04979647368421
+sample_70,NPDR/PDR + DME,3,Neutrophil,3.90853025
+sample_70,NPDR/PDR + DME,3,Plasmacytoid_dendritic_cell,4.11098244
+sample_70,NPDR/PDR + DME,3,Regulatory_T_cell,3.9911208
+sample_70,NPDR/PDR + DME,3,T_follicular_helper_cell,4.011424571428571
+sample_70,NPDR/PDR + DME,3,Type_1_T_helper_cell,4.036518809523811
+sample_70,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.000111
+sample_70,NPDR/PDR + DME,3,Type_2_T_helper_cell,3.985782315789474
+sample_08,healthy control,0,Activated_B_cell,4.110857399999999
+sample_08,healthy control,0,Activated_CD4_T_cell,3.916803333333333
+sample_08,healthy control,0,Activated_CD8_T_cell,4.006106
+sample_08,healthy control,0,Activated_dendritic_cell,4.0208179444444445
+sample_08,healthy control,0,CD56bright_natural_killer_cell,4.029136080000001
+sample_08,healthy control,0,CD56dim_natural_killer_cell,4.0584576666666665
+sample_08,healthy control,0,Central_memory_CD4_T_cell,4.07825935
+sample_08,healthy control,0,Central_memory_CD8_T_cell,4.102737916666666
+sample_08,healthy control,0,Effector_memory_CD4_T_cell,4.0401315
+sample_08,healthy control,0,Effector_memory_CD8_T_cell,4.083659666666667
+sample_08,healthy control,0,Eosinophil,3.992871
+sample_08,healthy control,0,Gamma_delta_T_cell,4.053653263157895
+sample_08,healthy control,0,Immature_B_cell,4.06737725
+sample_08,healthy control,0,Immature_dendritic_cell,4.084510133333334
+sample_08,healthy control,0,Macrophage,3.961448153846154
+sample_08,healthy control,0,Mast_cell,3.9903372000000004
+sample_08,healthy control,0,MDSC,3.9346166249999994
+sample_08,healthy control,0,Memory_B_cell,4.064344875
+sample_08,healthy control,0,Monocyte,4.1411451249999995
+sample_08,healthy control,0,Natural_killer_cell,4.058722333333333
+sample_08,healthy control,0,Natural_killer_T_cell,4.061257263157895
+sample_08,healthy control,0,Neutrophil,3.9130059999999998
+sample_08,healthy control,0,Plasmacytoid_dendritic_cell,4.110972319999999
+sample_08,healthy control,0,Regulatory_T_cell,4.017124600000001
+sample_08,healthy control,0,T_follicular_helper_cell,4.032620952380952
+sample_08,healthy control,0,Type_1_T_helper_cell,4.049422880952382
+sample_08,healthy control,0,Type_17_T_helper_cell,3.9922362307692305
+sample_08,healthy control,0,Type_2_T_helper_cell,3.9998304736842107
+sample_09,healthy control,0,Activated_B_cell,4.1226714
+sample_09,healthy control,0,Activated_CD4_T_cell,3.921940555555556
+sample_09,healthy control,0,Activated_CD8_T_cell,3.995731333333333
+sample_09,healthy control,0,Activated_dendritic_cell,4.0298236111111105
+sample_09,healthy control,0,CD56bright_natural_killer_cell,4.0270095999999995
+sample_09,healthy control,0,CD56dim_natural_killer_cell,4.055510666666668
+sample_09,healthy control,0,Central_memory_CD4_T_cell,4.095107149999999
+sample_09,healthy control,0,Central_memory_CD8_T_cell,4.141807583333333
+sample_09,healthy control,0,Effector_memory_CD4_T_cell,4.038576944444444
+sample_09,healthy control,0,Effector_memory_CD8_T_cell,4.081422333333333
+sample_09,healthy control,0,Eosinophil,3.96022675
+sample_09,healthy control,0,Gamma_delta_T_cell,4.059955736842106
+sample_09,healthy control,0,Immature_B_cell,4.11321725
+sample_09,healthy control,0,Immature_dendritic_cell,4.078114133333333
+sample_09,healthy control,0,Macrophage,3.967633230769231
+sample_09,healthy control,0,Mast_cell,3.9978688
+sample_09,healthy control,0,MDSC,3.984012375
+sample_09,healthy control,0,Memory_B_cell,4.053582125
+sample_09,healthy control,0,Monocyte,4.125744812499999
+sample_09,healthy control,0,Natural_killer_cell,4.064382523809524
+sample_09,healthy control,0,Natural_killer_T_cell,4.053415684210527
+sample_09,healthy control,0,Neutrophil,3.97168025
+sample_09,healthy control,0,Plasmacytoid_dendritic_cell,4.110883399999999
+sample_09,healthy control,0,Regulatory_T_cell,4.028828599999999
+sample_09,healthy control,0,T_follicular_helper_cell,4.039963285714285
+sample_09,healthy control,0,Type_1_T_helper_cell,4.042936595238096
+sample_09,healthy control,0,Type_17_T_helper_cell,4.011242384615384
+sample_09,healthy control,0,Type_2_T_helper_cell,3.9898420000000003

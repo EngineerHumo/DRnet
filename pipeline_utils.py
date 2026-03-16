@@ -2,8 +2,8 @@ import csv, math, json
 from pathlib import Path
 from urllib import request, parse
 
-GROUPS = ["healthy control", "diabetic", "NPPR", "NPDR/PDR + DME"]
-SEVERITY_MAP = {"healthy control": 0, "diabetic": 1, "NPPR": 2, "NPDR/PDR + DME": 3}
+GROUPS = ["healthy control", "diabetic", "NPDR", "NPDR/PDR + DME"]
+SEVERITY_MAP = {"healthy control": 0, "diabetic": 1, "NPDR": 2, "NPDR/PDR + DME": 3}
 
 
 def ensure_dirs(*dirs):

@@ -7,10 +7,10 @@ TABLE_DIR = RESULT_DIR / 'tables'
 LOG_DIR = RESULT_DIR / 'logs'
 FIG_DIR = RESULT_DIR / 'figures'
 
-GROUPS = ["healthy control", "diabetic", "NPPR", "NPDR/PDR + DME"]
+GROUPS = ["healthy control", "diabetic", "NPDR", "NPDR/PDR + DME"]
 PRIMARY_CTRL = "healthy control"
 PRIMARY_CASE = "NPDR/PDR + DME"
-SEVERITY_MAP = {"healthy control":0, "diabetic":1, "NPPR":2, "NPDR/PDR + DME":3}
+SEVERITY_MAP = {"healthy control":0, "diabetic":1, "NPDR":2, "NPDR/PDR + DME":3}
 
 PADJ_THRESHOLD = 0.05
 LOG2FC_THRESHOLD = 0.5

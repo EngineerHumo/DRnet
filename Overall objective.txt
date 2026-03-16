@@ -20,7 +20,7 @@ Overall objective for GSE160306 Python bioinformatics analysis (updated)
 二、必须先改掉的旧逻辑
 
 1. 不允许沿用当前 metadata.py 的早期二分类逻辑。
-   该脚本会过早把样本压成 Control/DR，并丢失 diabetic 和 NPPR 两个中间层级，破坏四组严重度分析。
+   该脚本会过早把样本压成 Control/DR，并丢失 diabetic 和 NPDR 两个中间层级，破坏四组严重度分析。
 
 2. 不允许直接用 normalized CPM 做差异分析。
    差异分析必须基于 raw counts。
@@ -91,7 +91,7 @@ dr_gse160306_project/
 1. 先从 GSE160306 series matrix 解析完整 metadata，保留四组原始标签：
    healthy control
    diabetic
-   NPPR
+   NPDR
    NPDR/PDR + DME
 
 2. 只保留 macula 样本进入正式分析。
@@ -102,7 +102,7 @@ dr_gse160306_project/
 4. 同时保留四组严重度/进展支持分析：
    healthy control = 0
    diabetic = 1
-   NPPR = 2
+   NPDR = 2
    NPDR/PDR + DME = 3
 
 5. 炎症候选基因主定义：
@@ -171,7 +171,7 @@ dr_gse160306_project/
 04_differential_expression.py
 - primary differential expression
 - diabetic vs healthy
-- NPPR vs healthy
+- NPDR vs healthy
 - severity trend analysis
 
 05_inflammation_scoring.py

@@ -12,7 +12,7 @@
 
 必须遵守的分析设计：
 1. 先从 GSE160306 series matrix 解析完整 metadata，保留四组原始标签：
-   healthy control, diabetic, NPPR, NPDR/PDR + DME
+   healthy control, diabetic, NPDR, NPDR/PDR + DME
 2. 只保留 macula 样本进入正式分析。
 3. 主比较是 healthy control vs NPDR/PDR + DME。
 4. 同时保留四组趋势分析，用 severity code = 0,1,2,3。
@@ -53,7 +53,7 @@ run_all.py
 - PRIMARY_CTRL = "healthy control"
 - PRIMARY_CASE = "NPDR/PDR + DME"
 - 定义 severity map:
-  {"healthy control":0, "diabetic":1, "NPPR":2, "NPDR/PDR + DME":3}
+  {"healthy control":0, "diabetic":1, "NPDR":2, "NPDR/PDR + DME":3}
 - 设定差异分析阈值：padj < 0.05, abs(log2FC) > 0.5
 - 设定低表达过滤阈值
 - 固定随机种子
@@ -112,7 +112,7 @@ run_all.py
 - 完成：
   A. healthy control vs NPDR/PDR + DME
   B. diabetic vs healthy control
-  C. NPPR vs healthy control
+  C. NPDR vs healthy control
   D. 可选 NPDR/PDR + DME vs diabetic
 - 再做四组 severity trend analysis（Spearman 或其他合适方法）
 - 输出主比较和辅助比较 DEG 结果表、趋势结果表

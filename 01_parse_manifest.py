@@ -1,6 +1,7 @@
 import csv, runpy
 from collections import Counter
 from pathlib import Path
+import shutil
 from pipeline_utils import ensure_dirs, parse_series_matrix, write_csv, log_message
 cfg=runpy.run_path('00_config.py')
 RAW_DIR,PROC_DIR,RESULT_DIR=cfg['RAW_DIR'],cfg['PROC_DIR'],cfg['RESULT_DIR']
@@ -9,7 +10,7 @@ GROUPS=cfg['GROUPS'];PRIMARY_CTRL=cfg['PRIMARY_CTRL'];PRIMARY_CASE=cfg['PRIMARY_
 def main():
     ensure_dirs(PROC_DIR, RESULT_DIR/'tables', RESULT_DIR/'logs', RAW_DIR)
     src=Path('GSE160306_series_matrix.txt'); dst=RAW_DIR/'GSE160306_series_matrix.txt'
-    if src.exists() and not dst.exists(): dst.write_text(src.read_text(encoding='utf-8',errors='ignore'),encoding='utf-8')
+    if src.exists() and not dst.exists(): shutil.copyfile(src, dst)
     data=parse_series_matrix(dst)
     out=[]
     for r in data:

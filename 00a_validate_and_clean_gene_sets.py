@@ -1,5 +1,6 @@
 import csv
 from pathlib import Path
+import shutil
 from pipeline_utils import ensure_dirs, read_gmt, write_gmt, log_message
 import runpy
 cfg=runpy.run_path('00_config.py')
@@ -14,7 +15,7 @@ def main():
     # bootstrap raw files if they are still in repo root
     for fn in ['hallmark_human_gene_symbols.gmt','hallmark_inflammatory_response.gmt','immune_28_signatures_tisidb.gmt']:
         src=Path(fn); dst=RAW_DIR/fn
-        if src.exists() and not dst.exists(): dst.write_text(src.read_text(encoding='utf-8',errors='ignore'),encoding='utf-8')
+        if src.exists() and not dst.exists(): shutil.copyfile(src, dst)
 
     hall=read_gmt(RAW_DIR/'hallmark_human_gene_symbols.gmt')
     infl=read_gmt(RAW_DIR/'hallmark_inflammatory_response.gmt')

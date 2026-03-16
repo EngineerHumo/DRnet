@@ -1,6 +1,7 @@
 import csv, math, runpy
 from collections import defaultdict
 from pathlib import Path
+import shutil
 from pipeline_utils import ensure_dirs, read_table, log_message
 cfg=runpy.run_path('00_config.py')
 RAW_DIR,PROC_DIR,RESULT_DIR=cfg['RAW_DIR'],cfg['PROC_DIR'],cfg['RESULT_DIR']
@@ -21,7 +22,7 @@ def main():
     ensure_dirs(PROC_DIR, RESULT_DIR/'logs')
     for fn in ['GSE160306_human_retina_DR_totalRNA_counts.txt','GSE160306_human_retina_DR_totalRNA_normalized_cpm.txt']:
         src=Path(fn); dst=RAW_DIR/fn
-        if src.exists() and not dst.exists(): dst.write_text(src.read_text(encoding='utf-8',errors='ignore'),encoding='utf-8')
+        if src.exists() and not dst.exists(): shutil.copyfile(src, dst)
     mac=read_manifest(PROC_DIR/'manifest_macula_4groups.csv'); primary=read_manifest(PROC_DIR/'manifest_primary_binary.csv')
     mac_ids=[r['sample_id'] for r in mac]; pri_ids=[r['sample_id'] for r in primary]
     ch,mx=subset_matrix(RAW_DIR/'GSE160306_human_retina_DR_totalRNA_counts.txt',mac_ids)

@@ -34,27 +34,27 @@ sample_38,GSM4871143,diabetic,periphery,1,Diabetic
 sample_39,GSM4871144,diabetic,periphery,1,Diabetic
 sample_04,GSM4871145,healthy control,macula,0,Control
 sample_40,GSM4871146,diabetic,periphery,1,Diabetic
-sample_41,GSM4871147,NPPR,macula,2,NPDR
-sample_42,GSM4871148,NPPR,macula,2,NPDR
-sample_43,GSM4871149,NPPR,macula,2,NPDR
-sample_44,GSM4871150,NPPR,macula,2,NPDR
-sample_46,GSM4871151,NPPR,macula,2,NPDR
-sample_47,GSM4871152,NPPR,macula,2,NPDR
-sample_48,GSM4871153,NPPR,macula,2,NPDR
-sample_49,GSM4871154,NPPR,macula,2,NPDR
+sample_41,GSM4871147,NPDR,macula,2,NPDR
+sample_42,GSM4871148,NPDR,macula,2,NPDR
+sample_43,GSM4871149,NPDR,macula,2,NPDR
+sample_44,GSM4871150,NPDR,macula,2,NPDR
+sample_46,GSM4871151,NPDR,macula,2,NPDR
+sample_47,GSM4871152,NPDR,macula,2,NPDR
+sample_48,GSM4871153,NPDR,macula,2,NPDR
+sample_49,GSM4871154,NPDR,macula,2,NPDR
 sample_05,GSM4871155,healthy control,macula,0,Control
-sample_50,GSM4871156,NPPR,macula,2,NPDR
-sample_51,GSM4871157,NPPR,periphery,2,NPDR
-sample_52,GSM4871158,NPPR,periphery,2,NPDR
-sample_53,GSM4871159,NPPR,periphery,2,NPDR
-sample_54,GSM4871160,NPPR,periphery,2,NPDR
-sample_55,GSM4871161,NPPR,periphery,2,NPDR
-sample_56,GSM4871162,NPPR,periphery,2,NPDR
-sample_57,GSM4871163,NPPR,periphery,2,NPDR
-sample_58,GSM4871164,NPPR,periphery,2,NPDR
-sample_59,GSM4871165,NPPR,periphery,2,NPDR
+sample_50,GSM4871156,NPDR,macula,2,NPDR
+sample_51,GSM4871157,NPDR,periphery,2,NPDR
+sample_52,GSM4871158,NPDR,periphery,2,NPDR
+sample_53,GSM4871159,NPDR,periphery,2,NPDR
+sample_54,GSM4871160,NPDR,periphery,2,NPDR
+sample_55,GSM4871161,NPDR,periphery,2,NPDR
+sample_56,GSM4871162,NPDR,periphery,2,NPDR
+sample_57,GSM4871163,NPDR,periphery,2,NPDR
+sample_58,GSM4871164,NPDR,periphery,2,NPDR
+sample_59,GSM4871165,NPDR,periphery,2,NPDR
 sample_06,GSM4871166,healthy control,macula,0,Control
-sample_60,GSM4871167,NPPR,periphery,2,NPDR
+sample_60,GSM4871167,NPDR,periphery,2,NPDR
 sample_61,GSM4871168,NPDR/PDR + DME,macula,3,NPDR + DME
 sample_62,GSM4871169,NPDR/PDR + DME,macula,3,NPDR + DME
 sample_63,GSM4871170,NPDR/PDR + DME,macula,3,PDR + DME

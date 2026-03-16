@@ -1,0 +1,26 @@
+[2026-03-16 06:59:35] Pipeline start. total_steps=12 resume=False
+[2026-03-16 06:59:35] START step=1/12 script=00a_validate_and_clean_gene_sets.py
+[2026-03-16 06:59:35] DONE step=1/12 script=00a_validate_and_clean_gene_sets.py elapsed_sec=0.06
+[2026-03-16 06:59:35] START step=2/12 script=01_parse_manifest.py
+[2026-03-16 06:59:36] DONE step=2/12 script=01_parse_manifest.py elapsed_sec=0.06
+[2026-03-16 06:59:36] START step=3/12 script=02_prepare_expression.py
+[2026-03-16 07:00:36] DONE step=3/12 script=02_prepare_expression.py elapsed_sec=60.51
+[2026-03-16 07:00:36] START step=4/12 script=03_qc_and_pca.py
+[2026-03-16 07:00:36] DONE step=4/12 script=03_qc_and_pca.py elapsed_sec=0.13
+[2026-03-16 07:00:36] START step=5/12 script=04_differential_expression.py
+[2026-03-16 07:00:40] DONE step=5/12 script=04_differential_expression.py elapsed_sec=3.37
+[2026-03-16 07:00:40] START step=6/12 script=05_inflammation_scoring.py
+[2026-03-16 07:13:44] DONE step=6/12 script=05_inflammation_scoring.py elapsed_sec=784.31
+[2026-03-16 07:13:44] START step=7/12 script=06_candidate_selection.py
+[2026-03-16 07:13:44] DONE step=7/12 script=06_candidate_selection.py elapsed_sec=0.21
+[2026-03-16 07:13:44] START step=8/12 script=07_lasso_signature.py
+[2026-03-16 07:25:32] DONE step=8/12 script=07_lasso_signature.py elapsed_sec=708.12
+[2026-03-16 07:25:32] START step=9/12 script=08_enrichment_analysis.py
+[2026-03-16 07:25:32] DONE step=9/12 script=08_enrichment_analysis.py elapsed_sec=0.05
+[2026-03-16 07:25:32] START step=10/12 script=09_immune_infiltration.py
+[2026-03-16 07:37:35] DONE step=10/12 script=09_immune_infiltration.py elapsed_sec=722.40
+[2026-03-16 07:37:35] START step=11/12 script=10_make_figures.py
+[2026-03-16 07:37:36] DONE step=11/12 script=10_make_figures.py elapsed_sec=1.70
+[2026-03-16 07:37:36] START step=12/12 script=11_export_master_summary.py
+[2026-03-16 07:37:36] DONE step=12/12 script=11_export_master_summary.py elapsed_sec=0.07
+[2026-03-16 07:37:36] Pipeline finished. elapsed_sec=2281.00

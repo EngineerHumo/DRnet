@@ -25,7 +25,7 @@ sample_01,healthy control,0,Plasmacytoid_dendritic_cell,4.1118345199999995
 sample_01,healthy control,0,Regulatory_T_cell,4.0236766
 sample_01,healthy control,0,T_follicular_helper_cell,4.032755476190475
 sample_01,healthy control,0,Type_1_T_helper_cell,4.045303714285715
-sample_01,healthy control,0,Type_17_T_helper_cell,3.9954516153846154
+sample_01,healthy control,0,Type_17_T_helper_cell,4.026065916666667
 sample_01,healthy control,0,Type_2_T_helper_cell,4.0113214210526325
 sample_10,healthy control,0,Activated_B_cell,4.1382194
 sample_10,healthy control,0,Activated_CD4_T_cell,3.9112024444444446
@@ -53,7 +53,7 @@ sample_10,healthy control,0,Plasmacytoid_dendritic_cell,4.10445308
 sample_10,healthy control,0,Regulatory_T_cell,4.008390099999999
 sample_10,healthy control,0,T_follicular_helper_cell,4.035929238095238
 sample_10,healthy control,0,Type_1_T_helper_cell,4.055776047619046
-sample_10,healthy control,0,Type_17_T_helper_cell,4.002262615384615
+sample_10,healthy control,0,Type_17_T_helper_cell,4.025770166666667
 sample_10,healthy control,0,Type_2_T_helper_cell,3.9976637368421053
 sample_02,healthy control,0,Activated_B_cell,4.1064554
 sample_02,healthy control,0,Activated_CD4_T_cell,3.909890666666666
@@ -81,7 +81,7 @@ sample_02,healthy control,0,Plasmacytoid_dendritic_cell,4.11314276
 sample_02,healthy control,0,Regulatory_T_cell,4.0209319
 sample_02,healthy control,0,T_follicular_helper_cell,4.041481999999999
 sample_02,healthy control,0,Type_1_T_helper_cell,4.059009785714285
-sample_02,healthy control,0,Type_17_T_helper_cell,4.0014987692307695
+sample_02,healthy control,0,Type_17_T_helper_cell,4.027752916666667
 sample_02,healthy control,0,Type_2_T_helper_cell,4.0001398421052645
 sample_21,diabetic,1,Activated_B_cell,4.1236224
 sample_21,diabetic,1,Activated_CD4_T_cell,3.892955222222222
@@ -109,7 +109,7 @@ sample_21,diabetic,1,Plasmacytoid_dendritic_cell,4.11153232
 sample_21,diabetic,1,Regulatory_T_cell,4.0412209
 sample_21,diabetic,1,T_follicular_helper_cell,4.037528047619047
 sample_21,diabetic,1,Type_1_T_helper_cell,4.049524309523808
-sample_21,diabetic,1,Type_17_T_helper_cell,4.000504
+sample_21,diabetic,1,Type_17_T_helper_cell,4.033701666666666
 sample_21,diabetic,1,Type_2_T_helper_cell,3.997985842105263
 sample_22,diabetic,1,Activated_B_cell,4.1485932
 sample_22,diabetic,1,Activated_CD4_T_cell,3.9215692222222223
@@ -137,7 +137,7 @@ sample_22,diabetic,1,Plasmacytoid_dendritic_cell,4.10858804
 sample_22,diabetic,1,Regulatory_T_cell,4.023749499999999
 sample_22,diabetic,1,T_follicular_helper_cell,4.052173761904761
 sample_22,diabetic,1,Type_1_T_helper_cell,4.059317119047619
-sample_22,diabetic,1,Type_17_T_helper_cell,3.9996991538461537
+sample_22,diabetic,1,Type_17_T_helper_cell,4.023196333333333
 sample_22,diabetic,1,Type_2_T_helper_cell,3.993776210526315
 sample_23,diabetic,1,Activated_B_cell,4.1080492
 sample_23,diabetic,1,Activated_CD4_T_cell,3.9144692222222215
@@ -165,7 +165,7 @@ sample_23,diabetic,1,Plasmacytoid_dendritic_cell,4.102958879999999
 sample_23,diabetic,1,Regulatory_T_cell,4.0179879
 sample_23,diabetic,1,T_follicular_helper_cell,4.0127624285714285
 sample_23,diabetic,1,Type_1_T_helper_cell,4.038519833333334
-sample_23,diabetic,1,Type_17_T_helper_cell,3.989725230769231
+sample_23,diabetic,1,Type_17_T_helper_cell,4.014055583333334
 sample_23,diabetic,1,Type_2_T_helper_cell,3.995993263157895
 sample_24,diabetic,1,Activated_B_cell,4.09933
 sample_24,diabetic,1,Activated_CD4_T_cell,3.883286
@@ -193,7 +193,7 @@ sample_24,diabetic,1,Plasmacytoid_dendritic_cell,4.104983560000001
 sample_24,diabetic,1,Regulatory_T_cell,3.9943244
 sample_24,diabetic,1,T_follicular_helper_cell,4.012058428571429
 sample_24,diabetic,1,Type_1_T_helper_cell,4.048149952380953
-sample_24,diabetic,1,Type_17_T_helper_cell,3.9990104615384614
+sample_24,diabetic,1,Type_17_T_helper_cell,4.020066916666667
 sample_24,diabetic,1,Type_2_T_helper_cell,4.007340789473684
 sample_25,diabetic,1,Activated_B_cell,4.1060631999999995
 sample_25,diabetic,1,Activated_CD4_T_cell,3.9032711111111116
@@ -221,7 +221,7 @@ sample_25,diabetic,1,Plasmacytoid_dendritic_cell,4.10746388
 sample_25,diabetic,1,Regulatory_T_cell,4.0021976
 sample_25,diabetic,1,T_follicular_helper_cell,4.023989761904763
 sample_25,diabetic,1,Type_1_T_helper_cell,4.047079738095238
-sample_25,diabetic,1,Type_17_T_helper_cell,4.002633076923077
+sample_25,diabetic,1,Type_17_T_helper_cell,4.02443925
 sample_25,diabetic,1,Type_2_T_helper_cell,4.003812526315791
 sample_26,diabetic,1,Activated_B_cell,4.107867199999999
 sample_26,diabetic,1,Activated_CD4_T_cell,3.8827096666666665
@@ -249,7 +249,7 @@ sample_26,diabetic,1,Plasmacytoid_dendritic_cell,4.10993112
 sample_26,diabetic,1,Regulatory_T_cell,4.0081293
 sample_26,diabetic,1,T_follicular_helper_cell,4.025466857142857
 sample_26,diabetic,1,Type_1_T_helper_cell,4.0441053333333326
-sample_26,diabetic,1,Type_17_T_helper_cell,4.0021706923076925
+sample_26,diabetic,1,Type_17_T_helper_cell,4.032053333333333
 sample_26,diabetic,1,Type_2_T_helper_cell,4.0068484210526325
 sample_27,diabetic,1,Activated_B_cell,4.1184978
 sample_27,diabetic,1,Activated_CD4_T_cell,3.8977385555555557
@@ -277,7 +277,7 @@ sample_27,diabetic,1,Plasmacytoid_dendritic_cell,4.110166999999999
 sample_27,diabetic,1,Regulatory_T_cell,4.0184099
 sample_27,diabetic,1,T_follicular_helper_cell,4.02435938095238
 sample_27,diabetic,1,Type_1_T_helper_cell,4.057789095238095
-sample_27,diabetic,1,Type_17_T_helper_cell,3.9933543076923077
+sample_27,diabetic,1,Type_17_T_helper_cell,4.01461325
 sample_27,diabetic,1,Type_2_T_helper_cell,3.9923462105263154
 sample_28,diabetic,1,Activated_B_cell,4.1336228
 sample_28,diabetic,1,Activated_CD4_T_cell,3.9179307777777783
@@ -305,7 +305,7 @@ sample_28,diabetic,1,Plasmacytoid_dendritic_cell,4.113682559999999
 sample_28,diabetic,1,Regulatory_T_cell,4.0343295
 sample_28,diabetic,1,T_follicular_helper_cell,4.039971714285714
 sample_28,diabetic,1,Type_1_T_helper_cell,4.068764428571429
-sample_28,diabetic,1,Type_17_T_helper_cell,4.025751846153846
+sample_28,diabetic,1,Type_17_T_helper_cell,4.0517295833333336
 sample_28,diabetic,1,Type_2_T_helper_cell,4.004511684210526
 sample_29,diabetic,1,Activated_B_cell,4.1240326000000005
 sample_29,diabetic,1,Activated_CD4_T_cell,3.8846204444444448
@@ -333,7 +333,7 @@ sample_29,diabetic,1,Plasmacytoid_dendritic_cell,4.10581636
 sample_29,diabetic,1,Regulatory_T_cell,4.019082099999999
 sample_29,diabetic,1,T_follicular_helper_cell,4.029804095238096
 sample_29,diabetic,1,Type_1_T_helper_cell,4.048927761904762
-sample_29,diabetic,1,Type_17_T_helper_cell,3.986539846153846
+sample_29,diabetic,1,Type_17_T_helper_cell,4.008605833333333
 sample_29,diabetic,1,Type_2_T_helper_cell,4.010086631578948
 sample_03,healthy control,0,Activated_B_cell,4.1240866
 sample_03,healthy control,0,Activated_CD4_T_cell,3.899498666666667
@@ -361,7 +361,7 @@ sample_03,healthy control,0,Plasmacytoid_dendritic_cell,4.1088898799999996
 sample_03,healthy control,0,Regulatory_T_cell,4.021709899999999
 sample_03,healthy control,0,T_follicular_helper_cell,4.042556095238096
 sample_03,healthy control,0,Type_1_T_helper_cell,4.054136047619048
-sample_03,healthy control,0,Type_17_T_helper_cell,4.005921692307692
+sample_03,healthy control,0,Type_17_T_helper_cell,4.034478749999999
 sample_03,healthy control,0,Type_2_T_helper_cell,4.009243473684211
 sample_30,diabetic,1,Activated_B_cell,4.1061046
 sample_30,diabetic,1,Activated_CD4_T_cell,3.9073290000000003
@@ -389,7 +389,7 @@ sample_30,diabetic,1,Plasmacytoid_dendritic_cell,4.111527920000001
 sample_30,diabetic,1,Regulatory_T_cell,4.002286499999999
 sample_30,diabetic,1,T_follicular_helper_cell,4.031521666666668
 sample_30,diabetic,1,Type_1_T_helper_cell,4.054441071428572
-sample_30,diabetic,1,Type_17_T_helper_cell,3.995839461538461
+sample_30,diabetic,1,Type_17_T_helper_cell,4.020033499999999
 sample_30,diabetic,1,Type_2_T_helper_cell,3.993309842105264
 sample_04,healthy control,0,Activated_B_cell,4.147170600000001
 sample_04,healthy control,0,Activated_CD4_T_cell,3.928606666666666
@@ -417,7 +417,7 @@ sample_04,healthy control,0,Plasmacytoid_dendritic_cell,4.11313312
 sample_04,healthy control,0,Regulatory_T_cell,4.0104410999999995
 sample_04,healthy control,0,T_follicular_helper_cell,4.027248714285714
 sample_04,healthy control,0,Type_1_T_helper_cell,4.065321071428572
-sample_04,healthy control,0,Type_17_T_helper_cell,3.9947613846153853
+sample_04,healthy control,0,Type_17_T_helper_cell,4.0253267500000005
 sample_04,healthy control,0,Type_2_T_helper_cell,4.007330473684211
 sample_41,NPDR,2,Activated_B_cell,4.132909799999999
 sample_41,NPDR,2,Activated_CD4_T_cell,3.925778555555556
@@ -445,7 +445,7 @@ sample_41,NPDR,2,Plasmacytoid_dendritic_cell,4.1078768000000006
 sample_41,NPDR,2,Regulatory_T_cell,4.031783299999999
 sample_41,NPDR,2,T_follicular_helper_cell,4.036739047619049
 sample_41,NPDR,2,Type_1_T_helper_cell,4.047276428571428
-sample_41,NPDR,2,Type_17_T_helper_cell,4.002856076923077
+sample_41,NPDR,2,Type_17_T_helper_cell,4.027441583333333
 sample_41,NPDR,2,Type_2_T_helper_cell,3.998639210526315
 sample_42,NPDR,2,Activated_B_cell,4.1221212000000005
 sample_42,NPDR,2,Activated_CD4_T_cell,3.885275666666667
@@ -473,7 +473,7 @@ sample_42,NPDR,2,Plasmacytoid_dendritic_cell,4.11375624
 sample_42,NPDR,2,Regulatory_T_cell,4.0214579
 sample_42,NPDR,2,T_follicular_helper_cell,4.034903857142857
 sample_42,NPDR,2,Type_1_T_helper_cell,4.0478097380952365
-sample_42,NPDR,2,Type_17_T_helper_cell,3.9859885384615388
+sample_42,NPDR,2,Type_17_T_helper_cell,4.0104105
 sample_42,NPDR,2,Type_2_T_helper_cell,3.99432852631579
 sample_43,NPDR,2,Activated_B_cell,4.1248124
 sample_43,NPDR,2,Activated_CD4_T_cell,3.9015500000000003
@@ -501,7 +501,7 @@ sample_43,NPDR,2,Plasmacytoid_dendritic_cell,4.1083754
 sample_43,NPDR,2,Regulatory_T_cell,4.0311497
 sample_43,NPDR,2,T_follicular_helper_cell,4.033231190476191
 sample_43,NPDR,2,Type_1_T_helper_cell,4.048601785714286
-sample_43,NPDR,2,Type_17_T_helper_cell,4.011763076923077
+sample_43,NPDR,2,Type_17_T_helper_cell,4.035438
 sample_43,NPDR,2,Type_2_T_helper_cell,4.001817105263159
 sample_44,NPDR,2,Activated_B_cell,4.1349524
 sample_44,NPDR,2,Activated_CD4_T_cell,3.9014435555555553
@@ -529,7 +529,7 @@ sample_44,NPDR,2,Plasmacytoid_dendritic_cell,4.104152679999999
 sample_44,NPDR,2,Regulatory_T_cell,4.0176133
 sample_44,NPDR,2,T_follicular_helper_cell,4.033636761904762
 sample_44,NPDR,2,Type_1_T_helper_cell,4.050036380952382
-sample_44,NPDR,2,Type_17_T_helper_cell,3.9892263846153844
+sample_44,NPDR,2,Type_17_T_helper_cell,4.013181749999999
 sample_44,NPDR,2,Type_2_T_helper_cell,3.996040947368422
 sample_46,NPDR,2,Activated_B_cell,4.120702199999999
 sample_46,NPDR,2,Activated_CD4_T_cell,3.9153797777777775
@@ -557,7 +557,7 @@ sample_46,NPDR,2,Plasmacytoid_dendritic_cell,4.105850359999998
 sample_46,NPDR,2,Regulatory_T_cell,4.022549400000001
 sample_46,NPDR,2,T_follicular_helper_cell,4.0363706666666666
 sample_46,NPDR,2,Type_1_T_helper_cell,4.0501039285714295
-sample_46,NPDR,2,Type_17_T_helper_cell,3.9911931538461536
+sample_46,NPDR,2,Type_17_T_helper_cell,4.015671749999999
 sample_46,NPDR,2,Type_2_T_helper_cell,4.010677894736842
 sample_47,NPDR,2,Activated_B_cell,4.1319854000000005
 sample_47,NPDR,2,Activated_CD4_T_cell,3.9050041111111113
@@ -585,7 +585,7 @@ sample_47,NPDR,2,Plasmacytoid_dendritic_cell,4.11693688
 sample_47,NPDR,2,Regulatory_T_cell,4.0362753
 sample_47,NPDR,2,T_follicular_helper_cell,4.035681666666666
 sample_47,NPDR,2,Type_1_T_helper_cell,4.060815309523808
-sample_47,NPDR,2,Type_17_T_helper_cell,4.001425307692307
+sample_47,NPDR,2,Type_17_T_helper_cell,4.024621499999999
 sample_47,NPDR,2,Type_2_T_helper_cell,3.9900117894736846
 sample_48,NPDR,2,Activated_B_cell,4.1239674
 sample_48,NPDR,2,Activated_CD4_T_cell,3.897662
@@ -613,7 +613,7 @@ sample_48,NPDR,2,Plasmacytoid_dendritic_cell,4.10749804
 sample_48,NPDR,2,Regulatory_T_cell,4.0087794
 sample_48,NPDR,2,T_follicular_helper_cell,4.025743285714286
 sample_48,NPDR,2,Type_1_T_helper_cell,4.050899833333335
-sample_48,NPDR,2,Type_17_T_helper_cell,3.989540153846154
+sample_48,NPDR,2,Type_17_T_helper_cell,4.012028
 sample_48,NPDR,2,Type_2_T_helper_cell,3.992716526315789
 sample_49,NPDR,2,Activated_B_cell,4.1317842
 sample_49,NPDR,2,Activated_CD4_T_cell,3.9005088888888895
@@ -641,7 +641,7 @@ sample_49,NPDR,2,Plasmacytoid_dendritic_cell,4.114777440000001
 sample_49,NPDR,2,Regulatory_T_cell,4.021854900000001
 sample_49,NPDR,2,T_follicular_helper_cell,4.032458285714286
 sample_49,NPDR,2,Type_1_T_helper_cell,4.047202452380953
-sample_49,NPDR,2,Type_17_T_helper_cell,4.002778
+sample_49,NPDR,2,Type_17_T_helper_cell,4.024598583333334
 sample_49,NPDR,2,Type_2_T_helper_cell,3.980925421052632
 sample_05,healthy control,0,Activated_B_cell,4.1449620000000005
 sample_05,healthy control,0,Activated_CD4_T_cell,3.932909333333333
@@ -669,7 +669,7 @@ sample_05,healthy control,0,Plasmacytoid_dendritic_cell,4.11731844
 sample_05,healthy control,0,Regulatory_T_cell,4.037340899999999
 sample_05,healthy control,0,T_follicular_helper_cell,4.043988380952381
 sample_05,healthy control,0,Type_1_T_helper_cell,4.070408523809524
-sample_05,healthy control,0,Type_17_T_helper_cell,4.007542384615385
+sample_05,healthy control,0,Type_17_T_helper_cell,4.030119583333334
 sample_05,healthy control,0,Type_2_T_helper_cell,4.011031947368421
 sample_50,NPDR,2,Activated_B_cell,4.146120999999999
 sample_50,NPDR,2,Activated_CD4_T_cell,3.908445666666667
@@ -697,7 +697,7 @@ sample_50,NPDR,2,Plasmacytoid_dendritic_cell,4.11134908
 sample_50,NPDR,2,Regulatory_T_cell,4.0161902
 sample_50,NPDR,2,T_follicular_helper_cell,4.045325428571429
 sample_50,NPDR,2,Type_1_T_helper_cell,4.0572236904761905
-sample_50,NPDR,2,Type_17_T_helper_cell,4.003107999999999
+sample_50,NPDR,2,Type_17_T_helper_cell,4.028586583333333
 sample_50,NPDR,2,Type_2_T_helper_cell,4.003321842105263
 sample_06,healthy control,0,Activated_B_cell,4.1317126
 sample_06,healthy control,0,Activated_CD4_T_cell,3.910342111111111
@@ -725,7 +725,7 @@ sample_06,healthy control,0,Plasmacytoid_dendritic_cell,4.10625324
 sample_06,healthy control,0,Regulatory_T_cell,4.0091643999999995
 sample_06,healthy control,0,T_follicular_helper_cell,4.031534095238095
 sample_06,healthy control,0,Type_1_T_helper_cell,4.046080452380953
-sample_06,healthy control,0,Type_17_T_helper_cell,4.003216153846153
+sample_06,healthy control,0,Type_17_T_helper_cell,4.027875916666667
 sample_06,healthy control,0,Type_2_T_helper_cell,4.00908694736842
 sample_61,NPDR/PDR + DME,3,Activated_B_cell,4.1076802
 sample_61,NPDR/PDR + DME,3,Activated_CD4_T_cell,3.9077153333333334
@@ -753,7 +753,7 @@ sample_61,NPDR/PDR + DME,3,Plasmacytoid_dendritic_cell,4.1128446400000005
 sample_61,NPDR/PDR + DME,3,Regulatory_T_cell,4.0458533999999995
 sample_61,NPDR/PDR + DME,3,T_follicular_helper_cell,4.045170285714285
 sample_61,NPDR/PDR + DME,3,Type_1_T_helper_cell,4.0494512857142855
-sample_61,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.002768923076923
+sample_61,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.029673333333333
 sample_61,NPDR/PDR + DME,3,Type_2_T_helper_cell,4.002297736842105
 sample_62,NPDR/PDR + DME,3,Activated_B_cell,4.0959976
 sample_62,NPDR/PDR + DME,3,Activated_CD4_T_cell,3.9222277777777776
@@ -781,7 +781,7 @@ sample_62,NPDR/PDR + DME,3,Plasmacytoid_dendritic_cell,4.113703920000001
 sample_62,NPDR/PDR + DME,3,Regulatory_T_cell,3.9842526
 sample_62,NPDR/PDR + DME,3,T_follicular_helper_cell,4.013389952380952
 sample_62,NPDR/PDR + DME,3,Type_1_T_helper_cell,4.052159619047619
-sample_62,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.000233000000001
+sample_62,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.018735583333334
 sample_62,NPDR/PDR + DME,3,Type_2_T_helper_cell,3.9902639473684203
 sample_63,NPDR/PDR + DME,3,Activated_B_cell,4.140138
 sample_63,NPDR/PDR + DME,3,Activated_CD4_T_cell,3.920687555555555
@@ -809,7 +809,7 @@ sample_63,NPDR/PDR + DME,3,Plasmacytoid_dendritic_cell,4.109857679999999
 sample_63,NPDR/PDR + DME,3,Regulatory_T_cell,4.0435859
 sample_63,NPDR/PDR + DME,3,T_follicular_helper_cell,4.043023761904761
 sample_63,NPDR/PDR + DME,3,Type_1_T_helper_cell,4.052927595238096
-sample_63,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.010367538461538
+sample_63,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.038418749999999
 sample_63,NPDR/PDR + DME,3,Type_2_T_helper_cell,4.010187263157896
 sample_64,NPDR/PDR + DME,3,Activated_B_cell,4.120497
 sample_64,NPDR/PDR + DME,3,Activated_CD4_T_cell,3.934273222222222
@@ -837,7 +837,7 @@ sample_64,NPDR/PDR + DME,3,Plasmacytoid_dendritic_cell,4.106715360000001
 sample_64,NPDR/PDR + DME,3,Regulatory_T_cell,4.031066699999999
 sample_64,NPDR/PDR + DME,3,T_follicular_helper_cell,4.036605428571429
 sample_64,NPDR/PDR + DME,3,Type_1_T_helper_cell,4.06207430952381
-sample_64,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.013451307692308
+sample_64,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.036734916666667
 sample_64,NPDR/PDR + DME,3,Type_2_T_helper_cell,3.9907378421052635
 sample_66,NPDR/PDR + DME,3,Activated_B_cell,4.1427917999999995
 sample_66,NPDR/PDR + DME,3,Activated_CD4_T_cell,3.9210172222222224
@@ -865,7 +865,7 @@ sample_66,NPDR/PDR + DME,3,Plasmacytoid_dendritic_cell,4.11441356
 sample_66,NPDR/PDR + DME,3,Regulatory_T_cell,4.0276397
 sample_66,NPDR/PDR + DME,3,T_follicular_helper_cell,4.0477508095238095
 sample_66,NPDR/PDR + DME,3,Type_1_T_helper_cell,4.062864809523807
-sample_66,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.017762076923076
+sample_66,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.04123475
 sample_66,NPDR/PDR + DME,3,Type_2_T_helper_cell,4.006008315789475
 sample_67,NPDR/PDR + DME,3,Activated_B_cell,4.1485218
 sample_67,NPDR/PDR + DME,3,Activated_CD4_T_cell,3.915827111111111
@@ -893,7 +893,7 @@ sample_67,NPDR/PDR + DME,3,Plasmacytoid_dendritic_cell,4.11162696
 sample_67,NPDR/PDR + DME,3,Regulatory_T_cell,4.034925599999999
 sample_67,NPDR/PDR + DME,3,T_follicular_helper_cell,4.040923761904762
 sample_67,NPDR/PDR + DME,3,Type_1_T_helper_cell,4.071201666666668
-sample_67,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.005152615384615
+sample_67,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.028534666666666
 sample_67,NPDR/PDR + DME,3,Type_2_T_helper_cell,4.015839631578949
 sample_68,NPDR/PDR + DME,3,Activated_B_cell,4.138548
 sample_68,NPDR/PDR + DME,3,Activated_CD4_T_cell,3.9194584444444445
@@ -921,7 +921,7 @@ sample_68,NPDR/PDR + DME,3,Plasmacytoid_dendritic_cell,4.11446352
 sample_68,NPDR/PDR + DME,3,Regulatory_T_cell,4.0358689
 sample_68,NPDR/PDR + DME,3,T_follicular_helper_cell,4.043046761904763
 sample_68,NPDR/PDR + DME,3,Type_1_T_helper_cell,4.059752690476191
-sample_68,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.015216923076924
+sample_68,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.037074416666667
 sample_68,NPDR/PDR + DME,3,Type_2_T_helper_cell,4.017501263157894
 sample_69,NPDR/PDR + DME,3,Activated_B_cell,4.112312
 sample_69,NPDR/PDR + DME,3,Activated_CD4_T_cell,3.901485666666667
@@ -949,7 +949,7 @@ sample_69,NPDR/PDR + DME,3,Plasmacytoid_dendritic_cell,4.11649472
 sample_69,NPDR/PDR + DME,3,Regulatory_T_cell,4.0397742999999995
 sample_69,NPDR/PDR + DME,3,T_follicular_helper_cell,4.047871571428571
 sample_69,NPDR/PDR + DME,3,Type_1_T_helper_cell,4.069657809523808
-sample_69,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.026779153846154
+sample_69,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.059012833333333
 sample_69,NPDR/PDR + DME,3,Type_2_T_helper_cell,4.0132278421052625
 sample_07,healthy control,0,Activated_B_cell,4.104216200000001
 sample_07,healthy control,0,Activated_CD4_T_cell,3.9057247777777775
@@ -977,7 +977,7 @@ sample_07,healthy control,0,Plasmacytoid_dendritic_cell,4.10540884
 sample_07,healthy control,0,Regulatory_T_cell,4.0365479
 sample_07,healthy control,0,T_follicular_helper_cell,4.0313167142857145
 sample_07,healthy control,0,Type_1_T_helper_cell,4.050825976190476
-sample_07,healthy control,0,Type_17_T_helper_cell,4.007697
+sample_07,healthy control,0,Type_17_T_helper_cell,4.0366290000000005
 sample_07,healthy control,0,Type_2_T_helper_cell,4.009204526315789
 sample_70,NPDR/PDR + DME,3,Activated_B_cell,4.0954528
 sample_70,NPDR/PDR + DME,3,Activated_CD4_T_cell,3.8843101111111107
@@ -1005,7 +1005,7 @@ sample_70,NPDR/PDR + DME,3,Plasmacytoid_dendritic_cell,4.11098244
 sample_70,NPDR/PDR + DME,3,Regulatory_T_cell,3.9911208
 sample_70,NPDR/PDR + DME,3,T_follicular_helper_cell,4.011424571428571
 sample_70,NPDR/PDR + DME,3,Type_1_T_helper_cell,4.036518809523811
-sample_70,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.000111
+sample_70,NPDR/PDR + DME,3,Type_17_T_helper_cell,4.022231333333334
 sample_70,NPDR/PDR + DME,3,Type_2_T_helper_cell,3.985782315789474
 sample_08,healthy control,0,Activated_B_cell,4.110857399999999
 sample_08,healthy control,0,Activated_CD4_T_cell,3.916803333333333
@@ -1033,7 +1033,7 @@ sample_08,healthy control,0,Plasmacytoid_dendritic_cell,4.110972319999999
 sample_08,healthy control,0,Regulatory_T_cell,4.017124600000001
 sample_08,healthy control,0,T_follicular_helper_cell,4.032620952380952
 sample_08,healthy control,0,Type_1_T_helper_cell,4.049422880952382
-sample_08,healthy control,0,Type_17_T_helper_cell,3.9922362307692305
+sample_08,healthy control,0,Type_17_T_helper_cell,4.021318166666666
 sample_08,healthy control,0,Type_2_T_helper_cell,3.9998304736842107
 sample_09,healthy control,0,Activated_B_cell,4.1226714
 sample_09,healthy control,0,Activated_CD4_T_cell,3.921940555555556
@@ -1061,5 +1061,5 @@ sample_09,healthy control,0,Plasmacytoid_dendritic_cell,4.110883399999999
 sample_09,healthy control,0,Regulatory_T_cell,4.028828599999999
 sample_09,healthy control,0,T_follicular_helper_cell,4.039963285714285
 sample_09,healthy control,0,Type_1_T_helper_cell,4.042936595238096
-sample_09,healthy control,0,Type_17_T_helper_cell,4.011242384615384
+sample_09,healthy control,0,Type_17_T_helper_cell,4.034614833333333
 sample_09,healthy control,0,Type_2_T_helper_cell,3.9898420000000003

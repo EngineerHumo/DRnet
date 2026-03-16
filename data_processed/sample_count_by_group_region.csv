@@ -1,8 +1,8 @@
 disease_group,region,n
-NPDR/PDR + DME,macula,10
-NPDR/PDR + DME,periphery,10
 NPDR,macula,9
 NPDR,periphery,10
+NPDR/PDR + DME,macula,10
+NPDR/PDR + DME,periphery,10
 diabetic,macula,10
 diabetic,periphery,10
 healthy control,macula,10

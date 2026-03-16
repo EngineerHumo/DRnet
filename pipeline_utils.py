@@ -3,7 +3,7 @@ from pathlib import Path
 from urllib import request, parse
 
 GROUPS = ["healthy control", "diabetic", "NPPR", "NPDR/PDR + DME"]
-SEVERITY_MAP = {"healthy control":0,"diabetic":1,"NPPR":2,"NPDR/PDR + DME":3}
+SEVERITY_MAP = {"healthy control": 0, "diabetic": 1, "NPPR": 2, "NPDR/PDR + DME": 3}
 
 
 def ensure_dirs(*dirs):
@@ -154,7 +154,7 @@ def ssgsea_score(expr_dict, geneset):
 
 
 def normalize_ensembl_id(gid):
-    return gid.split('.')[0].strip()
+    return str(gid).split('.')[0].strip()
 
 
 def _read_mapping_file(path):
@@ -165,44 +165,100 @@ def _read_mapping_file(path):
         delim = '\t' if sample.count('\t') >= sample.count(',') else ','
         r = csv.DictReader(f, delimiter=delim)
         for row in r:
-            rows.append({k.lower().strip(): (v or '').strip() for k, v in row.items()})
+            rows.append({(k or '').lower().strip(): (v or '').strip() for k, v in row.items()})
     if not rows:
         return {}
-    ensembl_keys = [k for k in rows[0].keys() if 'ensembl' in k and 'id' in k]
-    symbol_keys = [k for k in rows[0].keys() if ('symbol' in k) or (k == 'gene')]
+    ensembl_keys = [k for k in rows[0].keys() if 'ensembl' in k and ('id' in k or 'gene' in k)]
+    symbol_keys = [k for k in rows[0].keys() if ('symbol' in k) or (k == 'gene') or ('hgnc' in k)]
     if not ensembl_keys or not symbol_keys:
         return {}
     ek, sk = ensembl_keys[0], symbol_keys[0]
     out = {}
     for row in rows:
         e, s = normalize_ensembl_id(row.get(ek, '')), row.get(sk, '').upper()
-        if e and s:
+        if e.startswith('ENSG') and s and s != 'NAN':
             out[e] = s
     return out
 
 
-def _query_mygene(ensembl_ids):
-    # best-effort online mapping; network may be blocked.
+def _query_mygene_batch(ensembl_ids):
     out = {}
-    chunk = 500
+    if not ensembl_ids:
+        return out
+    # MyGene batch endpoint
+    chunk = 400
     for i in range(0, len(ensembl_ids), chunk):
         ids = ensembl_ids[i:i + chunk]
-        params = parse.urlencode({
+        payload = parse.urlencode({
             'ids': ','.join(ids),
             'fields': 'symbol',
-            'species': 'human',
-            'scopes': 'ensembl.gene'
-        })
-        url = f"https://mygene.info/v3/query?{params}"
+            'species': 'human'
+        }).encode('utf-8')
+        req = request.Request('https://mygene.info/v3/gene', data=payload, method='POST')
+        req.add_header('Content-Type', 'application/x-www-form-urlencoded')
         try:
-            with request.urlopen(url, timeout=30) as resp:
-                payload = json.loads(resp.read().decode('utf-8'))
-            hits = payload.get('hits', []) if isinstance(payload, dict) else payload
-            for h in hits:
-                q = normalize_ensembl_id(str(h.get('query', '')))
-                sym = str(h.get('symbol', '')).upper()
-                if q and sym and sym != 'NAN':
-                    out[q] = sym
+            with request.urlopen(req, timeout=40) as resp:
+                arr = json.loads(resp.read().decode('utf-8'))
+            if isinstance(arr, list):
+                for rec in arr:
+                    q = normalize_ensembl_id(rec.get('query', ''))
+                    s = str(rec.get('symbol', '')).upper()
+                    if q.startswith('ENSG') and s and s != 'NAN':
+                        out[q] = s
+        except Exception:
+            return out
+    return out
+
+
+def _query_ensembl_xrefs(ensembl_ids):
+    # slower fallback but robust if mygene is blocked
+    out = {}
+    for eid in ensembl_ids[:2000]:  # avoid unbounded runtime
+        url = f'https://rest.ensembl.org/xrefs/id/{eid}?external_db=HGNC;content-type=application/json'
+        try:
+            req = request.Request(url, headers={'Accept': 'application/json'})
+            with request.urlopen(req, timeout=20) as resp:
+                arr = json.loads(resp.read().decode('utf-8'))
+            if isinstance(arr, list) and arr:
+                label = str(arr[0].get('display_id', '')).upper()
+                if label:
+                    out[eid] = label
+        except Exception:
+            continue
+    return out
+
+
+
+
+def _query_biomart(ensembl_ids):
+    out = {}
+    if not ensembl_ids:
+        return out
+    chunk = 400
+    for i in range(0, len(ensembl_ids), chunk):
+        ids = ensembl_ids[i:i+chunk]
+        values = ','.join(ids)
+        xml = f"""<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Query>
+<Query virtualSchemaName='default' formatter='TSV' header='0' uniqueRows='1' count='' datasetConfigVersion='0.6'>
+  <Dataset name='hsapiens_gene_ensembl' interface='default'>
+    <Filter name='ensembl_gene_id' value='{values}'/>
+    <Attribute name='ensembl_gene_id'/>
+    <Attribute name='hgnc_symbol'/>
+  </Dataset>
+</Query>"""
+        try:
+            q = parse.urlencode({'query': xml})
+            url = f'https://www.ensembl.org/biomart/martservice?{q}'
+            with request.urlopen(url, timeout=60) as resp:
+                txt = resp.read().decode('utf-8', errors='ignore')
+            for line in txt.splitlines():
+                parts = line.strip().split('	')
+                if len(parts) >= 2:
+                    e = normalize_ensembl_id(parts[0])
+                    g = parts[1].strip().upper()
+                    if e.startswith('ENSG') and g:
+                        out[e] = g
         except Exception:
             return out
     return out
@@ -219,23 +275,29 @@ def load_ensembl_symbol_mapping(raw_dir='data_raw', proc_dir='data_processed', e
         mapping = _read_mapping_file(cache)
 
     if not mapping:
-        candidates = [
+        for p in [
             raw_dir / 'ensembl_to_symbol.csv',
             raw_dir / 'ensembl_to_symbol.tsv',
             raw_dir / 'gene_annotation.csv',
             raw_dir / 'gene_annotation.tsv',
-        ]
-        for p in candidates:
+        ]:
             if p.exists():
                 mapping = _read_mapping_file(p)
                 if mapping:
                     break
 
     if ensembl_ids:
-        missing = [normalize_ensembl_id(x) for x in ensembl_ids if normalize_ensembl_id(x) not in mapping]
+        need = sorted({normalize_ensembl_id(x) for x in ensembl_ids if normalize_ensembl_id(x).startswith('ENSG')})
+        missing = [x for x in need if x not in mapping]
         if missing:
-            online = _query_mygene(sorted(set(missing)))
+            online = _query_mygene_batch(missing)
             mapping.update(online)
+            missing2 = [x for x in missing if x not in mapping]
+            if missing2:
+                mapping.update(_query_biomart(missing2))
+                missing3 = [x for x in missing2 if x not in mapping]
+                if missing3:
+                    mapping.update(_query_ensembl_xrefs(missing3))
 
     if mapping:
         with open(cache, 'w', newline='', encoding='utf-8') as f:

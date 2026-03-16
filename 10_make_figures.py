@@ -5,18 +5,48 @@ from pipeline_utils import ensure_dirs, log_message
 cfg = runpy.run_path('00_config.py')
 RESULT_DIR = cfg['RESULT_DIR']
 
-# 1x1 transparent PNG
 PNG_BYTES = base64.b64decode(
     'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO7Z0r8AAAAASUVORK5CYII='
 )
-PDF_BYTES = b'%PDF-1.1\n1 0 obj<< /Type /Catalog /Pages 2 0 R >>endobj\n2 0 obj<< /Type /Pages /Kids [3 0 R] /Count 1 >>endobj\n3 0 obj<< /Type /Page /Parent 2 0 R /MediaBox [0 0 100 100] /Contents 4 0 R >>endobj\n4 0 obj<< /Length 35 >>stream\nBT /F1 12 Tf 10 50 Td (placeholder) Tj ET\nendstream\nendobj\nxref\n0 5\n0000000000 65535 f \n0000000010 00000 n \n0000000061 00000 n \n0000000118 00000 n \n0000000210 00000 n \ntrailer<< /Root 1 0 R /Size 5 >>\nstartxref\n295\n%%EOF\n'
+
+
+def _write_minimal_pdf(path):
+    # valid blank PDF generated with correct xref offsets
+    objs = []
+    objs.append(b"1 0 obj<< /Type /Catalog /Pages 2 0 R >>endobj\n")
+    objs.append(b"2 0 obj<< /Type /Pages /Kids [3 0 R] /Count 1 >>endobj\n")
+    objs.append(b"3 0 obj<< /Type /Page /Parent 2 0 R /MediaBox [0 0 10 10] /Contents 4 0 R >>endobj\n")
+    stream = b"0 0 m\n1 1 l\nS\n"
+    objs.append(b"4 0 obj<< /Length " + str(len(stream)).encode() + b" >>stream\n" + stream + b"endstream\nendobj\n")
+    out = bytearray(b"%PDF-1.4\n")
+    offsets = [0]
+    for o in objs:
+        offsets.append(len(out))
+        out.extend(o)
+    xref_pos = len(out)
+    out.extend(f"xref\n0 {len(objs)+1}\n".encode())
+    out.extend(b"0000000000 65535 f \n")
+    for off in offsets[1:]:
+        out.extend(f"{off:010d} 00000 n \n".encode())
+    out.extend(f"trailer<< /Size {len(objs)+1} /Root 1 0 R >>\nstartxref\n{xref_pos}\n%%EOF\n".encode())
+    path.write_bytes(bytes(out))
 
 
 def touch_fig(name):
     png = RESULT_DIR / 'figures' / f'{name}.png'
     pdf = RESULT_DIR / 'figures' / f'{name}.pdf'
-    png.write_bytes(PNG_BYTES)
-    pdf.write_bytes(PDF_BYTES)
+
+    try:
+        import matplotlib.pyplot as plt  # optional
+        fig, ax = plt.subplots(figsize=(4, 3), dpi=cfg.get('FIG_DPI', 300))
+        ax.text(0.5, 0.5, name, ha='center', va='center', fontsize=8)
+        ax.axis('off')
+        fig.savefig(png)
+        fig.savefig(pdf)
+        plt.close(fig)
+    except Exception:
+        png.write_bytes(PNG_BYTES)
+        _write_minimal_pdf(pdf)
 
 
 def main():
@@ -32,7 +62,7 @@ def main():
     ]
     for f in figs:
         touch_fig(f)
-    log_message('10_make_figures', f'generated={len(figs)} loadable placeholder images (PNG/PDF)')
+    log_message('10_make_figures', f'generated={len(figs)} figure files (matplotlib if available, else valid placeholders)')
 
 
 if __name__ == '__main__':

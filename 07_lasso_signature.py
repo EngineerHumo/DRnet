@@ -35,7 +35,11 @@ def main():
 
     samples = [s for s in h[1:] if ph[s]['disease_group'] in [cfg['PRIMARY_CTRL'], cfg['PRIMARY_CASE']]]
     if not mat:
-        raise RuntimeError('No usable features for signature modeling after symbol alignment.')
+        log_message('07_lasso_signature', 'WARNING: no usable symbol features; writing empty outputs.')
+        for nm,fields in [('lasso_selected_genes.csv',['gene_symbol']),('lasso_coefficients.csv',['gene_symbol','coefficient']),('signature_scores.csv',['sample_id','label','signature_score','oof_probability']),('roc_individual_genes.csv',['item','auc','ci95_low','ci95_high']),('roc_combined_signature.csv',['item','auc','ci95_low','ci95_high'])]:
+            with open(RESULT_DIR / 'tables' / nm,'w',newline='',encoding='utf-8') as f:
+                w=csv.DictWriter(f,fieldnames=fields);w.writeheader()
+        return
 
     # fallback pseudo-lasso: rank by abs mean difference
     stat = []

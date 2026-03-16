@@ -68,6 +68,8 @@ def main():
         genes = [g for g in genes if g]
 
     sig = [r['cell_type'] for r in comp if r['padj'] < 0.05]
+    if not sig:
+        sig = [r['cell_type'] for r in sorted(comp, key=lambda x: x['padj'])[:5]]
     cor = []
     for g in genes:
         if g not in mat:

@@ -1,9 +1,0 @@
-{
-  "completed": [
-    "00a_validate_and_clean_gene_sets.py",
-    "01_parse_manifest.py",
-    "02_prepare_expression.py",
-    "03_qc_and_pca.py",
-    "04_differential_expression.py"
-  ]
-}

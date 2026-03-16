@@ -14,16 +14,16 @@ sample_29,GSM4871133,diabetic,macula,1,Diabetic
 sample_03,GSM4871134,healthy control,macula,0,Control
 sample_30,GSM4871135,diabetic,macula,1,Diabetic
 sample_04,GSM4871145,healthy control,macula,0,Control
-sample_41,GSM4871147,NPPR,macula,2,NPDR
-sample_42,GSM4871148,NPPR,macula,2,NPDR
-sample_43,GSM4871149,NPPR,macula,2,NPDR
-sample_44,GSM4871150,NPPR,macula,2,NPDR
-sample_46,GSM4871151,NPPR,macula,2,NPDR
-sample_47,GSM4871152,NPPR,macula,2,NPDR
-sample_48,GSM4871153,NPPR,macula,2,NPDR
-sample_49,GSM4871154,NPPR,macula,2,NPDR
+sample_41,GSM4871147,NPDR,macula,2,NPDR
+sample_42,GSM4871148,NPDR,macula,2,NPDR
+sample_43,GSM4871149,NPDR,macula,2,NPDR
+sample_44,GSM4871150,NPDR,macula,2,NPDR
+sample_46,GSM4871151,NPDR,macula,2,NPDR
+sample_47,GSM4871152,NPDR,macula,2,NPDR
+sample_48,GSM4871153,NPDR,macula,2,NPDR
+sample_49,GSM4871154,NPDR,macula,2,NPDR
 sample_05,GSM4871155,healthy control,macula,0,Control
-sample_50,GSM4871156,NPPR,macula,2,NPDR
+sample_50,GSM4871156,NPDR,macula,2,NPDR
 sample_06,GSM4871166,healthy control,macula,0,Control
 sample_61,GSM4871168,NPDR/PDR + DME,macula,3,NPDR + DME
 sample_62,GSM4871169,NPDR/PDR + DME,macula,3,NPDR + DME

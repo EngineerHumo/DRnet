@@ -1,6 +1,7 @@
 import csv
 import math
 import runpy
+
 from pipeline_utils import ensure_dirs, log_message
 from simple_plot import Canvas, scale, quantile
 
@@ -27,43 +28,24 @@ def pearson(x, y):
 
 
 def top2_pca(samples_by_gene):
-    # input: list of genes, each = vector over samples
-    # sample-PCA should center each gene across samples (row-wise centering)
-    n = len(samples_by_gene[0])
-    centered = []
-    for g in samples_by_gene:
-        gm = sum(g) / len(g)
-        centered.append([x - gm for x in g])
+    # 使用成熟实现避免手写幂迭代在零空间方向上的退化
+    try:
+        import numpy as np
+        from sklearn.decomposition import PCA
+    except ImportError as e:
+        raise ImportError('top2_pca 需要 numpy + scikit-learn。') from e
 
-    cov = [[0.0] * n for _ in range(n)]
-    for g in centered:
-        for i in range(n):
-            gi = g[i]
-            for j in range(i, n):
-                cov[i][j] += gi * g[j]
-    for i in range(n):
-        for j in range(i, n):
-            cov[i][j] /= max(1, len(centered) - 1)
-            cov[j][i] = cov[i][j]
+    X = np.asarray(samples_by_gene, dtype=float)
+    if X.ndim != 2 or X.shape[0] == 0 or X.shape[1] < 2:
+        raise ValueError('PCA 输入矩阵维度异常，至少需要 1 个基因和 2 个样本。')
 
-    def power_iter(mat, iters=80):
-        v = [1.0 / math.sqrt(n)] * n
-        for _ in range(iters):
-            mv = [sum(mat[i][j] * v[j] for j in range(n)) for i in range(n)]
-            norm = math.sqrt(sum(a * a for a in mv)) + 1e-12
-            v = [a / norm for a in mv]
-        lam = sum(v[i] * sum(mat[i][j] * v[j] for j in range(n)) for i in range(n))
-        return lam, v
-
-    lam1, v1 = power_iter(cov)
-    cov2 = [[cov[i][j] - lam1 * v1[i] * v1[j] for j in range(n)] for i in range(n)]
-    lam2, v2 = power_iter(cov2)
-
-    coords = []
-    for i in range(n):
-        coords.append((v1[i] * math.sqrt(max(lam1, 0.0)), v2[i] * math.sqrt(max(lam2, 0.0))))
-    total_var = sum(cov[i][i] for i in range(n)) + 1e-12
-    return coords, lam1 / total_var, lam2 / total_var
+    # 基因×样本 -> 样本×基因
+    sample_gene = X.T
+    pca = PCA(n_components=2, svd_solver='full', random_state=cfg.get('RANDOM_SEED', 202501))
+    coords = pca.fit_transform(sample_gene)
+    points = [(float(v[0]), float(v[1])) for v in coords]
+    var1, var2 = float(pca.explained_variance_ratio_[0]), float(pca.explained_variance_ratio_[1])
+    return points, var1, var2
 
 
 def draw_bar(values, out_base):

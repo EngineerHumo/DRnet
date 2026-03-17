@@ -1,76 +1,72 @@
 import csv
 import math
-import random
 import runpy
-from pipeline_utils import ensure_dirs, read_gmt, load_ensembl_symbol_mapping, normalize_ensembl_id, bh_adjust, log_message
+
+from pipeline_utils import ensure_dirs, read_gmt, load_ensembl_symbol_mapping, normalize_ensembl_id, log_message
 
 cfg = runpy.run_path('00_config.py')
 RAW_DIR, PROC_DIR, RESULT_DIR = cfg['RAW_DIR'], cfg['PROC_DIR'], cfg['RESULT_DIR']
 SEED = cfg.get('RANDOM_SEED', 202501)
 
 
-def enrichment_score(ranked_genes, ranked_scores, gene_set, p=1.0):
-    s = set(gene_set)
-    hits = [i for i, g in enumerate(ranked_genes) if g in s]
-    nh = len(hits)
-    if nh == 0 or nh == len(ranked_genes):
-        return 0.0
-    nr = sum(abs(ranked_scores[i]) ** p for i in hits) + 1e-12
-    miss = 1.0 / (len(ranked_genes) - nh)
-    running = 0.0
-    best_pos, best_neg = -1e9, 1e9
-    hit_set = set(hits)
-    for i in range(len(ranked_genes)):
-        if i in hit_set:
-            running += (abs(ranked_scores[i]) ** p) / nr
-        else:
-            running -= miss
-        best_pos = max(best_pos, running)
-        best_neg = min(best_neg, running)
-    return best_pos if abs(best_pos) >= abs(best_neg) else best_neg
+def _run_preranked_gsea(rank_df, gene_sets):
+    """优先调用 fgsea，其次回退 gseapy.prerank。"""
+    try:
+        import fgsea  # type: ignore
 
+        # 兼容常见 Python fgsea API: fgsea(pathways=..., stats=..., min_size=..., max_size=..., nperm=...)
+        stats = dict(zip(rank_df['gene'], rank_df['score']))
+        res = fgsea.fgsea(pathways=gene_sets, stats=stats, min_size=5, max_size=2000, nperm=2000, seed=SEED)
+        rows = []
+        for _, r in res.iterrows():
+            rows.append({
+                'pathway': str(r['pathway']),
+                'ES': float(r.get('ES', r.get('es', 0.0))),
+                'NES': float(r.get('NES', r.get('nes', 0.0))),
+                'pvalue': float(r.get('pval', r.get('pvalue', 1.0))),
+                'padj': float(r.get('padj', r.get('FDR', 1.0))),
+                'hit_genes': int(r.get('size', r.get('nMoreExtreme', 0))),
+                'geneset_size': int(r.get('size', 0)),
+                'engine': 'fgsea',
+            })
+        return rows
+    except Exception:
+        pass
 
-def perm_null(ranked_genes, ranked_scores, gene_set, n_perm=80):
-    rnd = random.Random(SEED)
-    null = []
-    base = ranked_scores[:]
-    for _ in range(n_perm):
-        scores = base[:]
-        rnd.shuffle(scores)
-        null.append(enrichment_score(ranked_genes, scores, gene_set))
-    return null
+    try:
+        import pandas as pd
+        import gseapy as gp
+    except ImportError as e:
+        raise ImportError('08_enrichment_analysis.py 需要 fgsea（优先）或 gseapy（回退）。') from e
 
+    rnk = pd.DataFrame({'gene': rank_df['gene'], 'score': rank_df['score']})
+    pre = gp.prerank(
+        rnk=rnk,
+        gene_sets=gene_sets,
+        processes=1,
+        permutation_num=2000,
+        min_size=5,
+        max_size=2000,
+        seed=SEED,
+        outdir=None,
+        verbose=False,
+    )
+    tab = pre.res2d.reset_index().rename(columns={'Term': 'pathway'})
 
-def _normalize_nes_and_pvalue(es, null):
-    # Robust to empty same-sign null tails: fallback to all-null absolute mean normalization
-    if not null:
-        return 0.0, 1.0, 'empty_null'
-
-    if es >= 0:
-        same = [x for x in null if x >= 0]
-        if same:
-            denom = sum(same) / len(same)
-            pval = (sum(1 for x in same if x >= es) + 1) / (len(same) + 1)
-            method = 'same_sign_pos'
-        else:
-            denom = sum(abs(x) for x in null) / len(null)
-            pval = (sum(1 for x in null if abs(x) >= abs(es)) + 1) / (len(null) + 1)
-            method = 'fallback_abs_null'
-    else:
-        same = [x for x in null if x < 0]
-        if same:
-            denom = abs(sum(same) / len(same))
-            pval = (sum(1 for x in same if x <= es) + 1) / (len(same) + 1)
-            method = 'same_sign_neg'
-        else:
-            denom = sum(abs(x) for x in null) / len(null)
-            pval = (sum(1 for x in null if abs(x) >= abs(es)) + 1) / (len(null) + 1)
-            method = 'fallback_abs_null'
-
-    denom = max(denom, 1e-6)
-    nes = es / denom
-    pval = min(max(pval, 1.0 / (len(null) + 1)), 1.0)
-    return nes, pval, method
+    hit_col = 'Tag %' if 'Tag %' in tab.columns else None
+    rows = []
+    for _, r in tab.iterrows():
+        rows.append({
+            'pathway': str(r['pathway']),
+            'ES': float(r.get('ES', 0.0)),
+            'NES': float(r.get('NES', 0.0)),
+            'pvalue': float(r.get('NOM p-val', 1.0)),
+            'padj': float(r.get('FDR q-val', 1.0)),
+            'hit_genes': int(float(str(r[hit_col]).replace('%', '')) if hit_col and str(r[hit_col]).strip() else 0),
+            'geneset_size': len(set(gene_sets.get(str(r['pathway']), []))),
+            'engine': 'gseapy_prerank',
+        })
+    return rows
 
 
 def main():
@@ -95,26 +91,15 @@ def main():
         if sym not in gene_score or abs(score) > abs(gene_score[sym]):
             gene_score[sym] = score
 
-    ranked = sorted(gene_score.items(), key=lambda x: x[1], reverse=True)
-    ranked_genes = [g for g, _ in ranked][:6000]
-    ranked_scores = [s for _, s in ranked][:6000]
+    ranked = sorted(gene_score.items(), key=lambda x: x[1], reverse=True)[:6000]
+    rank_df = {'gene': [g for g, _ in ranked], 'score': [float(s) for _, s in ranked]}
 
     hall = read_gmt(RAW_DIR / 'hallmark_human_gene_symbols.gmt')
-    rows = []
-    for pth, gset in hall.items():
-        es = enrichment_score(ranked_genes, ranked_scores, gset)
-        null = perm_null(ranked_genes, ranked_scores, gset)
-        nes, pval, nes_method = _normalize_nes_and_pvalue(es, null)
-        hits = len(set(gset).intersection(set(ranked_genes)))
-        rows.append({'pathway': pth, 'ES': es, 'NES': nes, 'pvalue': pval, 'hit_genes': hits, 'geneset_size': len(set(gset)), 'nes_method': nes_method})
-
-    adj = bh_adjust([r['pvalue'] for r in rows])
-    for r, a in zip(rows, adj):
-        r['padj'] = a
+    rows = _run_preranked_gsea(rank_df, hall)
     rows.sort(key=lambda x: (x['padj'], -abs(x['NES'])))
 
     with open(RESULT_DIR / 'tables' / 'gsea_summary_matrix.csv', 'w', newline='', encoding='utf-8') as f:
-        w = csv.DictWriter(f, fieldnames=rows[0].keys())
+        w = csv.DictWriter(f, fieldnames=['pathway', 'ES', 'NES', 'pvalue', 'padj', 'hit_genes', 'geneset_size', 'engine'])
         w.writeheader()
         w.writerows(rows)
 
@@ -141,7 +126,8 @@ def main():
         for g in genes:
             w.writerow({'gene_symbol': g})
 
-    log_message('08_enrichment_analysis', f'ranked_genes={len(ranked_genes)} pathways={len(rows)} selected_genes={len(genes)}')
+    engine = rows[0]['engine'] if rows else 'none'
+    log_message('08_enrichment_analysis', f'ranked_genes={len(ranked)} pathways={len(rows)} selected_genes={len(genes)} engine={engine}')
 
 
 if __name__ == '__main__':

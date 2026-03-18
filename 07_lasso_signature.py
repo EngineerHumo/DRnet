@@ -44,6 +44,16 @@ def _bootstrap_auc_ci(y_true, y_prob, n_boot=500):
 
 
 def main():
+    try:
+        import numpy as np
+        from sklearn.linear_model import LogisticRegressionCV
+        from sklearn.metrics import roc_auc_score
+        from sklearn.model_selection import RepeatedStratifiedKFold, StratifiedKFold
+        from sklearn.pipeline import Pipeline
+        from sklearn.preprocessing import StandardScaler
+    except ImportError as e:
+        raise ImportError('07_lasso_signature.py 需要 numpy + scikit-learn。') from e
+
     ensure_dirs(RESULT_DIR / 'tables', RESULT_DIR / 'logs')
     prog = _read_gene_list(RESULT_DIR / 'tables' / 'progressive_inflammatory_genes.csv')
     core = _read_gene_list(RESULT_DIR / 'tables' / 'inflammatory_core_genes.csv')

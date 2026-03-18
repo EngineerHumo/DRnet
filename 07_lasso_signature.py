@@ -1,6 +1,13 @@
 import csv
 import runpy
 
+import numpy as np
+from sklearn.linear_model import LogisticRegressionCV
+from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import RepeatedStratifiedKFold, StratifiedKFold
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+
 from pipeline_utils import ensure_dirs, load_ensembl_symbol_mapping, matrix_ensembl_to_symbol, log_message
 
 cfg = runpy.run_path('00_config.py')
@@ -19,9 +26,6 @@ def _read_gene_list(path):
 
 
 def _bootstrap_auc_ci(y_true, y_prob, n_boot=500):
-    import numpy as np
-    from sklearn.metrics import roc_auc_score
-
     rng = np.random.default_rng(SEED)
     y_true = np.asarray(y_true, dtype=int)
     y_prob = np.asarray(y_prob, dtype=float)
@@ -56,7 +60,7 @@ def main():
     feats = sorted(set(prog if len(prog) >= 6 else core))
 
     with open(PROC_DIR / 'log2cpm_macula_4groups.tsv', encoding='utf-8') as f:
-        r = csv.reader(f, delimiter='\t')
+        r = csv.reader(f, delimiter='	')
         h = next(r)
         mat_ensembl = {row[0]: [float(x) for x in row[1:]] for row in r}
 
@@ -105,7 +109,7 @@ def main():
                 n_jobs=None,
                 random_state=SEED,
                 refit=True,
-            ))
+            )),
         ])
         model.fit(X[tr_idx], y[tr_idx])
         prob = model.predict_proba(X[te_idx])[:, 1]
@@ -125,7 +129,7 @@ def main():
             n_jobs=None,
             random_state=SEED,
             refit=True,
-        ))
+        )),
     ])
     final_model.fit(X, y)
 

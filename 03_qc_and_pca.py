@@ -2,6 +2,9 @@ import csv
 import math
 import runpy
 
+import numpy as np
+from sklearn.decomposition import PCA
+
 from pipeline_utils import ensure_dirs, log_message
 from simple_plot import Canvas, scale, quantile
 
@@ -11,7 +14,7 @@ PROC_DIR, RESULT_DIR = cfg['PROC_DIR'], cfg['RESULT_DIR']
 
 def read_matrix(path):
     with open(path, encoding='utf-8') as f:
-        r = csv.reader(f, delimiter='\t')
+        r = csv.reader(f, delimiter='	')
         h = next(r)
         data = {row[0]: [float(x) for x in row[1:]] for row in r}
     return h[1:], data
@@ -28,18 +31,11 @@ def pearson(x, y):
 
 
 def top2_pca(samples_by_gene):
-    # 使用成熟实现避免手写幂迭代在零空间方向上的退化
-    try:
-        import numpy as np
-        from sklearn.decomposition import PCA
-    except ImportError as e:
-        raise ImportError('top2_pca 需要 numpy + scikit-learn。') from e
-
+    # 使用成熟实现，避免手写幂迭代在零空间方向上的退化
     X = np.asarray(samples_by_gene, dtype=float)
     if X.ndim != 2 or X.shape[0] == 0 or X.shape[1] < 2:
         raise ValueError('PCA 输入矩阵维度异常，至少需要 1 个基因和 2 个样本。')
 
-    # 基因×样本 -> 样本×基因
     sample_gene = X.T
     pca = PCA(n_components=2, svd_solver='full', random_state=cfg.get('RANDOM_SEED', 202501))
     coords = pca.fit_transform(sample_gene)
@@ -84,7 +80,7 @@ def draw_scatter(points, groups, out_base):
         'healthy control': (65, 105, 225),
         'diabetic': (34, 139, 34),
         'NPDR': (255, 140, 0),
-        'NPDR/PDR + DME': (220, 20, 60)
+        'NPDR/PDR + DME': (220, 20, 60),
     }
     c = Canvas(1100, 700)
     c.line(90, 620, 1020, 620, (0, 0, 0), 2)

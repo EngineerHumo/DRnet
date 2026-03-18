@@ -2,6 +2,9 @@ import csv
 import math
 import runpy
 
+import pandas as pd
+import gseapy as gp
+
 from pipeline_utils import ensure_dirs, read_gmt, load_ensembl_symbol_mapping, normalize_ensembl_id, log_message
 
 cfg = runpy.run_path('00_config.py')
@@ -10,35 +13,6 @@ SEED = cfg.get('RANDOM_SEED', 202501)
 
 
 def _run_preranked_gsea(rank_df, gene_sets):
-    """优先调用 fgsea，其次回退 gseapy.prerank。"""
-    try:
-        import fgsea  # type: ignore
-
-        # 兼容常见 Python fgsea API: fgsea(pathways=..., stats=..., min_size=..., max_size=..., nperm=...)
-        stats = dict(zip(rank_df['gene'], rank_df['score']))
-        res = fgsea.fgsea(pathways=gene_sets, stats=stats, min_size=5, max_size=2000, nperm=2000, seed=SEED)
-        rows = []
-        for _, r in res.iterrows():
-            rows.append({
-                'pathway': str(r['pathway']),
-                'ES': float(r.get('ES', r.get('es', 0.0))),
-                'NES': float(r.get('NES', r.get('nes', 0.0))),
-                'pvalue': float(r.get('pval', r.get('pvalue', 1.0))),
-                'padj': float(r.get('padj', r.get('FDR', 1.0))),
-                'hit_genes': int(r.get('size', r.get('nMoreExtreme', 0))),
-                'geneset_size': int(r.get('size', 0)),
-                'engine': 'fgsea',
-            })
-        return rows
-    except Exception:
-        pass
-
-    try:
-        import pandas as pd
-        import gseapy as gp
-    except ImportError as e:
-        raise ImportError('08_enrichment_analysis.py 需要 fgsea（优先）或 gseapy（回退）。') from e
-
     rnk = pd.DataFrame({'gene': rank_df['gene'], 'score': rank_df['score']})
     pre = gp.prerank(
         rnk=rnk,
@@ -53,7 +27,6 @@ def _run_preranked_gsea(rank_df, gene_sets):
     )
     tab = pre.res2d.reset_index().rename(columns={'Term': 'pathway'})
 
-    hit_col = 'Tag %' if 'Tag %' in tab.columns else None
     rows = []
     for _, r in tab.iterrows():
         rows.append({
@@ -62,7 +35,7 @@ def _run_preranked_gsea(rank_df, gene_sets):
             'NES': float(r.get('NES', 0.0)),
             'pvalue': float(r.get('NOM p-val', 1.0)),
             'padj': float(r.get('FDR q-val', 1.0)),
-            'hit_genes': int(float(str(r[hit_col]).replace('%', '')) if hit_col and str(r[hit_col]).strip() else 0),
+            'hit_genes': len(set(gene_sets.get(str(r['pathway']), [])).intersection(rank_df['gene'])),
             'geneset_size': len(set(gene_sets.get(str(r['pathway']), []))),
             'engine': 'gseapy_prerank',
         })
@@ -126,8 +99,7 @@ def main():
         for g in genes:
             w.writerow({'gene_symbol': g})
 
-    engine = rows[0]['engine'] if rows else 'none'
-    log_message('08_enrichment_analysis', f'ranked_genes={len(ranked)} pathways={len(rows)} selected_genes={len(genes)} engine={engine}')
+    log_message('08_enrichment_analysis', f'ranked_genes={len(ranked)} pathways={len(rows)} selected_genes={len(genes)} engine=gseapy_prerank')
 
 
 if __name__ == '__main__':
